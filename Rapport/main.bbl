@@ -1291,6 +1291,43 @@
       \verb https://www.le-dictionnaire.com
       \endverb
     \endentry
+    \entry{json}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=466deec76ecdf5fca6d38571f6324d54}{%
+           family={json},
+           familyi={j\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{466deec76ecdf5fca6d38571f6324d54}
+      \strng{fullhash}{466deec76ecdf5fca6d38571f6324d54}
+      \strng{bibnamehash}{466deec76ecdf5fca6d38571f6324d54}
+      \strng{authorbibnamehash}{466deec76ecdf5fca6d38571f6324d54}
+      \strng{authornamehash}{466deec76ecdf5fca6d38571f6324d54}
+      \strng{authorfullhash}{466deec76ecdf5fca6d38571f6324d54}
+      \field{labelalpha}{jso}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Source code: Lib/json/\_\_init\_\_{}.py JSON (JavaScript Object Notation), specified by RFC 7159(which obsoletes RFC 4627) and by ECMA-404, is a lightweight data interchange format inspired by JavaScript...}
+      \field{journaltitle}{Python documentation}
+      \field{title}{json — {JSON} encoder and decoder}
+      \field{urlday}{20}
+      \field{urlmonth}{8}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Snapshot:/home/marchal/snap/zotero-snap/common/Zotero/storage/56VBZDP8/json.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://docs.python.org/3/library/json.html
+      \endverb
+      \verb{url}
+      \verb https://docs.python.org/3/library/json.html
+      \endverb
+    \endentry
     \entry{lucidchart}{misc}{}
       \name{author}{1}{}{%
         {{hash=0831ebf392685227f29806bf11ade668}{%
@@ -1952,7 +1989,6 @@
     \endentry
   \enddatalist
   \missing{bash}
-  \missing{json}
 \endrefsection
 \endinput
 

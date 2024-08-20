@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.8.9)  20 AUG 2024 12:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.8.9)  20 AUG 2024 17:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1235,6 +1235,12 @@ Package: chngcntr 2018/04/09 v1.1a change counter resetting
 Package chngcntr Info: \counterwithout already defined.
 (chngcntr)             Quitting chngcntr on input line 21.
 )
+(/usr/share/texlive/texmf-dist/tex/latex/appendix/appendix.sty
+Package: appendix 2020/02/08 v1.2c extra appendix facilities
+\c@@pps=\count503
+\c@@ppsavesec=\count504
+\c@@ppsaveapp=\count505
+)
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
@@ -1247,9 +1253,9 @@ Package: geometry 2020/01/02 v5.9 Page Geometry
 (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count503
-\Gm@cntv=\count504
-\c@Gm@tempcnt=\count505
+\Gm@cnth=\count506
+\Gm@cntv=\count507
+\c@Gm@tempcnt=\count508
 \Gm@bindingoffset=\dimen316
 \Gm@wd@mp=\dimen317
 \Gm@odd@mp=\dimen318
@@ -1307,16 +1313,16 @@ LaTeX Info: Redefining \up on input line 9.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count506
+\scratchcounter=\count509
 \scratchdimen=\dimen324
 \scratchbox=\box132
-\nofMPsegments=\count507
-\nofMParguments=\count508
+\nofMPsegments=\count510
+\nofMParguments=\count511
 \everyMPshowfont=\toks55
-\MPscratchCnt=\count509
+\MPscratchCnt=\count512
 \MPscratchDim=\dimen325
-\MPnumerator=\count510
-\makeMPintoPDFobject=\count511
+\MPnumerator=\count513
+\makeMPintoPDFobject=\count514
 \everyMPtoPDFconversion=\toks56
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1338,7 +1344,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count512
+\c@section@level=\count515
 )
 LaTeX Info: Redefining \ref on input line 9.
 LaTeX Info: Redefining \pageref on input line 9.
@@ -1357,7 +1363,7 @@ Package: ltcaption 2020/05/30 v1.4b longtable captions (AR)
 )
 Package caption Info: supertabular package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count513
+\c@lstlisting=\count516
 Package biblatex Info: Trying to load language 'french'...
 Package biblatex Info: ... file 'french.lbx' found.
 
@@ -1376,13 +1382,6 @@ Package biblatex Info: ... file 'main.bbl' found.
 Package biblatex Warning: The following entry could not be found
 (biblatex)                in the database:
 (biblatex)                bash
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                json
 (biblatex)                Please verify the spelling and rerun
 (biblatex)                LaTeX afterwards.
 
@@ -1465,7 +1464,7 @@ Package cleveref Info: loaded `french' language definitions on input line 6.
 (./Sections/../FiguresTex/especes.tex
 Package cleveref Info: loaded `french' language definitions on input line 6.
 
-Overfull \hbox (27.05998pt too wide) in paragraph at lines 11--42
+Overfull \hbox (27.05998pt too wide) in paragraph at lines 11--41
  [][] 
  []
 
@@ -1474,7 +1473,7 @@ Package cleveref Info: loaded `french' language definitions on input line 26.
  (./Sections/../FiguresTex/phylogenetic-relationships.tex
 Package cleveref Info: loaded `french' language definitions on input line 6.
 <Sections/../FiguresTex//../Illustrations/phylogenetic-relationships-modified.p
-ng, id=229, 222.8325pt x 190.5519pt>
+ng, id=227, 222.8325pt x 190.5519pt>
 File: Sections/../FiguresTex//../Illustrations/phylogenetic-relationships-modif
 ied.png Graphic file (type png)
 <use Sections/../FiguresTex//../Illustrations/phylogenetic-relationships-modifi
@@ -1509,12 +1508,12 @@ Overfull \hbox (2.93633pt too wide) in paragraph at lines 55--57
 [2] [3 <./Sections/../FiguresTex//../Illustrations/phylogenetic-relationships-m
 odified.png>] [4])
 Package cleveref Info: loaded `french' language definitions on input line 12.
- (./Sections/quantificationSNP.tex
+ [5] (./Sections/quantificationSNP.tex
 Package cleveref Info: loaded `french' language definitions on input line 6.
 
 (./Sections/../FiguresTex/exmpleTriticum.tex
 Package cleveref Info: loaded `french' language definitions on input line 6.
-<Sections/../FiguresTex//../Illustrations/ExempleTriticum.png, id=423, 154.176p
+<Sections/../FiguresTex//../Illustrations/ExempleTriticum.png, id=442, 154.176p
 t x 115.632pt>
 File: Sections/../FiguresTex//../Illustrations/ExempleTriticum.png Graphic file
  (type png)
@@ -1524,7 +1523,6 @@ um.png  used on input line 11.
 (pdftex.def)             Requested size: 384.1096pt x 288.11768pt.
 )
 Package cleveref Info: loaded `french' language definitions on input line 28.
- [5]
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 5
 2.
 
@@ -1541,7 +1539,7 @@ Underfull \hbox (badness 1675) in paragraph at lines 29--29
 
 )
 Package cleveref Info: loaded `french' language definitions on input line 53.
- [6 <./Sections/../FiguresTex//../Illustrations/ExempleTriticum.png>] [7]
+ [6] [7 <./Sections/../FiguresTex//../Illustrations/ExempleTriticum.png>]
 [8] [9] (./Sections/../FiguresTex/heatmap_SNP.tex
 Package cleveref Info: loaded `french' language definitions on input line 6.
  [10]
@@ -1577,7 +1575,7 @@ Package cleveref Info: loaded `french' language definitions on input line 6.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<Sections/../FiguresTex//../Illustrations/Classic_Heatmap_SNP.png, id=612, 789.
+<Sections/../FiguresTex//../Illustrations/Classic_Heatmap_SNP.png, id=609, 789.
 9111pt x 1115.1261pt>
 File: Sections/../FiguresTex//../Illustrations/Classic_Heatmap_SNP.png Graphic 
 file (type png)
@@ -1596,7 +1594,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--19
 ][][][][][][]
  []
 
-<Sections/../FiguresTex//../Illustrations/Percent_Heatmap_SNP.png, id=625, 789.
+<Sections/../FiguresTex//../Illustrations/Percent_Heatmap_SNP.png, id=622, 789.
 9111pt x 1115.1261pt>
 File: Sections/../FiguresTex//../Illustrations/Percent_Heatmap_SNP.png Graphic 
 file (type png)
@@ -1622,7 +1620,7 @@ LaTeX Warning: Float too large for page by 24.92337pt on input line 35.
 tions/../FiguresTex//../Illustrations/Percent_Heatmap_SNP.png>])
 Package cleveref Info: loaded `french' language definitions on input line 161.
 )
-Package cleveref Info: loaded `french' language definitions on input line 13.
+Package cleveref Info: loaded `french' language definitions on input line 15.
 
 (./Sections/mapping.tex
 Package cleveref Info: loaded `french' language definitions on input line 6.
@@ -1644,7 +1642,7 @@ Overfull \hbox (11.59425pt too wide) in paragraph at lines 46--47
 
 (./Sections/../FiguresTex/decompression.tex
 Package cleveref Info: loaded `french' language definitions on input line 6.
-<Sections/../FiguresTex//../Illustrations/Decompression.png, id=703, 1445.4pt x
+<Sections/../FiguresTex//../Illustrations/Decompression.png, id=700, 1445.4pt x
  828.09375pt>
 File: Sections/../FiguresTex//../Illustrations/Decompression.png Graphic file (
 type png)
@@ -1780,7 +1778,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 [17] (./Sections/../FiguresTex/boxplotsContigs.tex
 Package cleveref Info: loaded `french' language definitions on input line 6.
-<Sections/../FiguresTex//../Illustrations/boxplotTr.png, id=964, 769.87625pt x 
+<Sections/../FiguresTex//../Illustrations/boxplotTr.png, id=966, 769.87625pt x 
 526.96875pt>
 File: Sections/../FiguresTex//../Illustrations/boxplotTr.png Graphic file (type
  png)
@@ -1791,11 +1789,11 @@ Package pdftex.def Info: Sections/../FiguresTex//../Illustrations/boxplotTr.png
 )
 Package cleveref Info: loaded `french' language definitions on input line 168.
  [18])
-Package cleveref Info: loaded `french' language definitions on input line 14.
-
+Package cleveref Info: loaded `french' language definitions on input line 17.
+ [19]
 (./Sections/eggLib.tex
 Package cleveref Info: loaded `french' language definitions on input line 6.
- [19] [20 <./Sections/../FiguresTex//../Illustrations/boxplotTr.png>]
+ [20 <./Sections/../FiguresTex//../Illustrations/boxplotTr.png>] [21]
 Overfull \hbox (1.31334pt too wide) in paragraph at lines 71--72
 []\T1/cmr/m/n/10.95 La re-pro-duc-tion des ré-sul-tats s'est faite sans ac-croc
 s. Seule la par-tie $\OT1/cmr/m/n/10.95 02[]\OML/cmm/m/it/10.95 branch[]models$
@@ -1806,16 +1804,18 @@ s. Seule la par-tie $\OT1/cmr/m/n/10.95 02[]\OML/cmm/m/it/10.95 branch[]models$
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\gls' on input line 74.
 
-[21]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\gls' on input line 78.
 
 )
-Package cleveref Info: loaded `french' language definitions on input line 15.
- [22] (./Sections/conclusion.tex
+Package cleveref Info: loaded `french' language definitions on input line 20.
+ [22] [23] (./Sections/conclusion.tex
 Package cleveref Info: loaded `french' language definitions on input line 6.
- (./Sections/../FiguresTex/apprentissage.tex
+)
+Package cleveref Info: loaded `french' language definitions on input line 23.
+ [24] (./Specials/annexes.tex
+(./Specials/../FiguresTex/apprentissage.tex
 Package cleveref Info: loaded `french' language definitions on input line 6.
 
 Overfull \hbox (9.60657pt too wide) in paragraph at lines 11--51
@@ -1823,12 +1823,10 @@ Overfull \hbox (9.60657pt too wide) in paragraph at lines 11--51
  []
 
 )
-Package cleveref Info: loaded `french' language definitions on input line 22.
-)
-Package cleveref Info: loaded `french' language definitions on input line 18.
- [23] (./Specials/annexes.tex (./Specials/../FiguresTex/gantt.tex
+Package cleveref Info: loaded `french' language definitions on input line 13.
+ (./Specials/../FiguresTex/gantt.tex
 Package cleveref Info: loaded `french' language definitions on input line 6.
-<Specials/../FiguresTex//../Illustrations/Gantt.png, id=1172, 1866.975pt x 699.
+<Specials/../FiguresTex//../Illustrations/Gantt.png, id=1181, 1866.975pt x 699.
 61375pt>
 File: Specials/../FiguresTex//../Illustrations/Gantt.png Graphic file (type png
 )
@@ -1837,11 +1835,11 @@ Package pdftex.def Info: Specials/../FiguresTex//../Illustrations/Gantt.png  us
 ed on input line 11.
 (pdftex.def)             Requested size: 426.79135pt x 159.92566pt.
 )
-Package cleveref Info: loaded `french' language definitions on input line 15.
+Package cleveref Info: loaded `french' language definitions on input line 14.
 
 (./Specials/../FiguresTex/heatmap_classic_nombre_de_contigs.tex
 Package cleveref Info: loaded `french' language definitions on input line 6.
- [24] [25 <./Specials/../FiguresTex//../Illustrations/Gantt.png>]
+ [25] [26 <./Specials/../FiguresTex//../Illustrations/Gantt.png>]
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: pdftex
 * paper: a4paper
@@ -1875,7 +1873,7 @@ Package cleveref Info: loaded `french' language definitions on input line 6.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 <Specials/../FiguresTex//../Illustrations/Ex_Analysis_Contig_Heatmap_global.png
-, id=1191, 980.7039pt x 1005.2757pt>
+, id=1198, 980.7039pt x 1005.2757pt>
 File: Specials/../FiguresTex//../Illustrations/Ex_Analysis_Contig_Heatmap_globa
 l.png Graphic file (type png)
 <use Specials/../FiguresTex//../Illustrations/Ex_Analysis_Contig_Heatmap_global
@@ -1890,7 +1888,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--19
  []
 
 <Specials/../FiguresTex//../Illustrations/Mo_Analysis_Contig_Heatmap_global.png
-, id=1196, 980.7039pt x 1005.2757pt>
+, id=1203, 980.7039pt x 1005.2757pt>
 File: Specials/../FiguresTex//../Illustrations/Mo_Analysis_Contig_Heatmap_globa
 l.png Graphic file (type png)
 <use Specials/../FiguresTex//../Illustrations/Mo_Analysis_Contig_Heatmap_global
@@ -1904,10 +1902,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--28
 ]
  []
 
-[26 <./Specials/../FiguresTex//../Illustrations/Ex_Analysis_Contig_Heatmap_glob
+[27 <./Specials/../FiguresTex//../Illustrations/Ex_Analysis_Contig_Heatmap_glob
 al.png> <./Specials/../FiguresTex//../Illustrations/Mo_Analysis_Contig_Heatmap_
 global.png>])
-Package cleveref Info: loaded `french' language definitions on input line 17.
+Package cleveref Info: loaded `french' language definitions on input line 16.
  (./Specials/../FiguresTex/heatmap_percent_nombre_de_contigs.tex
 Package cleveref Info: loaded `french' language definitions on input line 6.
 *geometry* verbose mode - [ newgeometry ] result:
@@ -1943,7 +1941,7 @@ Package cleveref Info: loaded `french' language definitions on input line 6.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 <Specials/../FiguresTex//../Illustrations/Ex_Percent_Contig_Heatmap_global.png,
- id=1230, 980.7039pt x 1005.2757pt>
+ id=1237, 980.7039pt x 1005.2757pt>
 File: Specials/../FiguresTex//../Illustrations/Ex_Percent_Contig_Heatmap_global
 .png Graphic file (type png)
 <use Specials/../FiguresTex//../Illustrations/Ex_Percent_Contig_Heatmap_global.
@@ -1958,7 +1956,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--19
  []
 
 <Specials/../FiguresTex//../Illustrations/Mo_Percent_Contig_Heatmap_global.png,
- id=1235, 980.7039pt x 1005.2757pt>
+ id=1242, 980.7039pt x 1005.2757pt>
 File: Specials/../FiguresTex//../Illustrations/Mo_Percent_Contig_Heatmap_global
 .png Graphic file (type png)
 <use Specials/../FiguresTex//../Illustrations/Mo_Percent_Contig_Heatmap_global.
@@ -1972,11 +1970,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--28
 ]
  []
 
-[27 <./Specials/../FiguresTex//../Illustrations/Ex_Percent_Contig_Heatmap_globa
+[28 <./Specials/../FiguresTex//../Illustrations/Ex_Percent_Contig_Heatmap_globa
 l.png> <./Specials/../FiguresTex//../Illustrations/Mo_Percent_Contig_Heatmap_gl
 obal.png>])
-Package cleveref Info: loaded `french' language definitions on input line 18.
-) (./main.acr) [28
+Package cleveref Info: loaded `french' language definitions on input line 17.
+) (./main.acr) [29
 
 
 
@@ -1987,42 +1985,38 @@ Package cleveref Info: loaded `french' language definitions on input line 18.
 
 ] (./main.gls
 
-LaTeX Warning: Citation 'bash' on page 29 undefined on input line 47.
+LaTeX Warning: Citation 'bash' on page 30 undefined on input line 47.
 
-[29]
-
-LaTeX Warning: Citation 'json' on page 30 undefined on input line 118.
-
-[30] [31]) [32]
-Overfull \hbox (33.3177pt too wide) in paragraph at lines 40--40
+[30] [31] [32]) [33]
+Overfull \hbox (33.3177pt too wide) in paragraph at lines 45--45
 []\T1/cmr/m/n/10.95 Marchal []\T1/cmr/m/sc/10.95 Florent[]\T1/cmr/m/n/10.95 . \
 T1/cmr/m/it/10.95 F-Marchal/M1BioinfoInternship2024-INRAE_AGAP_GE2POP\T1/cmr/m/
 n/10.95 .
  []
 
 
-Overfull \hbox (22.70552pt too wide) in paragraph at lines 40--40
+Overfull \hbox (22.70552pt too wide) in paragraph at lines 45--45
 []\T1/cmr/m/n/10.95 Marchal []\T1/cmr/m/sc/10.95 Florent[]\T1/cmr/m/n/10.95 . \
 T1/cmr/m/it/10.95 F-Marchal/SnpHeatMap\T1/cmr/m/n/10.95 . original-date : 2024-
 05-04T14 :18 :46Z.
  []
 
 
-Overfull \hbox (33.3177pt too wide) in paragraph at lines 40--40
+Overfull \hbox (33.3177pt too wide) in paragraph at lines 45--45
 []\T1/cmr/m/n/10.95 Marchal []\T1/cmr/m/sc/10.95 Florent[]\T1/cmr/m/n/10.95 . \
 T1/cmr/m/it/10.95 F-Marchal/M1BioinfoInternship2024-INRAE_AGAP_GE2POP\T1/cmr/m/
 n/10.95 .
  []
 
-[33]
-Overfull \hbox (22.70552pt too wide) in paragraph at lines 40--40
+[34]
+Overfull \hbox (22.70552pt too wide) in paragraph at lines 45--45
 []\T1/cmr/m/n/10.95 Marchal []\T1/cmr/m/sc/10.95 Florent[]\T1/cmr/m/n/10.95 . \
 T1/cmr/m/it/10.95 F-Marchal/SnpHeatMap\T1/cmr/m/n/10.95 . original-date : 2024-
 05-04T14 :18 :46Z.
  []
 
 
-Overfull \hbox (18.81389pt too wide) in paragraph at lines 40--40
+Overfull \hbox (18.81389pt too wide) in paragraph at lines 45--45
 [][]\T1/cmr/m/sc/10.95 Doxygen[]\T1/cmr/m/n/10.95 . \T1/cmr/m/it/10.95 Doxy-gen
  ho-me-page\T1/cmr/m/n/10.95 . \T1/cmr/m/sc/10.95 url \T1/cmr/m/n/10.95 : [][]$
 \T1/cmtt/m/n/10.95 https : / / doxygen . nl/$[][] \T1/cmr/m/n/10.95 (vi-sité le
@@ -2030,38 +2024,38 @@ Overfull \hbox (18.81389pt too wide) in paragraph at lines 40--40
  []
 
 
-Overfull \hbox (25.4569pt too wide) in paragraph at lines 40--40
+Overfull \hbox (25.4569pt too wide) in paragraph at lines 45--45
 \T1/cmtt/m/n/10.95 369475290 & km _ CPC _ AdGroupID = 1240249291937118 & km _ C
 PC _ Keyword = lucidchart &
  []
 
-
-Overfull \hbox (7.7258pt too wide) in paragraph at lines 40--40
+[35]
+Overfull \hbox (7.7258pt too wide) in paragraph at lines 45--45
 \T1/cmr/m/it/10.95 ma-tics | Ox-ford Aca-de-mic\T1/cmr/m/n/10.95 . \T1/cmr/m/sc
 /10.95 url \T1/cmr/m/n/10.95 : [][]$\T1/cmtt/m/n/10.95 https : / / academic . o
 up . com / bioinformatics /
  []
 
-[34]
-Overfull \hbox (1.34575pt too wide) in paragraph at lines 40--40
+
+Overfull \hbox (1.34575pt too wide) in paragraph at lines 45--45
 \T1/cmtt/m/n/10.95 bioinformatics / bts635$[][]\T1/cmr/m/n/10.95 . \T1/cmr/m/sc
 /10.95 url \T1/cmr/m/n/10.95 : [][]$\T1/cmtt/m/n/10.95 https : / / doi . org / 
 10 . 1093 / bioinformatics /
  []
 
-[35] (./main.aux
+[36] (./main.aux
 Package cleveref Info: loaded `french' language definitions on input line 33.
 Package cleveref Info: loaded `french' language definitions on input line 50.
 Package cleveref Info: loaded `french' language definitions on input line 58.
 Package cleveref Info: loaded `french' language definitions on input line 59.
 Package cleveref Info: loaded `french' language definitions on input line 60.
 Package cleveref Info: loaded `french' language definitions on input line 61.
-Package cleveref Info: loaded `french' language definitions on input line 86.
-Package cleveref Info: loaded `french' language definitions on input line 87.
-Package cleveref Info: loaded `french' language definitions on input line 94.
-Package cleveref Info: loaded `french' language definitions on input line 95.
-Package cleveref Info: loaded `french' language definitions on input line 112.
-Package cleveref Info: loaded `french' language definitions on input line 113.
+Package cleveref Info: loaded `french' language definitions on input line 82.
+Package cleveref Info: loaded `french' language definitions on input line 99.
+Package cleveref Info: loaded `french' language definitions on input line 106.
+Package cleveref Info: loaded `french' language definitions on input line 107.
+Package cleveref Info: loaded `french' language definitions on input line 109.
+Package cleveref Info: loaded `french' language definitions on input line 110.
 Package cleveref Info: loaded `french' language definitions on input line 131.
 Package cleveref Info: loaded `french' language definitions on input line 147.
 Package cleveref Info: loaded `french' language definitions on input line 148.
@@ -2079,12 +2073,12 @@ Package cleveref Info: loaded `french' language definitions on input line 217.
 Package cleveref Info: loaded `french' language definitions on input line 226.
 Package cleveref Info: loaded `french' language definitions on input line 227.
 Package cleveref Info: loaded `french' language definitions on input line 234.
-Package cleveref Info: loaded `french' language definitions on input line 235.
+Package cleveref Info: loaded `french' language definitions on input line 238.
 Package cleveref Info: loaded `french' language definitions on input line 281.
-Package cleveref Info: loaded `french' language definitions on input line 290.
-Package cleveref Info: loaded `french' language definitions on input line 293.
+Package cleveref Info: loaded `french' language definitions on input line 282.
+Package cleveref Info: loaded `french' language definitions on input line 285.
 Package cleveref Info: loaded `french' language definitions on input line 294.
-Package cleveref Info: loaded `french' language definitions on input line 295.
+Package cleveref Info: loaded `french' language definitions on input line 298.
 Package cleveref Info: loaded `french' language definitions on input line 299.
 Package cleveref Info: loaded `french' language definitions on input line 300.
 Package cleveref Info: loaded `french' language definitions on input line 301.
@@ -2099,33 +2093,15 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 48190 strings out of 478287
- 958742 string characters out of 5849290
- 1685134 words of memory out of 5000000
- 65415 multiletter control sequences out of 15000+600000
+ 48267 strings out of 478287
+ 959977 string characters out of 5849290
+ 1685715 words of memory out of 5000000
+ 65492 multiletter control sequences out of 15000+600000
  487844 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  104i,12n,107p,2757b,6427s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{glo:ORF} has been referenced but does not exist, 
 replaced by a fixed one
-
-pdfTeX warning (dest): name{glo:mappeur} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{glo:ARN} has been referenced but does not exist, re
-placed by a fixed one
-
-pdfTeX warning (dest): name{glo:brins_bien_appari\351s} has been referenced but
- does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{glo:nucl\351otide} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{glo:h\351t\351rogame} has been referenced but does 
-not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{glo:s\351quen\347age} has been referenced but does 
-not exist, replaced by a fixed one
 
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/share/texmf/f
 onts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texlive/texmf-dist/fonts/ty
@@ -2146,10 +2122,10 @@ pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1095.pfb></usr/share/texm
 f/fonts/type1/public/cm-super/sfti1200.pfb></usr/share/texmf/fonts/type1/public
 /cm-super/sftt1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1095.p
 fb></usr/share/texmf/fonts/type1/public/cm-super/sfxc1200.pfb>
-Output written on main.pdf (36 pages, 2549457 bytes).
+Output written on main.pdf (37 pages, 2548395 bytes).
 PDF statistics:
- 1925 PDF objects out of 2073 (max. 8388607)
- 1693 compressed objects within 17 object streams
- 242 named destinations out of 1000 (max. 500000)
+ 1928 PDF objects out of 2073 (max. 8388607)
+ 1696 compressed objects within 17 object streams
+ 239 named destinations out of 1000 (max. 500000)
  432 words of extra memory for PDF output out of 10000 (max. 10000000)
 

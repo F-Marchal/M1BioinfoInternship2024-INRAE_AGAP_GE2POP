@@ -13,7 +13,7 @@
 Mon stage de master 1 en bioinformatique à la faculté des sciences de Montpellier, s’est déroulé au sein de 
 l’UMR AGAP, équipe Ge2POP (INRAE / Institut Agro) du 2 mai 2024 au 26 juillet 2024. J’ai été encadré par Concetta \textsc{Burgarella}, Vincent \textsc{Ranwez} et Nathalie \textsc{Chantret}. 
 
-L’objectif de ce stage est d’évaluer la qualité des données de \gls{séquençage} issues d’une étude antérieure (\cref{Contexte}) pour déterminer si celles-ci peuvent être utilisées pour rechercher des traces de sélection chez des espèces sauvages apparentées au blé.  Ce rapport est rédigé à des fins descriptives et à des fins de traçabilité. De ce fait,  en plus du contexte et des raisons qui ont motivé mes choix, je préciserai aussi les sources des données utilisées et comment faire pour reproduire les résultats.
+L’objectif de ce stage est d’évaluer la qualité des données de \gls{sequencage} issues d’une étude antérieure (\cref{Contexte}) pour déterminer si celles-ci peuvent être utilisées pour rechercher des traces de sélection chez des espèces sauvages apparentées au blé.  Ce rapport est rédigé à des fins descriptives et à des fins de traçabilité. De ce fait,  en plus du contexte et des raisons qui ont motivé mes choix, je préciserai aussi les sources des données utilisées et comment faire pour reproduire les résultats.
 
 \subsection{Contexte}
 \label{Contexte}
@@ -26,7 +26,7 @@ Nous travaillons ici sur 13 espèces \glspl{diploide} sauvages apparentées au b
 \subfile{../FiguresTex/especes.tex}
 \subfile{../FiguresTex/phylogenetic-relationships.tex}
 
-Ce choix de modèles permet de travailler sur des espèces génétiquement proches (\cref{fig:Phylo}) ayant des modes de reproduction divers. En effet, certaines de ces espèces sont \glspl{autogame}, d’autres sont \glspl{hétérogame} et enfin, certaines ont un régime mixte (\gls{autogame} et \gls{hétérogame}).
+Ce choix de modèles permet de travailler sur des espèces génétiquement proches (\cref{fig:Phylo}) ayant des modes de reproduction divers. En effet, certaines de ces espèces sont \glspl{autogame}, d’autres sont \glspl{heterogame} et enfin, certaines ont un régime mixte (\gls{autogame} et \gls{heterogame}).
 
 Si, au cours de ce stage, j’ai travaillé sur des données issues de toutes les espèces mentionnées ci-dessus,  certaines  analyses se concentrent sur \textit{Triticum urartu}. Ce choix est motivé par la présence d'un génome de référence publié (certaines des espèces n'en n'ont pas) et par son mode de reproduction fortement \gls{autogame}. Ce dernier point permet de s'assurer que les \glspl{mapping} ne seront pas trop longs. En effet, un mode de reproduction \gls{autogame} réduit la diversité génétique \cite{burgarella_mating_2024}. A titre indicatif, \textit{Triticum urartu} à un génome \gls{diploide} de $4,8 Gpb$  qui correspond à la partie « A » du génome du blé tendre (Froment) qui est \gls{hexaploide} (3 génomes : « A », « B » et « C »  \cite{noauthor_ble_2024}).
 
@@ -36,7 +36,7 @@ Si, au cours de ce stage, j’ai travaillé sur des données issues de toutes le
 
 \subfile{../FiguresTex/seq.tex}
 
-Les  données sont issues du \gls{séquençage} du \gls{transcriptome}
+Les  données sont issues du \gls{sequencage} du \gls{transcriptome}
 des \glspl{inflorescence}, des graines, et des feuilles de parents proches du blé (\cref{model_bio}). Les analyses bioinformatiques réalisées dans  \cite{burgarella_mating_2024} suivent le pipeline de \cite{sarah_large_2017}. 
 Le choix d’utiliser des données \glspl{transcriptomique} est motivé par la nécessité d'avoir une meilleure représentation possible de la diversité fonctionnelle à l'échelle du génome. En effet, en 2013, il n'y avait aucun génome de référence pour les espèces considérées (même le blé cultivé n'en avait pas). Les données \glspl{transcriptomique} ont aussi l'avantage de cibler les parties codantes du génome et donc les zones ayant le plus de chances d’être communes entre les espèces considérées. De fait, cela permet d’étudier les relations phylogénétiques entre les espèces (\cite{glemin_pervasive_2019}) ainsi que les traces de sélection au travers d'une \gls{phylogenie}. 
 
@@ -44,7 +44,7 @@ Le choix d’utiliser des données \glspl{transcriptomique} est motivé par la n
 Dès le début de ce stage, nous avions à notre disposition :
 
 \begin{description}
-    \item[Les résultats du \gls{séquençage} de chaque individu] sous la forme de \fastq déjà prêts à l’emploi. Les \reads ont déjà été nettoyés et la longueur de ceux-ci uniformisés à 100 nucléotides par \gls{read}. Les fichiers trop gros on été séparés en deux parties. La première partie contient toujours \num{25 000 000} de \reads.
+    \item[Les résultats du \gls{sequencage} de chaque individu] sous la forme de \fastq déjà prêts à l’emploi. Les \reads ont déjà été nettoyés et la longueur de ceux-ci uniformisés à 100 \glspl{nucleotide} par \gls{read}. Les fichiers trop gros on été séparés en deux parties. La première partie contient toujours \num{25 000 000} de \reads.
     
     \item[Les \glspl{transcriptome} de référence (\TrEx)] utilisés dans \cite{glemin_pervasive_2019} et construits selon la méthode de \cite{sarah_large_2017}. Ils proviennent de l'\gls{assemblage} des \reads de l’individu le plus couvert. Il en existe un par espèce. 
 

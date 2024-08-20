@@ -68,7 +68,7 @@ Les fichiers \fastq sur lesquels  j’ai travaillé sont tous stockés dans le 
 Nous aborderons ici les difficultés qui ont eu lieu pendant les mappings ainsi que leurs deroulés.
 \subsubsection{Mapping avec \gls{MINIMAP} (\GeMo)}
 \label{sec:Minimap}
-Le mapper MINIMAP2 a été choisi pour effectuer le \gls{mapping} des \fastq sur \GeMo. Cependant, ce choix a posé de nombreux problèmes et n'a pas abouti à une solution satisfaisante, malgré un investissement en temps conséquent (\cref{fig:gantt}). En effet, si nous arrivions à démarrer les \glspl{mapping}, ils se sont sont tous soldés par des erreurs. A titre indicatif voici les types d’erreurs rencontrés sur 17 échantillons :
+Le \gls{mappeur} MINIMAP2 a été choisi pour effectuer le \gls{mapping} des \fastq sur \GeMo. Cependant, ce choix a posé de nombreux problèmes et n'a pas abouti à une solution satisfaisante, malgré un investissement en temps conséquent (\cref{fig:gantt}). En effet, si nous arrivions à démarrer les \glspl{mapping}, ils se sont sont tous soldés par des erreurs. A titre indicatif voici les types d’erreurs rencontrés sur 17 échantillons :
 
 \begin{itemize}
     \item  10 \lstinline{'minimap2: hit.c:210: mm_hit_sort: Assertion `has_cigar + no_cigar == 1' failed.'}
@@ -83,12 +83,12 @@ Nous avons bien essayé d’augmenter la quantité de mémoire attribuée à \gl
 
 \subsubsection{Mapping avec \gls{STAR} (\GeMo)}
 \label{sec:Star}
-Comme \gls{MINIMAP} s’est révélé inexploitable, nous avons choisi d’essayer avec un autre mapper, bien qu’il ne soit pas accessible dans \GeCKO. Le mapper choisi a été \gls{STAR}. Les résultats des \glspl{mapping} ont été obtenus très rapidement et sans grandes difficultés. Cependant, les résultats sont arrivés trop tard (\cref{fig:gantt}) et n'ont pas put être analysés. 
+Comme \gls{MINIMAP} s’est révélé inexploitable, nous avons choisi d’essayer avec un autre \gls{mappeur}, bien qu’il ne soit pas accessible dans \GeCKO. Le \gls{mappeur} choisi a été \gls{STAR}. Les résultats des \glspl{mapping} ont été obtenus très rapidement et sans grandes difficultés. Cependant, les résultats sont arrivés trop tard (\cref{fig:gantt}) et n'ont pas put être analysés. 
 
 
 
 \subsubsection{Mapping avec \BWA (\TrEx et \TrMo)}
-Les mappings sur les transcriptions de références ont été fais avec \BWA $mem$. Il s’agit du mapper utilisé pour réaliser les \OldBam.
+Les mappings sur les transcriptions de références ont été fais avec \BWA $mem$. Il s’agit du \gls{mappeur} utilisé pour réaliser les \OldBam.
 
 \paragraph{Mapping sur \TrEx} Le re-mapping sur \TrEx est justifié par la nécessité d'avoir des données comparables au \gls{mapping} sur \TrMo. En effet, nous ne pouvions pas utiliser les \OldBam pour les raisons détaillées ici : \ref{sec:oldBam}. 
 
@@ -138,7 +138,7 @@ Quand un \gls{mapping} est lancé avec \GeCKO, \GeCKO crée de lui même un rap
 
 \paragraph{Le pourcentage de \reads mappés} est compris entre 80 \% et 85 \% pour \TrMo tandis qu'il est compris entre 90 \% et 96 \% pour \TrEx.
 
-\paragraph{Le pourcentage de \gls{brins_bien_appariés}} est compris entre 78 \% et 82 \% pour \TrMo tandis qu'il est compris entre 81 \% et 86 \% pour \TrEx.
+\paragraph{Le pourcentage de \gls{brins_bien_apparies}} est compris entre 78 \% et 82 \% pour \TrMo tandis qu'il est compris entre 81 \% et 86 \% pour \TrEx.
 
 Contrairement à nos attententes initiales, il semblerait que \TrEx soi plus intéressant pour procéder à nos \glspl{mapping} que \TrMo , \TrEx maximisant le nombre de \reads mappés.
 

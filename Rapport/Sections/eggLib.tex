@@ -14,7 +14,7 @@ La création de cette pipeline a débuté pendant le \gls{mapping} mentionné da
 L'objectif de cette pipeline est de détecter automatiquement des traces de sélection sur des gènes. Pour cela la pipeline doit pouvoir accepter deux types de sources :
 
 \begin{description}
-    \item[alignements de gènes \glspl{orthologue}] Ces alignements doivent être réalisés au niveau des \glspl{codon} et non des \glspl{nucléotide}, la sélection se faisant principalement au niveau de la protéine. Lorsque ce type de fichier est fournis, une analyse utilisant \gls{CODEML} doit être réalisée.
+    \item[alignements de gènes \glspl{orthologue}] Ces alignements doivent être réalisés au niveau des \glspl{codon} et non des \glspl{nucleotide}, la sélection se faisant principalement au niveau de la protéine. Lorsque ce type de fichier est fournis, une analyse utilisant \gls{CODEML} doit être réalisée.
     
     \item[fichier de statistiques] Ces fichiers tabulés doivent contenir des informations concernant le \acrshort{pn}, le \acrshort{ps}, le \acrshort{dn}, et le \acrshort{ds}. Dans ce type de situation un \gls{McTest} est réalisé.
 \end{description}
@@ -95,8 +95,6 @@ La \acrshort{REGEX} utilisée pour exploiter le fichier de sortie de \gls{CODEML
 \end{enumerate}
 
 J'ai tenté de corriger la \textit{REGEX} (cf. \cite{florent_f-marchalm1bioinfointernship2024-inrae_agap_ge2pop_2024} $Regex$) mais je ne suis pas arrivé au bout de la correction du point n°3. 
-
-\redbracket{Je souhaite envoyer les modifications que j'ai apporté à la REGEX à Stéphane De Mita, pensez-vous que cela soit utile / nécessaire ?}
 
 \subsection{Conclusion}
 \label{sec:EggConclusion}

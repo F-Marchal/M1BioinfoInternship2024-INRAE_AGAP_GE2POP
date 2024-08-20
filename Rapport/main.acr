@@ -42,7 +42,7 @@
 		\setentrycounter[]{page}\glsnumberformat{14\delimN 15}\delimN 
 		\setentrycounter[]{page}\glsnumberformat{23}}}%
 \glossentry{GNSPeq}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{5\delimR 7}}}%
+		\setentrycounter[]{page}\glsnumberformat{6\delimN 7}}}%
 \glossentry{GNSPge}{\glossaryentrynumbers{\relax 
 		\setentrycounter[]{page}\glsnumberformat{6\delimR 8}}}\glsgroupskip
 \glsgroupheading{N}\relax \glsresetentrylist %
@@ -61,7 +61,7 @@
 \glsgroupheading{S}\relax \glsresetentrylist %
 \glossentry{snp}{\glossaryentrynumbers{\relax 
 		\setentrycounter[]{page}\glsnumberformat{3}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{5\delimR 7}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{6\delimN 7}\delimN 
 		\setentrycounter[]{page}\glsnumberformat{9\delimR 12}\delimN 
 		\setentrycounter[]{page}\glsnumberformat{23}}}\glsgroupskip
 \glsgroupheading{T}\relax \glsresetentrylist %

@@ -9,8 +9,8 @@
 \glossaryentry{$P_n$?\glossentry{pn}|setentrycounter[]{page}"\glsnumberformat}{4}
 \glossaryentry{$P_s$?\glossentry{ps}|setentrycounter[]{page}"\glsnumberformat}{4}
 \glossaryentry{$P_s$?\glossentry{ps}|setentrycounter[]{page}"\glsnumberformat}{4}
-\glossaryentry{$D_n$?\glossentry{dn}|setentrycounter[]{page}"\glsnumberformat}{5}
-\glossaryentry{$D_n$?\glossentry{dn}|setentrycounter[]{page}"\glsnumberformat}{5}
+\glossaryentry{$D_n$?\glossentry{dn}|setentrycounter[]{page}"\glsnumberformat}{4}
+\glossaryentry{$D_n$?\glossentry{dn}|setentrycounter[]{page}"\glsnumberformat}{4}
 \glossaryentry{$D_s$?\glossentry{ds}|setentrycounter[]{page}"\glsnumberformat}{5}
 \glossaryentry{$D_s$?\glossentry{ds}|setentrycounter[]{page}"\glsnumberformat}{5}
 \glossaryentry{$"\frac {D_n}{D_s}$?\glossentry{dnds}|setentrycounter[]{page}"\glsnumberformat}{5}
@@ -22,22 +22,21 @@
 \glossaryentry{$"\frac {P_n}{P_s}$?\glossentry{pnps}|setentrycounter[]{page}"\glsnumberformat}{5}
 \glossaryentry{$P_s$?\glossentry{ps}|setentrycounter[]{page}"\glsnumberformat}{5}
 \glossaryentry{$P_n$?\glossentry{pn}|setentrycounter[]{page}"\glsnumberformat}{5}
-\glossaryentry{SNP?\glossentry{snp}|setentrycounter[]{page}"\glsnumberformat}{5}
-\glossaryentry{SNP?\glossentry{snp}|setentrycounter[]{page}"\glsnumberformat}{5}
-\glossaryentry{SNP?\glossentry{snp}|setentrycounter[]{page}"\glsnumberformat}{5}
-\glossaryentry{SNP?\glossentry{snp}|setentrycounter[]{page}"\glsnumberformat}{5}
-\glossaryentry{GNSP$=$?\glossentry{GNSPeq}|setentrycounter[]{page}"\glsnumberformat}{5}
-\glossaryentry{SNP?\glossentry{snp}|setentrycounter[]{page}"\glsnumberformat}{5}
-\glossaryentry{SNP?\glossentry{snp}|setentrycounter[]{page}"\glsnumberformat}{5}
-\glossaryentry{GNSP$"\geq $?\glossentry{GNSPge}|setentrycounter[]{page}"\glsnumberformat}{5}
-\glossaryentry{SNP?\glossentry{snp}|setentrycounter[]{page}"\glsnumberformat}{5}
+\glossaryentry{SNP?\glossentry{snp}|setentrycounter[]{page}"\glsnumberformat}{6}
+\glossaryentry{SNP?\glossentry{snp}|setentrycounter[]{page}"\glsnumberformat}{6}
+\glossaryentry{SNP?\glossentry{snp}|setentrycounter[]{page}"\glsnumberformat}{6}
+\glossaryentry{SNP?\glossentry{snp}|setentrycounter[]{page}"\glsnumberformat}{6}
 \glossaryentry{GNSP$=$?\glossentry{GNSPeq}|setentrycounter[]{page}"\glsnumberformat}{6}
+\glossaryentry{SNP?\glossentry{snp}|setentrycounter[]{page}"\glsnumberformat}{6}
+\glossaryentry{SNP?\glossentry{snp}|setentrycounter[]{page}"\glsnumberformat}{6}
 \glossaryentry{GNSP$"\geq $?\glossentry{GNSPge}|setentrycounter[]{page}"\glsnumberformat}{6}
-\glossaryentry{NbSNP?\glossentry{NbSNP}|setentrycounter[]{page}"\glsnumberformat}{6}
-\glossaryentry{NbSNP?\glossentry{NbSNP}|setentrycounter[]{page}"\glsnumberformat}{6}
 \glossaryentry{SNP?\glossentry{snp}|setentrycounter[]{page}"\glsnumberformat}{6}
 \glossaryentry{SNP?\glossentry{snp}|setentrycounter[]{page}"\glsnumberformat}{6}
+\glossaryentry{SNP?\glossentry{snp}|setentrycounter[]{page}"\glsnumberformat}{6}
 \glossaryentry{NbSNP?\glossentry{NbSNP}|setentrycounter[]{page}"\glsnumberformat}{6}
+\glossaryentry{GNSP$=$?\glossentry{GNSPeq}|setentrycounter[]{page}"\glsnumberformat}{7}
+\glossaryentry{GNSP$"\geq $?\glossentry{GNSPge}|setentrycounter[]{page}"\glsnumberformat}{7}
+\glossaryentry{NbSNP?\glossentry{NbSNP}|setentrycounter[]{page}"\glsnumberformat}{7}
 \glossaryentry{NbSNP?\glossentry{NbSNP}|setentrycounter[]{page}"\glsnumberformat}{7}
 \glossaryentry{NbSNP?\glossentry{NbSNP}|setentrycounter[]{page}"\glsnumberformat}{7}
 \glossaryentry{GNSP$=$?\glossentry{GNSPeq}|setentrycounter[]{page}"\glsnumberformat}{7}
@@ -49,13 +48,13 @@
 \glossaryentry{NbSNP?\glossentry{NbSNP}|setentrycounter[]{page}"\glsnumberformat}{8}
 \glossaryentry{NbSNP?\glossentry{NbSNP}|setentrycounter[]{page}"\glsnumberformat}{8}
 \glossaryentry{NbSNP?\glossentry{NbSNP}|setentrycounter[]{page}"\glsnumberformat}{8}
+\glossaryentry{NbSNP?\glossentry{NbSNP}|setentrycounter[]{page}"\glsnumberformat}{8}
 \glossaryentry{GNSP$"\geq $?\glossentry{GNSPge}|setentrycounter[]{page}"\glsnumberformat}{8}
 \glossaryentry{SNP?\glossentry{snp}|setentrycounter[]{page}"\glsnumberformat}{9}
 \glossaryentry{SNP?\glossentry{snp}|setentrycounter[]{page}"\glsnumberformat}{9}
 \glossaryentry{SNP?\glossentry{snp}|setentrycounter[]{page}"\glsnumberformat}{10}
 \glossaryentry{SNP?\glossentry{snp}|setentrycounter[]{page}"\glsnumberformat}{10}
 \glossaryentry{SNP?\glossentry{snp}|setentrycounter[]{page}"\glsnumberformat}{10}
-\glossaryentry{NbSNP?\glossentry{NbSNP}|setentrycounter[]{page}"\glsnumberformat}{10}
 \glossaryentry{NbSNP?\glossentry{NbSNP}|setentrycounter[]{page}"\glsnumberformat}{10}
 \glossaryentry{SNP?\glossentry{snp}|setentrycounter[]{page}"\glsnumberformat}{11}
 \glossaryentry{NbSNP?\glossentry{NbSNP}|setentrycounter[]{page}"\glsnumberformat}{11}
@@ -148,50 +147,42 @@
 \glossaryentry{REGEX?\glossentry{REGEX}|setentrycounter[]{page}"\glsnumberformat}{22}
 \glossaryentry{REGEX?\glossentry{REGEX}|setentrycounter[]{page}"\glsnumberformat}{22}
 \glossaryentry{REGEX?\glossentry{REGEX}|setentrycounter[]{page}"\glsnumberformat}{22}
-\glossaryentry{SNP?\glossentry{snp}|setentrycounter[]{page}"\glsnumberformat}{23}
-\glossaryentry{TrEx?\glossentry{TrEx}|setentrycounter[]{page}"\glsnumberformat}{23}
-\glossaryentry{SNP?\glossentry{snp}|setentrycounter[]{page}"\glsnumberformat}{23}
-\glossaryentry{GeMo?\glossentry{GeMo}|setentrycounter[]{page}"\glsnumberformat}{23}
-\glossaryentry{SNP?\glossentry{snp}|setentrycounter[]{page}"\glsnumberformat}{23}
-\glossaryentry{oldBAM?\glossentry{oldBAM}|setentrycounter[]{page}"\glsnumberformat}{23}
-\glossaryentry{SNP?\glossentry{snp}|setentrycounter[]{page}"\glsnumberformat}{23}
-\glossaryentry{BamGeStar?\glossentry{BamGeStar}|setentrycounter[]{page}"\glsnumberformat}{23}
-\glossaryentry{BamTrEx?\glossentry{BamTrEx}|setentrycounter[]{page}"\glsnumberformat}{23}
-\glossaryentry{BamTrMo?\glossentry{BamTrMo}|setentrycounter[]{page}"\glsnumberformat}{23}
-\glossaryentry{SNP?\glossentry{snp}|setentrycounter[]{page}"\glsnumberformat}{23}
-\glossaryentry{BamTrEx?\glossentry{BamTrEx}|setentrycounter[]{page}"\glsnumberformat}{26}
-\glossaryentry{BamTrMo?\glossentry{BamTrMo}|setentrycounter[]{page}"\glsnumberformat}{26}
-\glossaryentry{BamTrEx?\glossentry{BamTrEx}|setentrycounter[]{page}"\glsnumberformat}{26}
-\glossaryentry{BamTrMo?\glossentry{BamTrMo}|setentrycounter[]{page}"\glsnumberformat}{26}
+\glossaryentry{SNP?\glossentry{snp}|setentrycounter[]{page}"\glsnumberformat}{24}
+\glossaryentry{TrEx?\glossentry{TrEx}|setentrycounter[]{page}"\glsnumberformat}{24}
+\glossaryentry{SNP?\glossentry{snp}|setentrycounter[]{page}"\glsnumberformat}{24}
+\glossaryentry{GeMo?\glossentry{GeMo}|setentrycounter[]{page}"\glsnumberformat}{24}
+\glossaryentry{SNP?\glossentry{snp}|setentrycounter[]{page}"\glsnumberformat}{24}
+\glossaryentry{oldBAM?\glossentry{oldBAM}|setentrycounter[]{page}"\glsnumberformat}{24}
+\glossaryentry{SNP?\glossentry{snp}|setentrycounter[]{page}"\glsnumberformat}{24}
+\glossaryentry{BamGeStar?\glossentry{BamGeStar}|setentrycounter[]{page}"\glsnumberformat}{24}
+\glossaryentry{BamTrEx?\glossentry{BamTrEx}|setentrycounter[]{page}"\glsnumberformat}{24}
+\glossaryentry{BamTrMo?\glossentry{BamTrMo}|setentrycounter[]{page}"\glsnumberformat}{24}
+\glossaryentry{SNP?\glossentry{snp}|setentrycounter[]{page}"\glsnumberformat}{24}
 \glossaryentry{BamTrEx?\glossentry{BamTrEx}|setentrycounter[]{page}"\glsnumberformat}{27}
 \glossaryentry{BamTrMo?\glossentry{BamTrMo}|setentrycounter[]{page}"\glsnumberformat}{27}
 \glossaryentry{BamTrEx?\glossentry{BamTrEx}|setentrycounter[]{page}"\glsnumberformat}{27}
 \glossaryentry{BamTrMo?\glossentry{BamTrMo}|setentrycounter[]{page}"\glsnumberformat}{27}
-\glossaryentry{"\ensuremath {"\omega }?\glossentry{omega}|setentrycounter[]{page}"\glsnumberformat}{28}
-\glossaryentry{$D_s$?\glossentry{ds}|setentrycounter[]{page}"\glsnumberformat}{28}
-\glossaryentry{$D_n$?\glossentry{dn}|setentrycounter[]{page}"\glsnumberformat}{28}
-\glossaryentry{$P_s$?\glossentry{ps}|setentrycounter[]{page}"\glsnumberformat}{28}
-\glossaryentry{$P_n$?\glossentry{pn}|setentrycounter[]{page}"\glsnumberformat}{28}
-\glossaryentry{$"\frac {D_n}{D_s}$?\glossentry{dnds}|setentrycounter[]{page}"\glsnumberformat}{28}
-\glossaryentry{GeMo?\glossentry{GeMo}|setentrycounter[]{page}"\glsnumberformat}{28}
-\glossaryentry{TrEx?\glossentry{TrEx}|setentrycounter[]{page}"\glsnumberformat}{28}
-\glossaryentry{TrMo?\glossentry{TrMo}|setentrycounter[]{page}"\glsnumberformat}{28}
-\glossaryentry{SNP?\glossentry{snp}|setentrycounter[]{page}"\glsnumberformat}{28}
-\glossaryentry{SNP?\glossentry{snp}|setentrycounter[]{page}"\glsnumberformat}{28}
-\glossaryentry{SNP?\glossentry{snp}|setentrycounter[]{page}"\glsnumberformat}{28}
-\glossaryentry{TrEx?\glossentry{TrEx}|setentrycounter[]{page}"\glsnumberformat}{28}
-\glossaryentry{ARN?\glossentry{ARN}|setentrycounter[]{page}"\glsnumberformat}{29}
-\glossaryentry{ARN?\glossentry{ARN}|setentrycounter[]{page}"\glsnumberformat}{29}
-\glossaryentry{Open Reading Frame?\glossentry{ORF}|setentrycounter[]{page}"\glsnumberformat}{30}
-\glossaryentry{Open Reading Frame?\glossentry{ORF}|setentrycounter[]{page}"\glsnumberformat}{30}
-\glossaryentry{$D_n$?\glossentry{dn}|setentrycounter[]{page}"\glsnumberformat}{30}
-\glossaryentry{$D_s$?\glossentry{ds}|setentrycounter[]{page}"\glsnumberformat}{30}
-\glossaryentry{$P_n$?\glossentry{pn}|setentrycounter[]{page}"\glsnumberformat}{30}
-\glossaryentry{$P_s$?\glossentry{ps}|setentrycounter[]{page}"\glsnumberformat}{30}
-\glossaryentry{SNP?\glossentry{snp}|setentrycounter[]{page}"\glsnumberformat}{30}
-\glossaryentry{ARN?\glossentry{ARN}|setentrycounter[]{page}"\glsnumberformat}{30}
-\glossaryentry{ARN?\glossentry{ARN}|setentrycounter[]{page}"\glsnumberformat}{30}
-\glossaryentry{ARN?\glossentry{ARN}|setentrycounter[]{page}"\glsnumberformat}{31}
-\glossaryentry{ARN?\glossentry{ARN}|setentrycounter[]{page}"\glsnumberformat}{31}
-\glossaryentry{ARN?\glossentry{ARN}|setentrycounter[]{page}"\glsnumberformat}{31}
-\glossaryentry{ARN?\glossentry{ARN}|setentrycounter[]{page}"\glsnumberformat}{32}
+\glossaryentry{BamTrEx?\glossentry{BamTrEx}|setentrycounter[]{page}"\glsnumberformat}{28}
+\glossaryentry{BamTrMo?\glossentry{BamTrMo}|setentrycounter[]{page}"\glsnumberformat}{28}
+\glossaryentry{BamTrEx?\glossentry{BamTrEx}|setentrycounter[]{page}"\glsnumberformat}{28}
+\glossaryentry{BamTrMo?\glossentry{BamTrMo}|setentrycounter[]{page}"\glsnumberformat}{28}
+\glossaryentry{"\ensuremath {"\omega }?\glossentry{omega}|setentrycounter[]{page}"\glsnumberformat}{29}
+\glossaryentry{$D_s$?\glossentry{ds}|setentrycounter[]{page}"\glsnumberformat}{29}
+\glossaryentry{$D_n$?\glossentry{dn}|setentrycounter[]{page}"\glsnumberformat}{29}
+\glossaryentry{$P_s$?\glossentry{ps}|setentrycounter[]{page}"\glsnumberformat}{29}
+\glossaryentry{$P_n$?\glossentry{pn}|setentrycounter[]{page}"\glsnumberformat}{29}
+\glossaryentry{$"\frac {D_n}{D_s}$?\glossentry{dnds}|setentrycounter[]{page}"\glsnumberformat}{29}
+\glossaryentry{GeMo?\glossentry{GeMo}|setentrycounter[]{page}"\glsnumberformat}{29}
+\glossaryentry{TrEx?\glossentry{TrEx}|setentrycounter[]{page}"\glsnumberformat}{29}
+\glossaryentry{TrMo?\glossentry{TrMo}|setentrycounter[]{page}"\glsnumberformat}{29}
+\glossaryentry{SNP?\glossentry{snp}|setentrycounter[]{page}"\glsnumberformat}{29}
+\glossaryentry{SNP?\glossentry{snp}|setentrycounter[]{page}"\glsnumberformat}{29}
+\glossaryentry{SNP?\glossentry{snp}|setentrycounter[]{page}"\glsnumberformat}{29}
+\glossaryentry{TrEx?\glossentry{TrEx}|setentrycounter[]{page}"\glsnumberformat}{29}
+\glossaryentry{Open Reading Frame?\glossentry{ORF}|setentrycounter[]{page}"\glsnumberformat}{31}
+\glossaryentry{Open Reading Frame?\glossentry{ORF}|setentrycounter[]{page}"\glsnumberformat}{31}
+\glossaryentry{$D_n$?\glossentry{dn}|setentrycounter[]{page}"\glsnumberformat}{31}
+\glossaryentry{$D_s$?\glossentry{ds}|setentrycounter[]{page}"\glsnumberformat}{31}
+\glossaryentry{$P_n$?\glossentry{pn}|setentrycounter[]{page}"\glsnumberformat}{31}
+\glossaryentry{$P_s$?\glossentry{ps}|setentrycounter[]{page}"\glsnumberformat}{31}
+\glossaryentry{SNP?\glossentry{snp}|setentrycounter[]{page}"\glsnumberformat}{31}
