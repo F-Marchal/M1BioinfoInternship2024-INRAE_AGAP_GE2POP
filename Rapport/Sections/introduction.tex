@@ -21,14 +21,14 @@ L’équipe dans laquelle je travaille a publié un article dans lequel a été 
 
 \subsubsection{Modèles biologiques}
 \label{model_bio}
-Nous travaillons ici sur 13 espèces \glspl{diploide} sauvages apparentées au blé. Ces espèces appartiennent à la famille des \textit{Poaceae} (Graminées). Le nom et les particularités de ces espèces sont récapitulées dans \cref{tab:Especes}. La \gls{phylogénie} de ces espèces est, quant à elle, présentée dans la \cref{fig:Phylo}
+Nous travaillons ici sur 13 espèces \glspl{diploide} sauvages apparentées au blé. Ces espèces appartiennent à la famille des \textit{Poaceae} (Graminées). Le nom et les particularités de ces espèces sont récapitulées dans \cref{tab:Especes}. La \gls{phylogenie} de ces espèces est, quant à elle, présentée dans la \cref{fig:Phylo}
 
 \subfile{../FiguresTex/especes.tex}
 \subfile{../FiguresTex/phylogenetic-relationships.tex}
 
 Ce choix de modèles permet de travailler sur des espèces génétiquement proches (\cref{fig:Phylo}) ayant des modes de reproduction divers. En effet, certaines de ces espèces sont \glspl{autogame}, d’autres sont \glspl{hétérogame} et enfin, certaines ont un régime mixte (\gls{autogame} et \gls{hétérogame}).
 
-Si, au cours de ce stage, j’ai travaillé sur des données issues de toutes les espèces mentionnées ci-dessus,  certaines  analyses se concentrent sur \textit{Triticum urartu}. Ce choix est motivé par la présence d'un génome de référence publié (certaines des espèces n'en n'ont pas) et par son mode de reproduction fortement \gls{autogame}. Ce dernier point permet de s'assurer que les \glspl{mapping} ne seront pas trop longs. En effet, un mode de reproduction \gls{autogame} réduit la diversité génétique \cite{burgarella_mating_2024}. A titre indicatif, \textit{Triticum urartu} à un génome \gls{diploide} de $4,8 Gpb$  qui correspond à la partie « A » du génome du blé tendre (Froment) qui est \gls{hexaploïde} (3 génomes : « A », « B » et « C »  \cite{noauthor_ble_2024}).
+Si, au cours de ce stage, j’ai travaillé sur des données issues de toutes les espèces mentionnées ci-dessus,  certaines  analyses se concentrent sur \textit{Triticum urartu}. Ce choix est motivé par la présence d'un génome de référence publié (certaines des espèces n'en n'ont pas) et par son mode de reproduction fortement \gls{autogame}. Ce dernier point permet de s'assurer que les \glspl{mapping} ne seront pas trop longs. En effet, un mode de reproduction \gls{autogame} réduit la diversité génétique \cite{burgarella_mating_2024}. A titre indicatif, \textit{Triticum urartu} à un génome \gls{diploide} de $4,8 Gpb$  qui correspond à la partie « A » du génome du blé tendre (Froment) qui est \gls{hexaploide} (3 génomes : « A », « B » et « C »  \cite{noauthor_ble_2024}).
 
 
 \subsubsection{Données}
@@ -38,7 +38,7 @@ Si, au cours de ce stage, j’ai travaillé sur des données issues de toutes le
 
 Les  données sont issues du \gls{séquençage} du \gls{transcriptome}
 des \glspl{inflorescence}, des graines, et des feuilles de parents proches du blé (\cref{model_bio}). Les analyses bioinformatiques réalisées dans  \cite{burgarella_mating_2024} suivent le pipeline de \cite{sarah_large_2017}. 
-Le choix d’utiliser des données \glspl{transcriptomique} est motivé par la nécessité d'avoir une meilleure représentation possible de la diversité fonctionnelle à l'échelle du génome. En effet, en 2013, il n'y avait aucun génome de référence pour les espèces considérées (même le blé cultivé n'en avait pas). Les données \glspl{transcriptomique} ont aussi l'avantage de cibler les parties codantes du génome et donc les zones ayant le plus de chances d’être communes entre les espèces considérées. De fait, cela permet d’étudier les relations phylogénétiques entre les espèces (\cite{glemin_pervasive_2019}) ainsi que les traces de sélection au travers d'une \gls{phylogénie}. 
+Le choix d’utiliser des données \glspl{transcriptomique} est motivé par la nécessité d'avoir une meilleure représentation possible de la diversité fonctionnelle à l'échelle du génome. En effet, en 2013, il n'y avait aucun génome de référence pour les espèces considérées (même le blé cultivé n'en avait pas). Les données \glspl{transcriptomique} ont aussi l'avantage de cibler les parties codantes du génome et donc les zones ayant le plus de chances d’être communes entre les espèces considérées. De fait, cela permet d’étudier les relations phylogénétiques entre les espèces (\cite{glemin_pervasive_2019}) ainsi que les traces de sélection au travers d'une \gls{phylogenie}. 
 
 
 Dès le début de ce stage, nous avions à notre disposition :
@@ -67,7 +67,7 @@ Dès le début de ce stage, nous avions à notre disposition :
 
 \subsection{Principes de la recherche de traces de sélection}
 \label{PrincipeTrace}
-La recherche de traces de sélection, à l'echelle d'une \gls{phylogénie} se base sur le concept d’ « horloge moléculaire ». Cette idée stipule que la diversité accumulée par une espèce, en absence de sélection, est fonction du taux de mutation et du temps de divergence. Ainsi, si l'on assume que le taux de mutation est le même pour toutes les espèces et est constant dans le temps, plus le temps passe, plus les génomes accumulent de mutations. En conséquence, deux espèces « proches » accumulent un nombre similaire de \glspl{substitution} depuis qu'elles ont divergé.
+La recherche de traces de sélection, à l'echelle d'une \gls{phylogenie} se base sur le concept d’ « horloge moléculaire ». Cette idée stipule que la diversité accumulée par une espèce, en absence de sélection, est fonction du taux de mutation et du temps de divergence. Ainsi, si l'on assume que le taux de mutation est le même pour toutes les espèces et est constant dans le temps, plus le temps passe, plus les génomes accumulent de mutations. En conséquence, deux espèces « proches » accumulent un nombre similaire de \glspl{substitution} depuis qu'elles ont divergé.
 
 Dans les parties codantes du génome, en l'absence de sélection, on s'attend à ce que les sites \glspl{synonyme} évoluent à la même vitesse que les sites non \glspl{synonyme}. Cependant, en présence de sélection deux cas se distinguent :
 \begin{description}

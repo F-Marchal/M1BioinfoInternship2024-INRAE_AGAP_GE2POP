@@ -1,74 +1,78 @@
-\newglossaryentry{synonyme} {
-    name=synonyme,
-    description={désigne les sites ou les mutations qui produisent le même acide aminé. En effet, les deux \gls{codon} différents peuvent produire le même acide aminé},
-    type=definition
+\newglossaryentry{latex}{
+    name={LaTeX},
+    description={Un système de composition de documents de haute qualité utilisé pour la production de textes scientifiques et techniques.}
 }
 
-\newglossaryentry{codon} {
-    name=codon,
+\newglossaryentry{glossaire}{
+    name={Glossaire},
+    description={Une liste alphabétique de termes spécialisés et de leurs définitions.}
+}
+
+\newglossaryentry{compilation}{
+    name={Compilation},
+    description={Le processus de conversion du code source en un document final.}
+}
+
+
+\newglossaryentry{synonyme}{
+    name={synonyme},
+    description={Désigne les sites ou les mutations qui produisent le même acide aminé. En effet, les deux \glspl{codon} différents peuvent produire le même acide aminé.}
+}
+
+\newglossaryentry{codon}{
+    name={codon},
     description={"triplet de \gls{nucléotide} [...] qui détermine la synthèse cellulaire des acides aminés" \cite{Robert}},
-    type=definition
 }
 
 
 \newglossaryentry{autogame} {
-    name=autogame,
+    name={autogame},
     description={"mode de reproduction par union de gamètes provenant du même individu, observé surtout dans le règne végétal (algues, champignons…), plus rare dans le règne animal" \cite{Robert}},
-    type=definition
 }
 
 \newglossaryentry{outgroup} {
-    name=outgroup,
-    description={groupe d'espèces lié mais extérieur à aux espèces dont on souhaite construire la \gls{phylogénie}},
-    type=definition,
+    name={outgroup},
+    description={groupe d'espèces lié mais extérieur à aux espèces dont on souhaite construire la \gls{phylogenie}},
 }
 
 % 
-\newglossaryentry{hexaploïde} {
-    name=hexaploïde,
+\newglossaryentry{hexaploide} {
+    name={hexaploïde},
     description={se dit d'une cellule ou d'un organisme qui possède six jeux complets de chromosomes (6n), soit six copies de chaque chromosome.}
-    type=definition,
 }
  
 \newglossaryentry{hétérogame} {
-    name=hétérogame,
+    name={hétérogame},
     description={mode de "reproduction sexuée par deux gamètes de morphologie différente (par ex. ovule et spermatozoïde)" \cite{Robert}}
-    type=definition,
 }
 
 \newglossaryentry{brins_bien_appariés} {
-    name=brins bien appariés,
+    name={brins bien appariés},
     description={deux brins d'ADN (ou d'\ARN) sont bien appariés lorsque les \glspl{nucléotide} qui les composent sont correctement appariés selon la complémentarité des bases.}
-    type=definition,
 }
 
 \newglossaryentry{diploide} {
     name=diploïde,
     description={"se dit d'une cellule qui possède un jeu double de chromosomes semblables" \cite{Robert}}
-    type=definition,
 }
 
 \newglossaryentry{inflorescence} {
     name=inflorescence,
     description={"mode de groupement des fleurs d'une plante, ou groupe de fleurs" \cite{LeDico}}
-    type=definition,
 }
 
 \newglossaryentry{transcriptome} {
     name=transcriptome,
     description={ensemble des molécules d'\ARN résultant de l'expression d'une partie du génome d'un tissu cellulaire ou d'un type de cellule \cite{LeDico}},
-    type=definition,
 }
 \newglossaryentry{transcriptomique} {
     name=transcriptomique,
     description={relatif au \gls{transcriptome}},
-    type=definition,
 }
 
 \newglossaryentry{nucléotide} {
     name=nucléotide,
     description={"constituant élémentaire des acides nucléiques (ADN et \ARN), formé par un nucléoside associé à un phosphate". \cite{Robert} (modifiée)},
-    type=definition,
 }
 
 
@@ -76,43 +80,36 @@
 \newglossaryentry{séquençage} {
     name=séquençage,
     description={détermination de l'ordre des \gls{nucléotide} composant une molécule d'ADN ou d'\ARN},
-    type=definition,
 }
 
 \newglossaryentry{assemblage} {
     name=assemblage,
     description={utilisation des \reads pour reconstruire la séquences originale dont ils sont issus. Ce processus donne naissance à des \contigs et peut requérir une référence. On parle d'assemblage \textit{ex-nihilo} si aucune référence n'est utilisée},
-    type=definition,
 }
 
 \newglossaryentry{mapping} {
     name=mapping,
     description={alignement de \reads sur une séquence de référence. Cela permet d'identifier la position position du \gls{read} dans un génome ainsi que les différences qu'il présente par rapport à l'original (ex: \SNP)},
-    type=definition,
 }
 
 \newglossaryentry{mappeur} {
     name=mappeur,
     description={logiciel permettant de réaliser des \glspl{mapping}},
-    type=definition,
 }
 
-\newglossaryentry{phylogénie} {
+\newglossaryentry{phylogenie} {
     name=phylogénie,
     description={"étude de l’évolution des êtres vivants afin de déterminer leurs liens de parenté \cite{LeDico}"},
-    type=definition,
 }
 \newglossaryentry{read} {
     name=read,
     description={séquence de \gls{nucléotide} obtenue directement à partir du \gls{séquençage} de l'ADN ou de l'\ARN},
-    type=definition,
 }
 \newcommand{\reads}{\glspl{read}}
 
 \newglossaryentry{contig} {
     name=contig,
     description={séquence de \glspl{nucléotide} obtenue à partir de l'\gls{assemblage} de \reads. Dans le cadre de ce rapport, comme nous travaillons sur des donnés \gls{transcriptomique}, un \gls{contig} correspond à un \acrfull{ORF}, donc à un gène.  },
-    type=definition,
 }
 \newcommand{\contig}{\gls{contig}}
 \newcommand{\contigs}{\glspl{contig}}
@@ -120,77 +117,65 @@
 \newglossaryentry{polymorphisme} {
     name=polymorphisme,
     description={présence de plusieurs allèles (version d'un gène) au sein d'une population}
-    type=definition,
 }
 
 
 \newglossaryentry{pipe} {
     name=pipe,
     description={ou "tube" est un "mécanisme qui permet de chaîner des processus de sorte que la sortie d'un processus (stdout) alimente directement l'entrée (stdin) du suivant." \cite{LeDico}}
-     type=definition,
 }
 \newcommand{\pipe}{\gls{pipe}}
 
 \newglossaryentry{commit} {
     name=commit,
     description={opération qui enregistre un ensemble de modifications apportées au code dans l'historique du projet.}
-     type=definition,
 }
 
 
 \newglossaryentry{substitution} {
     name=substitution,
     description={désigne, dans le contexte de ce stage, un changement entre les séquences nucléotide de deux espèces. (\cref{PrincipeTrace})},
-     type=definition,
 }
 
 \newglossaryentry{orthologue} {
     name=orthologue,
     description={désignes des séquences héritées d'un même ancêtre.},
-     type=definition,
 }
 
 \newglossaryentry{McTest} {
     name=test de McDonald–Kreitman,
     description={test utilisé pour distinguer les effets de la sélection naturelle des variations génétiques neutres.}
-     type=definition,
 }
 \newglossaryentry{x2} {
     name=test du khi carré,
     description={test statistique permettant de déterminer si les différences observées entre les fréquences attendues et les fréquences observées sont significatives}
-     type=definition,
 }
 
 \newglossaryentry{fisherTest} {
     name=test de Fisher,
     description={test statistique permettant de déterminer si deux variables d'un tableau de contingence sont indépendantes}
-     type=definition,
 }
 
 \newglossaryentry{wrapper} {
     name=wrapper,
     description={code informatique permettant d'encapsuler un logiciel tiers dans un autre logiciel.}
-     type=definition,
 }
 
 \newglossaryentry{cluster} {
     name=cluster,
     description={ensemble d'ordinateur permettant de réaliser des calculs gourmands en ressource.}
-     type=software,
 }
 % ----------- Type de fichiers ------------
 
 \newglossaryentry{gz} {
     name=$.gz$,
     description={fichier compressé au format $gz$},
-    type=filetype,
 }
 \newcommand{\gz}{"\gls{gz}"}
 
 \newglossaryentry{bz} {
     name=$.bz2$,
     description={fichier compressé au format $.bz2$},
-    type=filetype,
 }
 \newcommand{\bz}{"\gls{bz}"}
 
@@ -198,7 +183,6 @@
 \newglossaryentry{fastq} {
     name=$.fastq$,
     description={Type de fichier texte permettant de stocker des séquences nulceotidiques (relatif aux \glspl{nucléotide}) et leur qualité. Contient généralement des \reads issues d'un \gls{séquençage}},
-    type=filetype,
 }
 \newcommand{\fastq}{"\gls{fastq}"}
 
@@ -206,21 +190,18 @@
 \newglossaryentry{pdf} {
     name=$.pdf$,
     description={type de fichier standardisé correspondant à la norme ISO 32000}
-    type=filetype,
 }
 \newcommand{\pdf}{"\gls{pdf}"}
 
 \newglossaryentry{png} {
     name=$.png$,
     description={format d'image numérique.}
-    type=filetype,
 }
 \newcommand{\png}{"\gls{png}"}
 
 \newglossaryentry{readme} {
     name=$README$,
     description={fichier texte utilisé pour décrire une application aux utilisateurs.}
-    type=filetype,
 }
 \newcommand{\readme}{\gls{readme}}
 
@@ -228,68 +209,58 @@
 \newglossaryentry{svg} {
    name=$.svg$,
     description={format d'image numérique utilisant des vecteurs pour représenter une image. Ce type de fichiers assure que l'image pourra être étendue sans perte de qualité }
-    type=filetype,
 }
 \newcommand{\svg}{"\gls{svg}"}
 
 \newglossaryentry{tsv} {
    name=$.tsv$,
     description={type de fichier texte représentant un tableau. Les données y sont séparées par des tabulations.}
-    type=filetype,
 }
 \newcommand{\tsv}{"\gls{tsv}"}
 
 \newglossaryentry{pyproject.toml} {
    name=$pyproject.toml$,
     description={fichier utilisé dans les projets \gls{Python} pour préciser les prérequis et les caractéristiques d'une application.}
-    type=filetype,
 }
 
 \newglossaryentry{bam} {
     name=$.bam$,
     description={fichier de cartographie d'alignement binaire. C'est le type de fichier créer à la suite d'un \gls{mapping}},
-    type=filetype,
 }
 \newcommand{\bam}{"\gls{bam}"}
 
 \newglossaryentry{json} {
     name=$.json$,
     description={fichier texte structuré permettant de stocker des informations},
-    type=filetype,
 }
 \newcommand{\json}{"\gls{json}"}
 
 \newglossaryentry{bashrc} {
     name=$.bashrc$,
     description={fichier de configuration utilisé par les environnements \gls{Bash}}
-     type=filetype,
 }
 % --------------- Logiciels ----------------
 
 \newglossaryentry{fastqc} {
     name=fastqc,
-    description={outil d'analyse des fichiers \gls{BAM}, $.sam$ et \gls{fastq}. \cite{fastqc}},
-    type=filetype,
+    description={outil d'analyse des fichiers \gls{bam}, $.sam$ et \gls{fastq}. \cite{fastqc}},
 }
 \newcommand{\fastqc}{\gls{fastqc}}
 
 \newglossaryentry{GitHub} {
     name=GitHub,
     description={plate-forme en ligne permettant de centraliser des dépôts \gls{git}. \cite{github}}
-    type=software,
 }
 \newcommand{\GitHub}{\gls{GitHub}}
 
 \newglossaryentry{git} {
     name=Git,
     description={système de contrôle de version distribué qui permet de suivre les modifications d'un code source. \cite{git}}
-    type=software,
 }
 
 \newglossaryentry{Conda} {
     name=Conda,
     description={gestionnaire de paquets et d'environnements virtuels isolés. \cite{conda}}
-    type=software,
 }
 \newcommand{\Conda}{\gls{Conda}}
 
@@ -297,44 +268,37 @@
 \newglossaryentry{Lucidchart} {
     name=Lucidchart,
     description={éditeur de diagrammes en ligne.\cite{lucidchart}}
-    type=software, 
 }
 
 \newglossaryentry{STAR} {
     name=STAR,
     description={\gls{mappeur} efficace pour aligner de l'\ARN\,sur de l'ADN \cite{star}}
-     type=software,
 }
 
 \newglossaryentry{dNdSpNpS} {
     name=dNdSpNpS,
     description={outil permettant d'extraire les \acrshort{dn}, \acrshort{ds}, \acrshort{pn}, \acrshort{ps} de données liées au génome. \cite{dNdSpNpS}}
-     type=software,
 }
 
 \newglossaryentry{BWA} {
     name=BWA,
     description={\gls{mappeur} efficace pour aligner de l'\ARN\,sur des références de petite taille \cite{bwa}}
-     type=software,
 }
 \newcommand{\BWA}{\gls{BWA}}
 
 \newglossaryentry{MINIMAP} {
     name=Minimap2,
     description={\gls{mappeur} efficace pour aligner de l'\ARN\,sur de l'ADN \cite{minimap2}}
-     type=software,
 }
 
 \newglossaryentry{OnlineGant} {
     name=OnlineGant,
     description={logiciel en ligne permettant de faire des diagrammes de Gantt \cite{gantt}}
-     type=software,
 }
 
 \newglossaryentry{SnakeMake} {
     name=SnakeMake,
     description={système de gestion de workflow permettant d'assurer une forme de reproductibilité et de portabilité \cite{snakemake} }
-     type=software,
 }
 \newcommand{\SnakeMake}{\gls{SnakeMake}}
 
@@ -342,47 +306,40 @@
 \newglossaryentry{Singularity} {
     name=Singularity,
     description={sytéme donnant la possibilité de créer des "conteneurs" permettant à une application de tourner dans un environnement virtuelle et indépendant. Ce système permet d'assurer une forme de reproductibilité et de probabilité}
-     type=software,
 }
 \newcommand{\Singularity}{\gls{Singularity}}
 
 \newglossaryentry{Python} {
     name=Python,
     description={langage de programmation grand publique \cite{python}}
-     type=software,
 }
 \newcommand{\Python}{\gls{Python}}
 
 \newglossaryentry{R} {
     name=R,
     description={langage de programmation utilisé pour les analyses statistiques \cite{r}}
-     type=software,
 }
 
 \newglossaryentry{Bash} {
     name=Bash,
     description={langage de programmation présent par défaut sur les sytémes d'exploitation linux. \cite{bash}}
-     type=software,
 }
 
 
 \newglossaryentry{WSL} {
     name=WSL,
     description={sous systéme Linux pour Windows. \cite{wsl}}
-     type=software,
 }
 
 \newglossaryentry{Slurm} {
     name=Slurm,
     description={logiciel permettant de répartir l'exécution de programmes sur les différents noeuds d'un \gls{cluster} \cite{slurm}}
-    type=software,
 }
 \newcommand{\Slurm}{\gls{Slurm}}
 
 \newglossaryentry{GeCKO} {
     name=GeCKO,
     description={pipeline facilitant les analyses phylogénétiques (cf. \cref{sec:GeCKO}) (\cite{ardisson_gecko_2024})}
-     type=software,
 }
 \newcommand{\GeCKO}{\gls{GeCKO}}
 
@@ -390,14 +347,12 @@
 \newglossaryentry{MatPlotLib} {
     name=MatPlotLib,
     description={bibliothèque \gls{Python} permettant de générer des graphiques 2D \cite{matplotlib}}
-     type=software,
 }
 \newcommand{\MatPlotLib}{\gls{MatPlotLib}}
 
 \newglossaryentry{Pytest} {
     name=Pytest,
     description={bibliothèque \gls{Python} permettant de tester les résultat des fonctions d'un projet \cite{pytest}}
-     type=software,
 }
 \newcommand{\Pytest}{\gls{Pytest}}
 \newcommand{\pytest}{\gls{Pytest}}
@@ -410,26 +365,22 @@
 \newglossaryentry{getopts} {
     name=getopt,
     description={bibliothèque \gls{Python} permettant de lire les arguments donnés à un script au moment du lancement \cite{getopt}}
-     type=software,
 }
 \newcommand{\getopts}{\gls{getopts}}
 
 \newglossaryentry{sysLib} {
     name=sys,
     description={bibliothèque \gls{Python} permettant d'accéder aux variables de l'interpréteur \gls{Python} \cite{sys}}
-     type=software,
 }
 
 \newglossaryentry{osLib} {
     name=os,
     description={bibliothèque \gls{Python} permettant de communiquer avec le système d'exploitation \cite{os}}
-     type=software,
 }
 
 \newglossaryentry{jsonLib} {
     name=json,
     description={bibliothèque \gls{Python} permettant d'exploiter des \gls{json} \cite{json}}
-    type=software,
 }
 
 
@@ -439,52 +390,44 @@
 \newglossaryentry{Doxygen} {
     name=Doxygen,
     description={Outil de documentation automatique \cite{doxygen}}
-     type=software,
 }
 \newcommand{\Doxygen}{\gls{Doxygen}}
 
 \newglossaryentry{Latex} {
     name=\LaTeX,
     description={système de développement de documents techniques et scientifiques \cite{latex}}
-     type=software,
 }
 \newcommand{\Latex}{\gls{Latex}}
 
 \newglossaryentry{gimp} {
     name=Gimp,
     description={Outil de modification d'image \cite{gimp}}
-     type=software,
 }
 \newcommand{\gimp}{\gls{gimp}}
 
 \newglossaryentry{Seqkit} {
     name=Seqkit,
-    description={outil permettant notament l'analyse de fichiers \fastq\s \cite{seqkit1} \cite{seqkit2}}
-     type=software,
+    description={outil permettant notament l'analyse de fichiers \fastq\,\cite{seqkit1} \cite{seqkit2}}
 }
 
 \newglossaryentry{PAML} {
     name=PAML,
     description={logiciel utilisé pour l'analyse phylogénétique (cf. \cref{sec:CODEML}, \cite{yang_paml_2020}) (\textit{Phylogenetic Analysis by Maximum Likelihood})}
-     type=software,
 }
 
 \newglossaryentry{EggLib} {
     name=EggLib,
     description={bibliothèque \gls{Python} proposant des \glspl{wrapper} pour divers outils de bioinformatique et des objets permettant de manipuler des séquences biologiques (cf. \cref{sec:EggLib}) \cite{siol_egglib_2022}}
-     type=software,
 }
 
 \newglossaryentry{CODEML} {
     name=CODEML,
     description={programme  contenu dans le package \gls{PAML} (cf. \cref{sec:CODEML}, \cite{noauthor_paml-tutorialpositive-selection_nodate})}
-     type=software,
 }
 
 \newglossaryentry{Samtools} {
     name=Samtools,
     description={outil permettant l'analyse et la manipulation de fichiers \gls{bam}}
-     type=software,
 }
 
 
@@ -576,5 +519,3 @@ et non \glspl{synonyme} (\dn) entre deux populations. Si $\frac{D_n}{D_s} > 1$ l
 
 
 % ------ -------------------- -------
-
-
