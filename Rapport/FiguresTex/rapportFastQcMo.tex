@@ -1,0 +1,49 @@
+% ----------------------------  START --------------------------- 
+\documentclass[../main]{subfiles} % main refers to main.tex
+\graphicspath{{\subfix{../Illustrations}}}
+\begin{document}
+\addto\extrasfrench{\protected\edef:{\unexpanded\expandafter{:}}}
+\selectlanguage{french}
+% ---------------------------------------------------------------- 
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{lccc}
+\toprule
+Nom & Taux d'erreurs & \reads\,mappés (\%) &  \reads\,appariés (\%) \\
+\midrule
+Tr206\_GATCAG\_L002 & 0.78 & 84.7 & 80.2 \\
+Tr207\_TAGCTT\_L002 & 0.82 & 84.4 & 79.8 \\
+Tr232\_TTAGGC\_L003 & 0.89 & 82.1 & 77.8 \\
+Tr306\_ATCACG\_L005 & 0.75 & 84.3 & 79.3 \\
+Tr307\_CGATGT\_L005 & 0.79 & 84.3 & 79.4 \\
+Tr312\_TGACCA\_L005 & 0.77 & 81.3 & 76.3 \\
+Tr315\_ACAGTG\_L005 & 0.79 & 83.4 & 78.4 \\
+Tr317\_GCCAAT\_L005 & 0.82 & 84.1 & 79.1 \\
+Tr318\_CAGATC\_L005 & 0.82 & 84.0 & 79.2 \\
+Tr347\_CGATGT\_L006 & 0.79 & 82.9 & 77.7 \\
+Tr348\_TTAGGC\_L006 & 0.80 & 82.0 & 77.0 \\
+Tr349\_TGACCA\_L006 & 0.79 & 83.2 & 78.4 \\
+Tr235\_TGACCA\_L003\_00 & 0.87 & 82.5 & 78.1 \\
+Tr235\_TGACCA\_L003\_01 & 1.11 & 82.3 & 78.0 \\
+Tr245\_GATCAG\_L003\_00 & 0.82 & 85.4 & 81.4 \\
+Tr245\_GATCAG\_L003\_01 & 1.10 & 85.2 & 81.2 \\
+Tr246\_TAGCTT\_L003\_00 & 0.77 & 84.9 & 80.8 \\
+Tr246\_TAGCTT\_L003\_01 & 1.05 & 84.7 & 80.5 \\
+Tr304\_CTTGTA\_L004\_00 & 0.79 & 83.7 & 79.5 \\
+Tr304\_CTTGTA\_L004\_01 & 1.11 & 83.6 & 79.4 \\
+Tr309\_TTAGGC\_L005\_00 & 0.81 & 83.4 & 78.4 \\
+Tr309\_TTAGGC\_L005\_01 & 0.90 & 83.4 & 78.4 \\
+\midrule
+Moyenne & 0.86 & 83.63 & 79.01 \\
+Écart type & 0.12 & 1.11 & 1.32 \\
+\bottomrule
+\end{tabular}
+\caption{Statistiques du rapport \gls{fastqc} des \BamTrMo}
+\label{tab:fastqcTrMo}
+\end{table}
+
+% ----------------------------  END --------------------------- 
+
+\end{document}
+% -------------------------------------------------------------

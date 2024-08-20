@@ -1,0 +1,58 @@
+% ----------------------------  START --------------------------- 
+\documentclass[../main]{subfiles} % main refers to main.tex
+\graphicspath{{\subfix{../Illustrations}}}
+\begin{document}
+\addto\extrasfrench{\protected\edef:{\unexpanded\expandafter{:}}}
+\selectlanguage{french}
+% --------------------------------------------------------------- 
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{l l}
+        \toprule
+        \textit{Logiciel} & Example \\
+        \midrule
+        \gls{Python} & \cref{sec:SnpHeatmap} \\
+        \gls{Doxygen} & \cref{sec:AutoDoc} \\
+        \gls{Latex} & ce rapport, cf \cite{florent_f-marchalm1bioinfointernship2024-inrae_agap_ge2pop_2024} \\
+        \gls{CODEML} & \cref{sec:CODEML} \\
+        \gls{EggLib} & \cref{sec:EggLib} \\
+        \gls{Slurm} & \cref{sec:Mapping} \\
+        \gls{GeCKO} & \cref{sec:Mapping} \\
+        \gls{Bash} & \cite{florent_f-marchalm1bioinfointernship2024-inrae_agap_ge2pop_2024} \\
+        \gls{R} & \cref{fig:BoxPlotContigs} \\
+        \gls{Conda} & - \\
+        \gls{GitHub} & \cref{sec:SnpHeatmap} \\
+ 
+
+        \midrule
+        \textit{Bonne pratique} & Example \\
+        \midrule
+        Documentation des outils & \cref{sec:AutoDoc} \\
+        Création de tests unitaires & \cref{sec:SnpPytest} \\
+        Gestion de la mémoire & \gls{Slurm}, \cref{sec:SnpHeatmap} \\
+        Usage de \gls{git} & \cite{florent_f-marchalm1bioinfointernship2024-inrae_agap_ge2pop_2024}, \cite{florent_f-marchalsnpheatmap_2024} \\
+        Assurer une traçabilité & Usage de \gls{git}, ce rapport \\
+        Tenue d'un journal de bord & - \\
+        Assurer la reproductibilité des résultats & Légende des figures  \\
+        Parallélisation des tâches quand possible & Usage de \gls{Slurm}, \cref{sec:PipelineFoncionnement} \\
+        Organisation personnelle & du travail et de l'espace de travail \\
+        \midrule
+        \textit{Apprentissage} & Example \\
+        \midrule
+        Usage d'un \gls{cluster} & \cref{sec:Mapping} \\
+        Usage d'environnements \gls{WSL} & - \\
+        Création d'environnements \gls{Conda} & - \\
+        Connaissances sur l'usage des mappers & \cref{sec:Mapping} \\
+        Connaissances sur la recherche de traces de sélection & - \\
+        Connaissances sur les \bam & - \\
+        \bottomrule
+    \end{tabular}
+    \caption{Récapitulatif non exhaustif, des logiciels utilisés, bonnes pratiques acquises et autres apprentissages}
+    \label{tab:software_usage}
+\end{table}
+
+
+% --------------------------------------------------------------- 
+\end{document}
+% ----------------------------  END --------------------------- 

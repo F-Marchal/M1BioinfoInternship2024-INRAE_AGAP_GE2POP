@@ -1,0 +1,42 @@
+% ----------------------------  START --------------------------- 
+\documentclass[../main]{subfiles} % main refers to main.tex
+\graphicspath{{
+ubfix{../Illustrations}}}
+\begin{document}
+\addto\extrasfrench{\protected\edef:{\unexpanded\expandafter{:}}}
+\selectlanguage{french}
+% ---------------------------------------------------------------- 
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{l r r r}
+        \toprule
+        Individu & \BamTrEx & \BamTrMo & \OldBam \\
+        \midrule
+        Tr206    & 92.98    & 77.07    & 66.72   \\
+        Tr207    & 89.27    & 73.36    & 65.43   \\
+        Tr232    & 90.38    & 75.27    & 64.90   \\
+        Tr235    & 92.27    & 76.03    & 67.14   \\
+        Tr245    & 89.65    & 74.00    & 62.33   \\
+        Tr246    & 94.03    & 76.57    & 68.89   \\
+        Tr304    & 91.79    & 75.45    & 68.27   \\
+        Tr306    & 92.76    & 76.42    & 70.38   \\
+        Tr307    & 91.76    & 75.83    & 66.11   \\
+        Tr309    & 92.43    & 76.33    & 70.32   \\
+        Tr312    & 90.19    & 74.55    & 64.53   \\
+        Tr315    & 92.37    & 76.44    & 66.43   \\
+        Tr317    & 92.22    & 76.07    & 66.50   \\
+        Tr318    & 90.34    & 74.64    & 67.13   \\
+        Tr347    & 91.75    & 75.22    & 67.53   \\
+        Tr348    & 91.30    & 75.39    & 66.67   \\
+        Tr349    & 88.44    & 74.26    & 64.00   \\
+        \bottomrule
+    \end{tabular}
+    \caption{Tableau indiquant le pourcentage de \reads se trouvant dans le(s) \fastq\,correspondant à un individu se trouvant aussi dans les \bam  de cet individu avec une qualité de correspondance supérieure ou égale à 30. Le nombre de \reads a été extrait des \fastq en utilisant gls{Seqkit} (\lstinline{seqkit stats}). Le nombre de \reads a été extrait des \bam avec  \gls{Samtools} (\lstinline{samtools stats -c -F 4 -q 30}).
+    }
+    \label{tab:qual}
+\end{table}
+% ----------------------------  END --------------------------- 
+
+\end{document}
+% -------------------------------------------------------------

@@ -1,0 +1,19 @@
+% ----------------------------  START --------------------------- 
+\documentclass[../main]{subfiles} % main refers to main.tex
+\graphicspath{{\subfix{../Illustrations}}}
+\begin{document}
+\addto\extrasfrench{\protected\edef:{\unexpanded\expandafter{:}}}
+\selectlanguage{french}
+% --------------------------------------------------------------- 
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=1\textwidth]{../Illustrations/Gantt.png}
+    \caption{Diagramme de gantt illustrant l'usage du temps pendant le stage. Les jours fériés et jours ne sont pas affichés et les dates de début et de fin peuvent être légèrement décalée par rapport à la réalité. Figure générée avec \gls{OnlineGant}. }
+    \label{fig:gantt}
+\end{figure}
+
+
+% --------------------------------------------------------------- 
+\end{document}
+% ----------------------------  END --------------------------- 

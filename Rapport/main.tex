@@ -1,0 +1,46 @@
+\input{Specials/preamble.tex}
+
+% --- --- --- Glossaire --- --- --- 
+\newglossary[slg]{software}{sog}{sog}{Logiciels}
+\newglossary[dlg]{definition}{dog}{dog}{Définitions}
+\newglossary[flg]{filetype}{fog}{fog}{Types de fichiers}
+
+\makeglossaries
+\input{Specials/glossaries.tex}
+
+% --- --- --- Start --- --- --- 
+\begin{document}
+% --- --- --- ----- --- --- --- 
+\subfile{Specials/first_page}
+\subfile{Sections/introduction}
+\subfile{Sections/quantificationSNP}
+\subfile{Sections/mapping}
+\subfile{Sections/egglib}
+
+\newpage
+\subfile{Sections/conclusion}
+
+\newpage
+\subfile{Specials/annexes}
+% --- --- --- Imprimer du glossaire --- --- --- 
+\newpage
+\newpage
+\addcontentsline{toc}{section}{Acronymes et objets mathématiques}
+\printglossary[type=\acronymtype]
+
+\newpage
+\addcontentsline{toc}{section}{Glossaire}
+\printglossary
+
+% --- --- --- --- --- --- ----- --- --- --- ---
+
+% --- --- --- Imprimer la bibliographie --- --- --- 
+\newpage
+\addcontentsline{toc}{section}{References}
+\printbibliography
+% --- --- --- --- --- --- ----- --- --- --- --- --- 
+% --- --- --- End --- --- ---
+\end{document}
+% --- --- --- --- --- --- --- 
+
+

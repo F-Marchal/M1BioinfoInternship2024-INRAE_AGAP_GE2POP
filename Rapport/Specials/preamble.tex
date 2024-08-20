@@ -1,0 +1,126 @@
+% ----------------------------  PACKAGES ---------------------------- 
+\documentclass[french,a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}          % Switch french with english
+\usepackage{csquotes}
+\usepackage{tcolorbox}
+\usepackage{amsmath}
+\definecolor{darkblue}{rgb}{0.0, 0.0, 0.4} % Darker shade of blue
+\definecolor{darkgreen}{rgb}{0.0, 0.4, 0.0} % Darker shade of blue
+\definecolor{darkred}{rgb}{0.4, 0.0, 0.0} % Darker shade of blue
+\usepackage[colorlinks=true, linkcolor=darkblue, citecolor=darkgreen, filecolor=purple, urlcolor=darkred]{hyperref}  
+\usepackage[capitalise,noabbrev]{cleveref} 
+\usepackage{graphicx}               % For including figures
+\usepackage{caption}                % For better control over captions in tables and figures
+\usepackage{multicol}
+\usepackage{multirow} 
+\usepackage{listings}
+\usepackage{subfiles}
+\usepackage[backend=biber,style=alphabetic,sorting=none]{biblatex}
+\usepackage{booktabs} 
+\usepackage{array} % Pour définir une colonne d'alignement avec un style particulier
+\usepackage[acronym]{glossaries} % nonumberlist pour effacer les numéros
+\usepackage{subcaption}
+\usepackage{pdflscape}
+\usepackage{siunitx}
+\sisetup{group-separator = \ }
+\usepackage{titlesec}
+\usepackage{needspace}
+\usepackage{enumitem}
+\usepackage{chngcntr} % Permet de changer le compteur de figure et de table
+
+
+%\usepackage{helvet}
+% \renewcommand{\familydefault}{\sfdefault}
+% % Use Adobe Helvetica for math
+% \usepackage{sansmath}
+% \sansmath
+% ------------------------------------------------------------------- 
+
+% ----------------------------  ALLIASES ---------------------------- 
+\newcommand{\redbracket}[1]{\textbf{\textcolor{red}{[ #1 ]}}}
+\newcommand{\purplebracket}[1]{\textbf{\textcolor{purple}{[ #1 ]}}}
+\newcommand{\greenbracket}[1]{\textbf{\textcolor{darkgreen}{[ #1 ]}}}
+% -------------------------------------------------------------------
+
+
+% ----------------------------  CODES ---------------------------- 
+\definecolor{codeblue}{rgb}{0.1,0.1,0.7}
+\lstset{
+    language=bash,                          % The programming language of the code
+    basicstyle=\ttfamily\small,             % The style of the code
+    keywordstyle=\color{codeblue},          % Keyword style
+    commentstyle=\color{green!50!black},    % Comment style
+    numbers=left,                           % Line numbers on the left
+    numberstyle=\tiny\color{gray},          % Line number style
+    stepnumber=1,                           % Line numbers incrementing by 1
+    showstringspaces=false,                 % Don't show spaces in strings
+    tabsize=4,                              % Tab size
+    breaklines=true,                        % Automatic line breaking
+    breakatwhitespace=false,                % Automatic breaks at whitespace
+    frame=single,                           % Frame around the code
+    captionpos=b,                           % Caption position (bottom)
+    morekeywords={} % Define size_t as a keyword
+}
+% ---------------------------------------------------------------- 
+
+
+% ----------------------------  GEOMETRY ---------------------------- 
+\usepackage[top=3cm, bottom=3cm, left=3cm, right=3cm, marginparwidth=2.5cm]{geometry}
+% ------------------------------------------------------------------- 
+
+
+% ----------------------------  SECTIONS ---------------------------- 
+% Redéfinir \section
+\titleformat{\section}
+  {\vspace{1em}\normalfont\Large\bfseries}
+  {\thesection}{1em}{}
+
+\titlespacing*{\section}
+  {0pt}{\dimexpr\baselineskip}{\dimexpr\baselineskip/2}
+
+% Redéfinir \subsection
+\titleformat{\subsection}
+  {\vspace{1em}\normalfont\large\bfseries}
+  {\thesubsection}{1em}{}
+
+\titlespacing*{\subsection}
+  {0pt}{\dimexpr\baselineskip}{\dimexpr\baselineskip/2}
+
+% Redéfinir \subsubsection
+\titleformat{\subsubsection}
+  {\vspace{1em}\normalfont\normalsize\bfseries}
+  {\thesubsubsection}{1em}{}
+
+\titlespacing*{\subsubsection}
+  {0pt}{\dimexpr\baselineskip}{\dimexpr\baselineskip/2}
+% ------------------------------------------------------------------- 
+
+
+
+% ----------------------------  ITEMIZE ---------------------------- 
+% Ajouter un saut de ligne après les environnements d'énumération
+\setlist[itemize]{after=\vspace{0.5\baselineskip}}
+\setlist[enumerate]{after=\vspace{0.5\baselineskip}}
+\setlist[description]{after=\vspace{0.5\baselineskip}}
+% ------------------------------------------------------------------
+
+
+
+% ----------------------------  CREF ---------------------------- 
+% Redéfinir les noms des types de références en minuscules
+\crefname{section}{section}{sections}
+\crefname{figure}{figure}{figures}
+\crefname{table}{tableau}{tables}
+
+% Optionnel : Redéfinir les noms avec une majuscule (pour \Cref)
+\Crefname{section}{Section}{Sections}
+\Crefname{figure}{Figure}{Figures}
+\Crefname{table}{Tableau}{Tables}
+% -------------------------------------------------------------- 
+
+
+% ----------------------------  BIBLIO ---------------------------- 
+\addbibresource{ref.bib}
+% ----------------------------------------------------------------- 

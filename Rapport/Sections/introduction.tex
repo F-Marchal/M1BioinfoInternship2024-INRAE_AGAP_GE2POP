@@ -1,0 +1,112 @@
+% ----------------------------  START --------------------------- 
+\documentclass[../main]{subfiles} % main refers to main.tex
+\graphicspath{{\subfix{../Illustrations}}}
+\begin{document}
+\addto\extrasfrench{\protected\edef:{\unexpanded\expandafter{:}}}
+\selectlanguage{french}
+% ---------------------------------------------------------------- 
+
+
+
+\section{Introduction}
+
+Mon stage de master 1 en bioinformatique à la faculté des sciences de Montpellier, s’est déroulé au sein de 
+l’UMR AGAP, équipe Ge2POP (INRAE / Institut Agro) du 2 mai 2024 au 26 juillet 2024. J’ai été encadré par Concetta \textsc{Burgarella}, Vincent \textsc{Ranwez} et Nathalie \textsc{Chantret}. 
+
+L’objectif de ce stage est d’évaluer la qualité des données de \gls{séquençage} issues d’une étude antérieure (\cref{Contexte}) pour déterminer si celles-ci peuvent être utilisées pour rechercher des traces de sélection chez des espèces sauvages apparentées au blé.  Ce rapport est rédigé à des fins descriptives et à des fins de traçabilité. De ce fait,  en plus du contexte et des raisons qui ont motivé mes choix, je préciserai aussi les sources des données utilisées et comment faire pour reproduire les résultats.
+
+\subsection{Contexte}
+\label{Contexte}
+L’équipe dans laquelle je travaille a publié un article dans lequel a été étudié la diversité génétique des plantes en fonction de leur mode de reproduction \cite{burgarella_mating_2024}. Les données sur lesquelles ce stage est basé proviennent toutes de cette étude.
+
+\subsubsection{Modèles biologiques}
+\label{model_bio}
+Nous travaillons ici sur 13 espèces \glspl{diploide} sauvages apparentées au blé. Ces espèces appartiennent à la famille des \textit{Poaceae} (Graminées). Le nom et les particularités de ces espèces sont récapitulées dans \cref{tab:Especes}. La \gls{phylogénie} de ces espèces est, quant à elle, présentée dans la \cref{fig:Phylo}
+
+\subfile{../FiguresTex/especes.tex}
+\subfile{../FiguresTex/phylogenetic-relationships.tex}
+
+Ce choix de modèles permet de travailler sur des espèces génétiquement proches (\cref{fig:Phylo}) ayant des modes de reproduction divers. En effet, certaines de ces espèces sont \glspl{autogame}, d’autres sont \glspl{hétérogame} et enfin, certaines ont un régime mixte (\gls{autogame} et \gls{hétérogame}).
+
+Si, au cours de ce stage, j’ai travaillé sur des données issues de toutes les espèces mentionnées ci-dessus,  certaines  analyses se concentrent sur \textit{Triticum urartu}. Ce choix est motivé par la présence d'un génome de référence publié (certaines des espèces n'en n'ont pas) et par son mode de reproduction fortement \gls{autogame}. Ce dernier point permet de s'assurer que les \glspl{mapping} ne seront pas trop longs. En effet, un mode de reproduction \gls{autogame} réduit la diversité génétique \cite{burgarella_mating_2024}. A titre indicatif, \textit{Triticum urartu} à un génome \gls{diploide} de $4,8 Gpb$  qui correspond à la partie « A » du génome du blé tendre (Froment) qui est \gls{hexaploïde} (3 génomes : « A », « B » et « C »  \cite{noauthor_ble_2024}).
+
+
+\subsubsection{Données}
+\label{sec:donnees}
+
+\subfile{../FiguresTex/seq.tex}
+
+Les  données sont issues du \gls{séquençage} du \gls{transcriptome}
+des \glspl{inflorescence}, des graines, et des feuilles de parents proches du blé (\cref{model_bio}). Les analyses bioinformatiques réalisées dans  \cite{burgarella_mating_2024} suivent le pipeline de \cite{sarah_large_2017}. 
+Le choix d’utiliser des données \glspl{transcriptomique} est motivé par la nécessité d'avoir une meilleure représentation possible de la diversité fonctionnelle à l'échelle du génome. En effet, en 2013, il n'y avait aucun génome de référence pour les espèces considérées (même le blé cultivé n'en avait pas). Les données \glspl{transcriptomique} ont aussi l'avantage de cibler les parties codantes du génome et donc les zones ayant le plus de chances d’être communes entre les espèces considérées. De fait, cela permet d’étudier les relations phylogénétiques entre les espèces (\cite{glemin_pervasive_2019}) ainsi que les traces de sélection au travers d'une \gls{phylogénie}. 
+
+
+Dès le début de ce stage, nous avions à notre disposition :
+
+\begin{description}
+    \item[Les résultats du \gls{séquençage} de chaque individu] sous la forme de \fastq déjà prêts à l’emploi. Les \reads ont déjà été nettoyés et la longueur de ceux-ci uniformisés à 100 nucléotides par \gls{read}. Les fichiers trop gros on été séparés en deux parties. La première partie contient toujours \num{25 000 000} de \reads.
+    
+    \item[Les \glspl{transcriptome} de référence (\TrEx)] utilisés dans \cite{glemin_pervasive_2019} et construits selon la méthode de \cite{sarah_large_2017}. Ils proviennent de l'\gls{assemblage} des \reads de l’individu le plus couvert. Il en existe un par espèce. 
+
+    \item[Les résultats des \glspl{mapping} (\OldBam)]  de chaque individu ont été réalisés avec les \fastq et les \TrEx précédemment mentionnés. Ils sont disponibles sur \textit{NCBI SRA} avec l'identifiant : \textit{PRJNA945064}. Les fichiers \bam qui en résultent seront nommés \OldBam. Vous trouverez quelques informations concernant le contenu de ces \bam ici : \cref{sec:oldBam}
+
+    \item[Le génome de référence complet  (\GeMo)] de \textit{Triticum urartu} provient de la release 59 de \href{https://www.ensembl.org}{ensembl génomes} : \href{https://ftp.ebi.ac.uk/ensemblgenomes/pub/release-59/plants/fasta/triticum_urartu/dna/Triticum_urartu.IGDB.dna.toplevel.fa.gz}{Triticum\_urartu.IGDB.dna.toplevel.fa.gz} 
+
+    \item[Le transciptome de référence complet  de \textit{Triticum urartu}] provient lui aussi de \href{https://www.ensembl.org}{ensembl biomart}. Voici comment récupérer celui-ci :
+    \begin{itemize}
+        \item Dataset : Triticum urartu genes (Tu2.0)
+        \item Gene type: protein\_coding ; Ensembl Canonical: Only
+        \item Attributs :  Gene stable ID ; Transcript stable ID ; cDNA sequences ; Upstream flank [200] ; Downstream flank [200]
+    \end{itemize}
+    
+    \item[Tableau SNP par contigs ] contenant pour chaque \contig lié à une espèce, le nombre de \SNP présent sur les deux  
+    allèles. Ils ont été produits grâce à l'outil \gls{dNdSpNpS}.
+
+
+\end{description}
+
+\subsection{Principes de la recherche de traces de sélection}
+\label{PrincipeTrace}
+La recherche de traces de sélection, à l'echelle d'une \gls{phylogénie} se base sur le concept d’ « horloge moléculaire ». Cette idée stipule que la diversité accumulée par une espèce, en absence de sélection, est fonction du taux de mutation et du temps de divergence. Ainsi, si l'on assume que le taux de mutation est le même pour toutes les espèces et est constant dans le temps, plus le temps passe, plus les génomes accumulent de mutations. En conséquence, deux espèces « proches » accumulent un nombre similaire de \glspl{substitution} depuis qu'elles ont divergé.
+
+Dans les parties codantes du génome, en l'absence de sélection, on s'attend à ce que les sites \glspl{synonyme} évoluent à la même vitesse que les sites non \glspl{synonyme}. Cependant, en présence de sélection deux cas se distinguent :
+\begin{description}
+
+    \item [la sélection purificatrice] Elle fonctionne "contre" les mutations non \glspl{synonyme}. De fait, elle tend à conserver la séquence d'acides aminés et, en conséquence, la séquence nucléotidique. Dans la majorité des cas, lorsqu'un site est soumis à une sélection, c'est à celle-ci. Ainsi, l'action de cette sélection réduit le nombre de sites non \glspl{synonyme}.
+
+    \item [la sélection positive] Elle favorise la fixation de mutations dans une espèce. Dans un gène sous sélection positive, on s'attend à trouver plus de substitutions non \glspl{synonyme} que ce à quoi l'on aurait pu s'attendre en regardant les substitution \glspl{synonyme}.
+    
+\end{description}
+
+Ces deux types de sélections peuvent s'étudier dans les deux conditions suivantes :
+\begin{description}
+    \item [au sein d’une même espèce] Dans ce cas, les variations de séquences sont appelées sites polymorphe
+    \item [au sein d'un groupe d'espèce] Les différences entre séquence sont appelées "\gls{substitution}" ou "divergence" lorsqu'elles sont fixées dans les espèces. Dans les fait, on  considère que ces différences sont toujours fixées dans les espèces.
+\end{description}
+Des exemples sont consultable dans le \cref{tab:seqEx}.
+
+
+
+L'étude des sélections se fait en utilisant les indicateurs suivant :
+
+
+\begin{description}
+    \item [\acrshort{pn}] \acrlong{pn}
+    \item [\acrshort{ps}] \acrlong{ps}
+    \item [\acrshort{dn}] \acrlong{dn}
+    \item [\acrshort{ds}] \acrlong{ds}
+\end{description}
+
+
+Ces indicateurs permettent de calculer les deux ratios qui suivent :
+\begin{description}
+    \item [\acrshort{dnds}] \acrlong{dnds}
+    \item [\acrshort{pnps}] qui \acrlong{pnps}
+\end{description}
+Tout ces éléments sont utilisés par des tests et des logiciels qui seront utilisés dans la  \cref{sec:PipelineTrace}
+
+
+% ----------------------------  END --------------------------- 
+
+\end{document}
+% -------------------------------------------------------------

@@ -1,0 +1,46 @@
+% ----------------------------  START --------------------------- 
+\documentclass[../main]{subfiles} % main refers to main.tex
+\graphicspath{{\subfix{../Illustrations}}}
+\begin{document}
+\addto\extrasfrench{\protected\edef:{\unexpanded\expandafter{:}}}
+\selectlanguage{french}
+% --------------------------------------------------------------- 
+
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{l r r}
+        \toprule
+        Nom du fichier & \TrEx (Mo) & \TrMo (Mo) \\
+        \midrule
+        Tr207\_TAGCTT\_L002.bam & 1\,866 & 1\,903 \\
+        Tr232\_TTAGGC\_L003.bam & 2\,394 & 2\,436 \\
+        Tr235\_TGACCA\_L003\_00.bam & 1\,895 & 1\,928 \\
+        Tr235\_TGACCA\_L003\_01.bam & 624 & 633 \\
+        Tr245\_GATCAG\_L003\_00.bam & 1\,888 & 1\,921 \\
+        Tr245\_GATCAG\_L003\_01.bam & 1\,245 & 1\,262 \\
+        Tr246\_TAGCTT\_L003\_00.bam & 1\,876 & 1\,919 \\
+        Tr246\_TAGCTT\_L003\_01.bam & 1\,605 & 1\,635 \\
+        Tr304\_CTTGTA\_L004\_00.bam & 1\,850 & 1\,885 \\
+        Tr304\_CTTGTA\_L004\_01.bam & 1\,149 & 1\,167 \\
+        Tr306\_ATCACG\_L005.bam & 2\,152 & 2\,189 \\
+        Tr307\_CGATGT\_L005.bam & 2\,348 & 2\,392 \\
+        Tr309\_TTAGGC\_L005\_00.bam & 1\,883 & 1\,917 \\
+        Tr309\_TTAGGC\_L005\_01.bam & 620 & 630 \\
+        Tr312\_TGACCA\_L005.bam & 2\,011 & 2\,049 \\
+        Tr315\_ACAGTG\_L005.bam & 1\,927 & 1\,965 \\
+        Tr317\_GCCAAT\_L005.bam & 2\,145 & 2\,182 \\
+        Tr318\_CAGATC\_L005.bam & 1\,874 & 1\,909 \\
+        Tr347\_CGATGT\_L006.bam & 1\,843 & 1\,879 \\
+        Tr348\_TTAGGC\_L006.bam & 2\,083 & 2\,119 \\
+        Tr349\_TGACCA\_L006.bam & 2\,220 & 2\,259 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Taille des fichiers issus des différents \glspl{mapping}. Chaque taille est comptée en méga octet (Mo) et est arrondie au plus proche. Certains individus sont représentés par deux fichiers du fait des spécificités des \fastq (Cf. \cref{sec:donnees})}
+    \label{tab:weight}
+\end{table}
+
+
+% --------------------------------------------------------------- 
+\end{document}
+% ----------------------------  END --------------------------- 

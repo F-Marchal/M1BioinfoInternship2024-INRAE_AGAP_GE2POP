@@ -1,0 +1,42 @@
+% ----------------------------  START --------------------------- 
+\documentclass[../main]{subfiles} % main refers to main.tex
+\graphicspath{{\subfix{../Illustrations}}}
+\begin{document}
+% --------------------------------------------------------------- 
+
+
+
+\begin{table}[]
+    \centering
+    \begin{tabular}{cccccccc}
+        \toprule
+        \textbf{Espéce}                     & \textbf{Individu}             & \multicolumn{6}{c}{\textbf{Séquence}} \\
+        \midrule
+        \multirow{2}{*}{\textbf{espéce\_1}} & \multirow{2}{*}{individu   1} & ATG  & AG\textcolor{blue}{A}  & TGC  & CGA  & \textcolor{red}{C}GT & TTT \\
+                                            &                               & M    & \textbf{R}    & C    & R    & \textbf{R}   & F   \\
+        \midrule
+        \multirow{2}{*}{\textbf{espéce\_1}} & \multirow{2}{*}{individu 2}   & ATG  & AG\textcolor{blue}{A} & TGC  & CGA  & \textcolor{red}{C}GT & TTT \\
+                                            &                               & M    & \textbf{R}    & C    & R    & \textbf{R}   & F   \\
+        \midrule
+        \multirow{2}{*}{\textbf{espéce\_1}} & \multirow{2}{*}{individu 3}   & ATG  & AG\textcolor{blue}{A}  & TGC  & CGA  & \textcolor{red}{C}GT & TTT \\
+                                            &                               & M    & \textbf{R}    & C    & R    & \textbf{R}   & F   \\
+        \midrule
+        \multirow{2}{*}{\textbf{espéce\_2}} & \multirow{2}{*}{individu 1}   & ATG  & CG\textcolor{blue}{T}  & TGC  & C\textcolor{orange}{G}A  & \textcolor{red}{T}GT & TTT \\
+                                            &                               & M    & \textbf{R}    & C    & \textbf{P}    & \textbf{C}   & F   \\
+        \midrule
+        \multirow{2}{*}{\textbf{espéce\_2}} & \multirow{2}{*}{individu 2}   & ATG  & CG\textcolor{blue}{T}  & TGC  & C\textcolor{orange}{C}A  & \textcolor{red}{T}GT & TTT \\
+                                            &                               & M    & \textbf{R}    & C    & \textbf{R}    & \textbf{C}   & F   \\
+        \midrule
+        \multirow{2}{*}{\textbf{espéce\_2}} & \multirow{2}{*}{individu 3}   & ATG  & CG\textcolor{blue}{T}  & TGC  & C\textcolor{orange}{G}A  & \textcolor{red}{T}GT & TTT \\
+                                            &                               & M    & \textbf{R}    & C    & \textbf{P}    & \textbf{C}   & F   \\
+        \bottomrule
+    \end{tabular}
+    \caption{Exemple de séquence portant du polymorphisme. Pour chaque individu, la première séquence correspond aux \glspl{nucléotide} et la seconde aux acides aminés. Le \gls{codon} n°2 (en \textcolor{blue}{bleu}) est un exemple de \gls{substitution} \gls{synonyme} ; le \gls{codon} n°4 (en \textcolor{orange}{orange}) est un exemple de \gls{polymorphisme} ; le \gls{codon} n°5 (en \textcolor{red}{rouge}) est un exemple de \gls{substitution} non \gls{synonyme}
+    }
+    \label{tab:seqEx}
+\end{table}
+
+
+% ----------------------------  END --------------------------- 
+\end{document}
+% ------------------------------------------------------------- 

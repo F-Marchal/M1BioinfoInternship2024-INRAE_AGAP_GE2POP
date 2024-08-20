@@ -1,0 +1,165 @@
+% ----------------------------  START --------------------------- 
+\documentclass[../main]{subfiles} % main refers to main.tex
+\graphicspath{{\subfix{../Illustrations}}}
+\begin{document}
+\addto\extrasfrench{\protected\edef:{\unexpanded\expandafter{:}}}
+\selectlanguage{french}
+% ---------------------------------------------------------------- 
+
+
+\section{Quantification des SNP dans les différentes espèces}
+\label{sec:SnpHeatmap}
+Comme vu dans l'introduction (\cref{PrincipeTrace}), les \SNP jouent un rôle crucial dans l'analyse des traces de sélection, ceux-ci étant la principale source d'information de nos modèles d'analyse. Ainsi, afin de déterminer si les données en notre possession sont utilisables pour ce type d’analyse, il nous faut trouver un moyen de quantifier la présence des \SNP dans nos données. Cela a motivé la création d’un programme ayant pour objectif de permettre la visualisation de la distribution des \SNP au sein d’un ensemble de \contigs par espèce. Cet outil est en libre accès sur \GitHub :
+\begin{itemize}
+    \item sur le dépôt contenant les scripts que j'ai développés lors de ce stage : \cite{internship2024}
+    \item sur le dépôt du projet \cite{snpheatmap}. Ma participation à ce dernier s'étend de la fondation du dépôt à la version 1.2.0.
+\end{itemize}
+
+L'objectif de cette partie est d'expliquer le fonctionnement de ce logiciel et de déterminer si le nombre de \contigs sur lesquels on peut envisager de travailler est suffisant :
+\begin{itemize}
+    \item à l’échelle de chaque espèce individuellement
+    \item le long de la phylogénie (\cref{fig:Phylo}), auquel cas des \contigs \glspl{orthologue} et polymorphes sont requis pour au moins certaines espèces.  
+\end{itemize}
+
+
+\subsection{Fonctionnement de l’outil} 
+\label{sec:FonctionnementSNPHeatmap}
+Le but de cet outil est de créer un petit nombre de graphiques pouvant présenter :
+\subfile{../FiguresTex/exmpleTriticum.tex}
+\begin{itemize}
+    \item le nombre de \contigs présentant un certain nombre de \SNP (\GNSPeq). Ex : environ 
+    \num{4000}
+    \contigs contiennent 1 \SNP (\cref{fig:ExempleTriticum}).
+    
+    \item le  nombre de \contigs présentant au moins un certain nombre de \SNP (\GNSPge). Ex : environ \num{12 300} ($= \num{4 000} + \num{3 000} + \num{2 000} + \num{1 000} + \num{800} ...$) \contigs contiennent au moins 1 \SNP (\cref{fig:ExempleTriticum}). 
+\end{itemize}
+
+Si dans le cadre de ce stage, cet outil ne servira qu'à l'analyse des \SNP et du nombre de \contigs dans un fichier \bam (\cref{fig:ContigClassicHeatmap}, \cref{fig:ContigPercentHeatmap}), celui-ci peut être utilisé pour toutes données discrètes distribuées sur un axe discret.
+
+Ce programme utilise plusieurs bibliothèques externes : 
+\begin{multicols}{3}
+    \begin{itemize}
+        \item \pytest
+        \item \MatPlotLib
+        \item \getopts
+        \item \gls{sysLib}
+        \item \gls{osLib}
+        \item \gls{jsonLib}
+    \end{itemize}
+\end{multicols}
+
+\subsubsection{Données attendues}
+Les données doivent être contenues dans des fichiers tabulés (exemple : \cref{tab:snpTable}). Chaque tableau doit contenir des données à propos d’une espèce.  Les lignes du tableau doivent contenir, à minima, une clef primaire (ex : nom du \contig) et une valeur numérique (ici le nombre de \SNP (\NbSNP)). Il est possible de séparer les données relatives à une espèce dans un ou plusieurs fichiers si l’option \lstinline{--path} est utilisée. Cette option permet de préciser le chemin vers un \json. Si plusieurs fichiers sont utilisés en même temps, les noms des colonnes considérées (colonne "clef primaire" et colonne "valeurs numériques") doivent être identiques. Des fichiers exemples sont présents dans le dossier \textit{tests/data}.
+\subfile{../FiguresTex/SnpTable.tex}
+
+
+\subsubsection{Sorties}
+Pour chaque ensemble d’espèces données (c’est à dire pour chaque groupe de tableaux), au moins un graphique est créé. Les graphiques obtenables sont décrits ci-dessous :
+
+\begin{description}
+\item[L'histogramme quantitatif] montre simplement le nombre de gènes en ordonnée et le \NbSNP en abscisse.  Il est lié à une seule espèce. Il permet de connaître le  \GNSPeq. La \cref{fig:ExempleTriticum} est un exemple d'histogramme quantitatif. S'active avec l'option  \lstinline{-q}
+
+\item[L'histogramme cumulatif] montre le nombre de gènes en ordonnée et le \NbSNP en abscisse. Lui aussi est lié à une seule espèce. Il permet de connaître le \GNSPge. 
+S'active avec l'option  \lstinline{-c}
+\item[La heatmap cumulative] est une représentation différente des histogrammes cumulatifs. Le nombre de \contigs est contenu dans les cellules de la heatmap au lieu d’être présent en ordonnée. Les heatmaps cumulatives présentent le \GNSPge d’un seul groupe. S'active avec l'option  \lstinline{-u}
+
+\item [La heatmap globale] est la concaténation de toutes les heatmaps cumulatives. De fait, elle présente l’ensemble des espèces sur une seule figure. La \cref{fig:ClassicSNPHeatmap} et la \cref{fig:PercentSNPHeatmap} sont des exemples de  d'heatmaps globale. S'active avec l'option  \lstinline{-g}
+
+\end{description}
+
+Ces graphiques ont tous, en abscisse ou dans les cellules, le nombre de \SNP (\NbSNP). Par défaut les légendes diffèrent entre chaque graphique, mais il est possible de les uniformiser via l’option \lstinline{-y}
+
+Tous les graphiques sont générés par la bibliothèque \MatPlotLib et peuvent tous être exportés au format \png, au format 
+\svg, au format \tsv ou simplement affichés au moment de leur création. Cela correspond respectivement aux options \lstinline{-k}, \lstinline{-v}, \lstinline{-t} et \lstinline{-d}. 
+
+\subsubsection{Chargement du jeu de données}
+La fonction \lstinline{utilities.extract_data_from_table} permet la lecture des fichiers tabulés. Elle se sert du nom des colonnes pour identifier quelles informations utiliser (cf. options \lstinline{-s} et \lstinline{-n}). Bien entendu elle ne charge pas tout le contenu du fichier en mémoire. A la place, elle crée un générateur. Ce générateur est utilisé par la fonction \lstinline{snp_analyser.compile_gene_snp} pour créer un dictionnaire où chaque \NbSNP est associé avec le nombre de \contigs présentant ce \NbSNP. Le nom du fichier d’origine (ou du groupe d’origine) est conservé. 
+
+\subsubsection{Manipulation du jeu de données}
+Le programme utilise le résultat de l’étape précédente pour créer un dictionnaire intermédiaire via la fonction \lstinline{snp_analyser.py.compile_gene_snp}. Cet intermédiaire permet de concaténer les dictionnaires créés précédemment tout en conservant l’espèce d’origine.
+Ce dictionnaire intermédiaire est utilisé par \lstinline{snp_analyser.py.make_data_matrix} pour créer une matrice de données. Cette matrice est de taille $e$ * $s$  avec $e$ l’espèce et $s$ le nombre de valeurs considérées, c'est-à-dire le nombre de \NbSNP affiché. Ce dernier nombre peut être modifié via l’option \lstinline{-m}. Par défaut, les valeurs considérées sont $[1:20]$. Chaque cellule contient le \GNSPge associé à la valeur.
+
+
+\subsubsection{Automatisation}
+
+\paragraph{pytest}
+\label{sec:SnpPytest}
+Un workflow \pytest a été développé afin de s’assurer du bon fonctionnent de l’outil. Ce workflow correspond peu ou prou au workflow \pytest proposé par \GitHub. Des tests unitaires ont été développés pour une grande partie des fonctions mais les sorties ne font l’objet d’aucun test.
+
+\paragraph{auto-doc}
+\label{sec:AutoDoc}
+En plus du workflow précédent, j’ai décidé de faire un workflow supplémentaire ayant pour but de générer automatiquement la documentation \Doxygen à chaque \gls{commit}. Ce Workflow est relativement simple, il installe \Doxygen et \Latex dans un environnement Linux avant de se servir du $Doc/Doxyfile$ pour créer la documentation. Ce workflow présente tout de même trois problèmes :
+\begin{itemize}
+\item Il est relativement long (environ 3 à 4 minutes pour être exécuté)
+\item Il ajoute un \gls{commit} supplémentaire dans la branche \textit{main} (la branche principale).
+\item Le \pdf qui en résulte est relativement laid et difficilement consultable sans être téléchargé.
+
+\end{itemize}
+
+
+\subsubsection{Points d'améliorations}
+Voici une liste d'améliorations et de critiques pouvant être adressées à l'égard de ce programme :
+
+\begin{itemize}
+    \item Fonctionnement interne :
+        \begin{itemize}
+            \item la nécessité d'une clef primaire est un reliquat des toutes premières versions de ce script. Elle pourrait complètement être effacée sans altérer le fonctionnement du logiciel.   
+
+            \item le calcul de pourcentage se base toujours sur les valeurs présentes dans la matrice. Cela implique que la première colonne de la heatmap ou des histogrammes sera toujours 100\%. Aussi, si l'on cherche à calculer le pourcentage de \contigs ayant au moins $n$ \SNP sans utiliser l'option  \lstinline{--start_at_0}, tous les \contigs n'ayant aucun \SNP seront exclus du calcul.
+   
+            \item je me suis aperçu à la fin de mon stage que j'ai construit mon \getopts à l'envers, ce qui rend impossible l'usage d'un "\pipe" pour fournir des noms de fichiers au programme.
+
+            \item seuls les entiers supérieurs ou égaux à un sont acceptés. Le programme pourrait être modifié afin d'accepter des nombres réels.
+    
+        \end{itemize}
+
+    \item Visualisation des données :
+        \begin{itemize}
+            \item il n'est pas possible de choisir une "tranche" de vision. En effet, la zone affichée dans les sorties est toujours $[0:n]$ ou $[1:n]$ avec une incrémentation de 1. Cela implique qu'il n'est pas possible d'afficher uniquement les données incluses dans un intervalle $[n:m]$ où est $n>1$.
+            
+            \item il n'est pas possible de définir une valeur maximale pour l'axe des ordonnées. Cela permettrait de faciliter la comparaison entre plusieurs groupes (exemple : \cref{fig:ContigClassicHeatmap} et \cref{fig:ContigPercentHeatmap}) en uniformisant les légendes.  
+
+            \item les valeurs sont toujours affichées avec un pas de 1, ce qui rend complexe la visualisation de certaine données (\cref{fig:ContigClassicHeatmap}, \cref{fig:ContigPercentHeatmap}).
+        \end{itemize}
+
+    \item Confort de l'utilisateur :
+    \begin{itemize}
+        \item les colonnes ne peuvent pas être identifiées en utilisant une valeur numérique.
+        
+        \item il n'y a pas de possibilité pour l'utilisateur de changer le style des heatmaps ou des histogrammes. Un fichier de configuration pourrait être rajouté.
+        
+    \end{itemize}
+
+    \item Maintenance :
+        \begin{itemize}
+          \item la documentation de certaines fonctions n'est peut être plus à jour. Aucune révision de la documentation n'a été faite depuis la version 1.0.0 du fait d'un manque de temps.
+    
+        \item il n'y a aucun test automatisé des sorties du programme. 
+        
+        \item certaines fonctions n'ont pas de tests unitaires ou des tests unitaires incomplets.
+
+        \item les images d'exemple du \readme ne sont pas mises à jour automatiquement à chaque \gls{commit}. Un workflow pourrait être ajouté.
+
+        
+    \end{itemize}
+
+\item Reproductibilité et portabilité : 
+\begin{itemize}
+     \item le \readme généré à la fin de chaque exécution ne contient pas la ligne de commande utilisé pour démarrer le programme mais le dictionnaire d'argument reçu par la fonction démarrant le programme.
+
+     \item il n'existe pas d'environnement \Conda ou de fichier \gls{pyproject.toml} pour faciliter l'installation et l'utilisation du logiciel. Les erreurs d'import donnent tout de même lieu à des erreurs personnalisées pour aider l'utilisateur à installer les bibliothèques manquantes.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Résultats et conclusion}
+\label{sec:SNP_Results}
+Pour cette analyse nous avons utilisé les tableaux récapitulant le nombre de \SNP par \contig mentionné dans \ref{sec:donnees} et le logiciel décrit dans cette partie (\cref{sec:SnpHeatmap}). Les résultats décrits dans cette partie correspondent à la \cref{fig:SNPHeatmap}.
+
+Dans notre cas, pour pouvoir procéder à une analyse de  traces de sélection, on souhaiterait avoir au grand minimum 5 \SNP par \contigs.
+On observe sur la \cref{fig:ClassicSNPHeatmap} que le nombre de \contigs est très variable entre les différentes espèces étudiées (\ref{tab:Especes}). Celui-ci varie de \num{19 000} (\textit{Ae. bicornis}) à \num{7 080} (\textit{Ae. searsii}). On remarque aussi que le nombre de \SNP s'écroule très rapidement. Cette impression est confirmée par la \cref{fig:PercentSNPHeatmap}. Sur cette seconde figure, on observe que seules 4 des 13 espèces ont au moins 20\% de leurs \contigs avec un \NbSNP supérieur à \num{5}. \redbracket{Quel aurait été le seuil acceptable pour procéder aux analyses (Quel pourcentage de \contigs avec un \NbSNP >5 permettrait de procéder à des analyses ?)}
+
+\subfile{../FiguresTex/heatmap_SNP.tex}
+% ----------------------------  END --------------------------- 
+
+\end{document}
+% -------------------------------------------------------------
