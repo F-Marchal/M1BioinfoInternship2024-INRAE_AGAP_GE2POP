@@ -8,10 +8,10 @@
 
 \section{Pipeline pour la recherche de traces de sélections}
 \label{sec:PipelineTrace}
-La création de cette pipeline a débuté pendant le \gls{mapping} mentionné dans la \cref{sec:Minimap} (cf. \cref{fig:gantt}). Trop peu de temps a été consacré à cette pipeline pour qu'elle soit dans un état utilisable. Cependant, le terrain a bien été débroussaillé. Cette section a pour but de présenter les concepts théoriques et les avancements de la pipeline.
+La création de ce pipeline a débuté pendant le \gls{mapping} mentionné dans la \cref{sec:Minimap} (cf. \cref{fig:gantt}). Trop peu de temps a été consacré à ce pipeline pour qu'il soit dans un état utilisable. Cependant, le terrain a bien été débroussaillé. Cette section a pour but de présenter les concepts théoriques et les avancements du pipeline.
 
 \subsection{Objectif et contexte}
-L'objectif de cette pipeline est de détecter automatiquement des traces de sélection sur des gènes. Pour cela la pipeline doit pouvoir accepter deux types de sources :
+L'objectif de ce pipeline est de détecter automatiquement des traces de sélection sur des gènes. Pour cela le pipeline doit pouvoir accepter deux types de sources :
 
 \begin{description}
     \item[alignements de gènes \glspl{orthologue}] Ces alignements doivent être réalisés au niveau des \glspl{codon} et non des \glspl{nucleotide}, la sélection se faisant principalement au niveau de la protéine. Lorsque ce type de fichier est fournis, une analyse utilisant \gls{CODEML} doit être réalisée.
@@ -30,7 +30,7 @@ Le Fonctionnement théorique du pipeline est le suivant :
     \begin{enumerate}
         \item Chargement du fichier d'alignement (\lstinline{egglib.io.from_fasta})
         \item Chargement de l'arbre ayant permis la création de l'alignement (\lstinline{egglib.Tree})
-        \item Déclenchement de \gls{CODEML} sur les modèles $M1a$, $M2a$, $M7$ et $M8$  (\lstinline{egglib.wrappers.codeml}).
+        \item Déclenchement de \gls{CODEML} sur les modèles $M1a$, $M2a$, $M7$ et $M8$  (\lstinline{egglib.wrappers.codeml}). Les modéles sont expliqués dans la  \cref{sec:CODEML}
         \item \Gls{x2} sur les résultats : $M1a$ contre $M2a$ et $M7$ contre $M8$.
         \item Si un des tests est significatif, le résultat doit être écrit dans un fichier de sortie.
     \end{enumerate}
@@ -43,7 +43,7 @@ Le Fonctionnement théorique du pipeline est le suivant :
     \end{enumerate}
 \end{itemize}
 
-Dans l'idéal pour chaque fichier traité et pour chaque modèle, le pipeline doit utiliseé du multiprocessing, du thtreading ou \gls{Slurm}.
+Dans l'idéal pour chaque fichier traité et pour chaque modèle, le pipeline doit utilisé du multiprocessing, du multi-thtreading ou \gls{Slurm}.
 
 \subsection{Les outils}
 
@@ -51,7 +51,7 @@ Présentons succinctement les logiciels utilisés.
 
 \subsubsection{CODEML}
 \label{sec:CODEML}
-\gls{CODEML} est un outil disponible dans \gls{PAML} (Phylogenetic Analysis by Maximum Likelihood), un ensemble d'outil permettant de faire des analyses relatives aux \glspl{phylogenie}. \gls{CODEML} permet d'analyser les pressions sélectives agissant sur des séquences codantes. Dans notre cas, la "sélection positive" est définie par la présence de \glspl{codon} où \acrshort{omega} > 1  \cite{alvarez-carretero_beginners_2023}. Pour cela, plusieurs modèles sont disponibles. Dans le cadre de ce stage nous ne nous intéresserons qu'aux modèles "sites" :
+\gls{CODEML} est un outil disponible dans \gls{PAML} (Phylogenetic Analysis by Maximum Likelihood), un ensemble d'outils permettant de faire des analyses relatives aux \glspl{phylogenie}. \gls{CODEML} permet d'analyser les pressions sélectives agissant sur des séquences codantes. Dans notre cas, la "sélection positive" est définie par la présence de \glspl{codon} où \acrshort{omega} > 1  \cite{alvarez-carretero_beginners_2023}. Pour cela, plusieurs modèles sont disponibles. Dans le cadre de ce stage nous ne nous intéresserons qu'aux modèles "sites" :
 \begin{itemize}
     \item $M1a$ Modèle "quasiment neutre".  \cite{alvarez-carretero_beginners_2023}
     \item $M2a$ Modèle "sélection positive". \cite{alvarez-carretero_beginners_2023}
@@ -63,7 +63,7 @@ Présentons succinctement les logiciels utilisés.
 
 \subsubsection{EggLib}
 \label{sec:EggLib}
-\gls{EggLib} est un package \gls{Python} proposant des objets permettant la manipulation d'objets biologiques (alignements, arbres phylogénétiques, séquences ...). En plus de ces objets, \gls{EggLib} propose des \glspl{wrapper} pour différents logiciels. Nous utiliserons principalement \gls{EggLib} pour son \gls{wrapper} \gls{CODEML}. Il permet, en théorie, d'exécuter \gls{CODEML}, de lire automatiquement le fichier de sortie et de charger les informations de celui-ci dans un dictionnaire \gls{Python}. Cela facilite grandement l'exploitation des résultats de \gls{CODEML}.
+\gls{EggLib} est un package \gls{Python} proposant des clases permettant la manipulation d'objets biologiques (alignements, arbres phylogénétiques, séquences ...). En plus de ces objets, \gls{EggLib} propose des \glspl{wrapper} pour différents logiciels. Nous utiliserons principalement \gls{EggLib} pour son \gls{wrapper} \gls{CODEML}. Il permet, en théorie, d'exécuter \gls{CODEML}, de lire automatiquement le fichier de sortie et de charger les informations de celui-ci dans un dictionnaire \gls{Python}. Cela facilite grandement l'exploitation des résultats de \gls{CODEML}.
 
 \label{sec:FamiCodeml}
 Afin de me familiariser avec \gls{CODEML}, j'ai suivi un "Beginner's Guide" (\cite{alvarez-carretero_beginners_2023}). Celui-explique les différents types de tests réalisables avec cet outil et propose des données permettant de reproduire les exemples utilisés dans le guide. Celles-ci se trouvent sur un dépôt \GitHub \cite{noauthor_paml-tutorialpositive-selection_nodate}.
@@ -78,7 +78,7 @@ Pour me familiarisé avec \gls{EggLib}, et plus particulièrement avec le \gls{w
 \subsubsection{Problèmes avec \gls{EggLib}}
 Lors de ma reproduction des résultats, j'ai découvert deux problème majeurs.
 
-\paragraph{Gestion des séquences} Lorsque la première séquence de l'alignement contient des délétions ("$---$"), la fonction \lstinline {egglib.wrappers._codeml._helper_rst} n'arrive pas à extraire les données. Celui-ci considére la délétion comme des caractères invalides.
+\paragraph{Gestion des séquences} Lorsque la première séquence de l'alignement contient des délétions ("$---$"), la fonction \lstinline {egglib::wrappers::_codeml._helper_rst} n'arrive pas à extraire les données. Celui-ci considére la délétion comme des caractères invalides.
 
 \paragraph{Arguments du \gls{wrapper}} L'argument "codon\_freq" été limité à une valeur de 3 tandis que \gls{CODEML} peut accepter plus de valeur. A titre indicatif, \cite{alvarez-carretero_beginners_2023} utilise une valeur de 7. 
 
@@ -86,19 +86,19 @@ Lors de ma reproduction des résultats, j'ai découvert deux problème majeurs.
 Ces deux problèmes ont été rapportés au développeur et ont été résolus avec le passage à la version $3.3.3$.
 
 \paragraph{\acrshort{REGEX} incomplète}
-La \acrshort{REGEX} utilisée pour exploiter le fichier de sortie de \gls{CODEML} ne fonctionne pas  correctement :
+Une \acrshort{REGEX} est utilisée pour extraire efficacement les données clefs du fichier de sortie de \gls{CODEML}. Malheureusement, elle ne fonctionne pas correctement :
 
 \begin{enumerate}
     \item la présence de délétions ("$---$") dans l'alignement casse la \acrshort{REGEX} (le symbole "-" n'est pas reconnu par celle-ci)
     \item la "log-likelihood" qui est requise par certains tests n'est pas récupérée par le \gls{wrapper}
-    \item la valeurs de $P(w)>1$ associé aux sites potentiellement sélectionnés ne sont pas récupérés.
+    \item la valeurs de $P(w)>1$ associé aux sites potentiellement sélectionnés n'est pas récupérées.
 \end{enumerate}
 
-J'ai tenté de corriger la \textit{REGEX} (cf. \cite{florent_f-marchalm1bioinfointernship2024-inrae_agap_ge2pop_2024} $Regex$) mais je ne suis pas arrivé au bout de la correction du point n°3. 
+J'ai tenté de corriger la \textit{REGEX} (cf. \cite{florent_f-marchalm1bioinfointernship2024-inrae_agap_ge2pop_2024} $Regex$) mais je ne suis pas arrivé au bout de la correction du point n°3. Mon ébauche de correction a été portée à l'attention du développeur. 
 
 \subsection{Conclusion}
 \label{sec:EggConclusion}
-Si ce stage n'a pas permis de construire cette pipeline, il aura permis de mettre en évidence des problèmes liée à \gls{EggLib}. L'identification de ces problèmes et la construction théorique de la pipeline devrait permettre dans l'avenir de reprendre la construction de la pipeline.
+Si ce stage n'a pas permis de construire cette pipeline, il aura permis de mettre en évidence des problèmes liés à \gls{EggLib}. L'identification de ces problèmes et la construction théorique de la pipeline devrait permettre dans l'avenir de reprendre la construction de la pipeline.
 % ----------------------------  END --------------------------- 
 
 \end{document}

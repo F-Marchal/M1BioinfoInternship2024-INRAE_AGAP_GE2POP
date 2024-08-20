@@ -49,7 +49,7 @@ Ce programme utilise plusieurs bibliothèques externes :
 \end{multicols}
 
 \subsubsection{Données attendues}
-Les données doivent être contenues dans des fichiers tabulés (exemple : \cref{tab:snpTable}). Chaque tableau doit contenir des données à propos d’une espèce.  Les lignes du tableau doivent contenir, à minima, une clef primaire (ex : nom du \contig) et une valeur numérique (ici le nombre de \SNP (\NbSNP)). Il est possible de séparer les données relatives à une espèce dans un ou plusieurs fichiers si l’option \lstinline{--path} est utilisée. Cette option permet de préciser le chemin vers un \json. Si plusieurs fichiers sont utilisés en même temps, les noms des colonnes considérées (colonne "clef primaire" et colonne "valeurs numériques") doivent être identiques. Des fichiers exemples sont présents dans le dossier \textit{tests/data}.
+Les données doivent être contenues dans des fichiers tabulés (exemple : \cref{tab:snpTable}). Chaque tableau doit contenir des données liées à une espèce. Les lignes du tableau doivent contenir, à minima, une clef primaire (ex : nom du \contig) et une valeur numérique (ici le nombre de \SNP (\NbSNP)). Il est possible de séparer les données relatives à une espèce dans un ou plusieurs fichiers si l’option \lstinline{--path} est utilisée. Cette option permet de préciser le chemin vers un \json. Si plusieurs fichiers sont utilisés en même temps, les noms des colonnes considérées (colonne "clef primaire" et colonne "valeurs numériques") doivent être identiques. Des fichiers exemples sont présents dans le dossier \textit{tests/data}.
 \subfile{../FiguresTex/SnpTable.tex}
 
 
@@ -63,7 +63,7 @@ Pour chaque ensemble d’espèces données (c’est à dire pour chaque groupe d
 S'active avec l'option  \lstinline{-c}
 \item[La heatmap cumulative] est une représentation différente des histogrammes cumulatifs. Le nombre de \contigs est contenu dans les cellules de la heatmap au lieu d’être présent en ordonnée. Les heatmaps cumulatives présentent le \GNSPge d’un seul groupe. S'active avec l'option  \lstinline{-u}
 
-\item [La heatmap globale] est la concaténation de toutes les heatmaps cumulatives. De fait, elle présente l’ensemble des espèces sur une seule figure. La \cref{fig:ClassicSNPHeatmap} et la \cref{fig:PercentSNPHeatmap} sont des exemples de  d'heatmaps globale. S'active avec l'option  \lstinline{-g}
+\item [La heatmap globale] est la concaténation de toutes les heatmaps cumulatives. De fait, elle présente l’ensemble des espèces sur une seule figure. La \cref{fig:ClassicSNPHeatmap} et la \cref{fig:PercentSNPHeatmap} sont des exemples de  d'heatmaps globales. S'active avec l'option  \lstinline{-g}
 
 \end{description}
 
@@ -73,11 +73,11 @@ Tous les graphiques sont générés par la bibliothèque \MatPlotLib et peuvent
 \svg, au format \tsv ou simplement affichés au moment de leur création. Cela correspond respectivement aux options \lstinline{-k}, \lstinline{-v}, \lstinline{-t} et \lstinline{-d}. 
 
 \subsubsection{Chargement du jeu de données}
-La fonction \lstinline{utilities.extract_data_from_table} permet la lecture des fichiers tabulés. Elle se sert du nom des colonnes pour identifier quelles informations utiliser (cf. options \lstinline{-s} et \lstinline{-n}). Bien entendu elle ne charge pas tout le contenu du fichier en mémoire. A la place, elle crée un générateur. Ce générateur est utilisé par la fonction \lstinline{snp_analyser.compile_gene_snp} pour créer un dictionnaire où chaque \NbSNP est associé avec le nombre de \contigs présentant ce \NbSNP. Le nom du fichier d’origine (ou du groupe d’origine) est conservé. 
+La fonction \lstinline{utilities.py::extract_data_from_table} permet la lecture des fichiers tabulés. Elle se sert du nom des colonnes pour identifier quelles informations utiliser (cf. options \lstinline{-s} et \lstinline{-n}). Bien entendu elle ne charge pas tout le contenu du fichier en mémoire. A la place, elle crée un générateur. Ce générateur est utilisé par la fonction \lstinline{snp_analyser.py::compile_gene_snp} pour créer un dictionnaire où chaque \NbSNP est associé avec le nombre de \contigs présentant ce \NbSNP. Le nom du fichier d’origine (ou du groupe d’origine) est conservé. 
 
 \subsubsection{Manipulation du jeu de données}
-Le programme utilise le résultat de l’étape précédente pour créer un dictionnaire intermédiaire via la fonction \lstinline{snp_analyser.py.compile_gene_snp}. Cet intermédiaire permet de concaténer les dictionnaires créés précédemment tout en conservant l’espèce d’origine.
-Ce dictionnaire intermédiaire est utilisé par \lstinline{snp_analyser.py.make_data_matrix} pour créer une matrice de données. Cette matrice est de taille $e$ * $s$  avec $e$ l’espèce et $s$ le nombre de valeurs considérées, c'est-à-dire le nombre de \NbSNP affiché. Ce dernier nombre peut être modifié via l’option \lstinline{-m}. Par défaut, les valeurs considérées sont $[1:20]$. Chaque cellule contient le \GNSPge associé à la valeur.
+Le programme utilise le résultat de l’étape précédente pour créer un dictionnaire intermédiaire via la fonction \lstinline{snp_analyser.py::compile_gene_snp}. Cet intermédiaire permet de concaténer les dictionnaires créés précédemment tout en conservant l’espèce d’origine.
+Ce dictionnaire intermédiaire est utilisé par \lstinline{snp_analyser.py::make_data_matrix} pour créer une matrice de données. Cette matrice est de taille $e$ * $s$  avec $e$ le nombre d’espèce et $s$ le nombre de valeurs considérées, c'est-à-dire le nombre de \NbSNP affiché. Ce dernier nombre peut être modifié via l’option \lstinline{-m}. Par défaut, les valeurs considérées sont $[1:20]$. Chaque cellule contient le \GNSPge associé à la valeur.
 
 
 \subsubsection{Automatisation}
@@ -107,7 +107,8 @@ Voici une liste d'améliorations et de critiques pouvant être adressées à l'�
 
             \item le calcul de pourcentage se base toujours sur les valeurs présentes dans la matrice. Cela implique que la première colonne de la heatmap ou des histogrammes sera toujours 100\%. Aussi, si l'on cherche à calculer le pourcentage de \contigs ayant au moins $n$ \SNP sans utiliser l'option  \lstinline{--start_at_0}, tous les \contigs n'ayant aucun \SNP seront exclus du calcul.
    
-            \item je me suis aperçu à la fin de mon stage que j'ai construit mon \getopts à l'envers, ce qui rend impossible l'usage d'un "\pipe" pour fournir des noms de fichiers au programme.
+            \item je me suis aperçu à la fin de mon stage que j'ai construit mon \getopts à l'envers, ce qui rend impossible l'usage d'un "\pipe" pour fournir des noms de fichiers au programme : \lstinline{echo "Clef" "NbSnp" "Exemple.tsv" | python3 main.py -g} ne fonctionne pas car les arguments doivent être placés avant les options. 
+
 
             \item seuls les entiers supérieurs ou égaux à un sont acceptés. Le programme pourrait être modifié afin d'accepter des nombres réels.
     
@@ -155,8 +156,17 @@ Voici une liste d'améliorations et de critiques pouvant être adressées à l'�
 \label{sec:SNP_Results}
 Pour cette analyse nous avons utilisé les tableaux récapitulant le nombre de \SNP par \contig mentionné dans \ref{sec:donnees} et le logiciel décrit dans cette partie (\cref{sec:SnpHeatmap}). Les résultats décrits dans cette partie correspondent à la \cref{fig:SNPHeatmap}.
 
-Dans notre cas, pour pouvoir procéder à une analyse de  traces de sélection, on souhaiterait avoir au grand minimum 5 \SNP par \contigs.
+Dans notre cas, pour pouvoir procéder à une analyse de  traces de sélection, on souhaiterait avoir 5 \SNP par \contigs\,sur au moins 70\% des \contigs.
 On observe sur la \cref{fig:ClassicSNPHeatmap} que le nombre de \contigs est très variable entre les différentes espèces étudiées (\ref{tab:Especes}). Celui-ci varie de \num{19 000} (\textit{Ae. bicornis}) à \num{7 080} (\textit{Ae. searsii}). On remarque aussi que le nombre de \SNP s'écroule très rapidement. Cette impression est confirmée par la \cref{fig:PercentSNPHeatmap}. Sur cette seconde figure, on observe que seules 4 des 13 espèces ont au moins 20\% de leurs \contigs avec un \NbSNP supérieur à \num{5}.
+
+La \cref{fig:ClassicSNPHeatmap} et la \cref{fig:PercentSNPHeatmap} permettent aussi de determiner que :
+
+\begin{itemize}
+\item \textit{Aegilops speltoides} est un bon candidat pour une étude exploratoire, c'est la seule espèce avec 5 \SNP par \contigs\,sur au moins 70\%.
+
+\item les données disponibles sur \textit{Aegilops searsii} sont largement insufisantes (peu de \reads\,et peu de \SNP\,par \contigs ).
+
+\end{itemize}
 
 \subfile{../FiguresTex/heatmap_SNP.tex}
 % ----------------------------  END --------------------------- 

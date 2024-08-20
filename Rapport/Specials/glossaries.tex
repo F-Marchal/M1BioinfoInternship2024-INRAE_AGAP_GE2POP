@@ -46,10 +46,11 @@
     description={mode de "reproduction sexuée par deux gamètes de morphologie différente (par ex. ovule et spermatozoïde)" \cite{Robert}}
 }
 
-\newglossaryentry{brins_bien_apparies} {
-    name={brins bien appariés},
-    description={deux brins d'ADN (ou d'\ARN) sont bien appariés lorsque les \glspl{nucleotide} qui les composent sont correctement appariés selon la complémentarité des bases}
+\newglossaryentry{bien_apparies} {
+    name={bien appariés},
+    description={deux brins d'ADN (ou d'\ARN) (ou \reads\,ou \contigs) sont bien appariés lorsque les \glspl{nucleotide} qui les composent sont correctement appariés selon la complémentarité des bases}
 }
+
 
 \newglossaryentry{diploide} {
     name=diploïde,
@@ -147,7 +148,7 @@
     description={test utilisé pour distinguer les effets de la sélection naturelle des variations génétiques neutres}
 }
 \newglossaryentry{x2} {
-    name=test du khi carré,
+    name=test du khi deux,
     description={test statistique permettant de déterminer si les différences observées entre les fréquences attendues et les fréquences observées sont significatives}
 }
 
@@ -441,13 +442,13 @@
 
 
 % ------ Mapping -------
-\newacronym{TrEx}{TrEx}{transcriptome de référence créé par l’équipe. (\textit{Transcriptome ex-nihilo)}}
+\newacronym{TrEx}{TrEx}{\gls{transcriptome} de référence créé par l’équipe. (\textit{Transcriptome ex-nihilo)}}
 \newcommand{\TrEx}{\acrshort{TrEx}}
 
 \newacronym{GeMo}{GeMo}{génome de référence. (\textit{Génome Moderne})}
 \newcommand{\GeMo}{\acrshort{GeMo}}
 
-\newacronym{TrMo}{TrMo}{transcriptome de référence construit à partir du génome de référence. (\textit{Transcriptome moderne})}
+\newacronym{TrMo}{TrMo}{\gls{transcriptome} de référence construit à partir du génome de référence. (\textit{Transcriptome moderne})}
 \newcommand{\TrMo}{\acrshort{TrMo}}
 
 \newacronym{oldBAM}{oldBAM}{fichiers \gls{bam} générés avec \gls{BWA} en utilisant \gls{TrEx} datant d'avant le début du stage (cf. \cref{sec:donnees})}
@@ -519,3 +520,5 @@ et non \glspl{synonyme} (\dn) entre deux populations. Si $\frac{D_n}{D_s} > 1$ l
 
 
 % ------ -------------------- -------
+
+\newacronym{ngs}{NGS}{Designe les technologies de \Gls{sequencage} Nouvelle Generation.(\textit{Next-Generation Sequencing}}

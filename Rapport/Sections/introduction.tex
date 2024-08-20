@@ -13,11 +13,11 @@
 Mon stage de master 1 en bioinformatique à la faculté des sciences de Montpellier, s’est déroulé au sein de 
 l’UMR AGAP, équipe Ge2POP (INRAE / Institut Agro) du 2 mai 2024 au 26 juillet 2024. J’ai été encadré par Concetta \textsc{Burgarella}, Vincent \textsc{Ranwez} et Nathalie \textsc{Chantret}. 
 
-L’objectif de ce stage est d’évaluer la qualité des données de \gls{sequencage} issues d’une étude antérieure (\cref{Contexte}) pour déterminer si celles-ci peuvent être utilisées pour rechercher des traces de sélection chez des espèces sauvages apparentées au blé.  Ce rapport est rédigé à des fins descriptives et à des fins de traçabilité. De ce fait,  en plus du contexte et des raisons qui ont motivé mes choix, je préciserai aussi les sources des données utilisées et comment faire pour reproduire les résultats.
+L’objectif de ce stage est d’évaluer la qualité des données de \gls{sequencage} issues d’une étude antérieure (cf. \cref{Contexte}) pour déterminer si celles-ci peuvent être utilisées pour rechercher des traces de sélection chez des espèces sauvages apparentées au blé (cf. \cref{PrincipeTrace}). Ce rapport est rédigé à des fins descriptives et à des fins de traçabilité. De ce fait,  en plus du contexte et des raisons qui ont motivé mes choix, je préciserai aussi les sources des données utilisées et comment faire pour reproduire les résultats.
 
 \subsection{Contexte}
 \label{Contexte}
-L’équipe dans laquelle je travaille a publié un article dans lequel a été étudié la diversité génétique des plantes en fonction de leur mode de reproduction \cite{burgarella_mating_2024}. Les données sur lesquelles ce stage est basé proviennent toutes de cette étude.
+L’équipe dans laquelle je travaille a publié un article dans lequel a été étudié la diversité génétique de plantes apparentées au blé dur en fonction de leur mode de reproduction \cite{burgarella_mating_2024}. Les données sur lesquelles ce stage est basé proviennent toutes de cette étude.
 
 \subsubsection{Modèles biologiques}
 \label{model_bio}
@@ -28,7 +28,7 @@ Nous travaillons ici sur 13 espèces \glspl{diploide} sauvages apparentées au b
 
 Ce choix de modèles permet de travailler sur des espèces génétiquement proches (\cref{fig:Phylo}) ayant des modes de reproduction divers. En effet, certaines de ces espèces sont \glspl{autogame}, d’autres sont \glspl{heterogame} et enfin, certaines ont un régime mixte (\gls{autogame} et \gls{heterogame}).
 
-Si, au cours de ce stage, j’ai travaillé sur des données issues de toutes les espèces mentionnées ci-dessus,  certaines  analyses se concentrent sur \textit{Triticum urartu}. Ce choix est motivé par la présence d'un génome de référence publié (certaines des espèces n'en n'ont pas) et par son mode de reproduction fortement \gls{autogame}. Ce dernier point permet de s'assurer que les \glspl{mapping} ne seront pas trop longs. En effet, un mode de reproduction \gls{autogame} réduit la diversité génétique \cite{burgarella_mating_2024}. A titre indicatif, \textit{Triticum urartu} à un génome \gls{diploide} de $4,8 Gpb$  qui correspond à la partie « A » du génome du blé tendre (Froment) qui est \gls{hexaploide} (3 génomes : « A », « B » et « C »  \cite{noauthor_ble_2024}).
+Si, au cours de ce stage, j’ai travaillé sur des données issues de toutes les espèces mentionnées ci-dessus,  certaines  analyses se concentrent sur \textit{Triticum urartu}. Ce choix est motivé par la présence d'un génome de référence publié (certaines des espèces n'en n'ont pas). A titre indicatif, \textit{Triticum urartu} à un génome \gls{diploide} de $4,8 Gpb$ soit $35,5$ fois plus qu'\textit{Arabidopsis thaliana} ($0,135 Gpb$). Le génome de \textit{Triticum urartu} correspond à la partie « A » du génome du blé tendre (Froment) qui est \gls{hexaploide} (3 génomes : « A », « B » et « C »  \cite{noauthor_ble_2024}).
 
 
 \subsubsection{Données}
@@ -44,7 +44,7 @@ Le choix d’utiliser des données \glspl{transcriptomique} est motivé par la n
 Dès le début de ce stage, nous avions à notre disposition :
 
 \begin{description}
-    \item[Les résultats du \gls{sequencage} de chaque individu] sous la forme de \fastq déjà prêts à l’emploi. Les \reads ont déjà été nettoyés et la longueur de ceux-ci uniformisés à 100 \glspl{nucleotide} par \gls{read}. Les fichiers trop gros on été séparés en deux parties. La première partie contient toujours \num{25 000 000} de \reads.
+    \item[Les résultats du \gls{sequencage} de chaque individu] sous la forme de \fastq déjà prêts à l’emploi. Les \reads ont déjà été nettoyés et la longueur de ceux-ci uniformisées à 100 \glspl{nucleotide} par \gls{read}. Les fichiers trop gros on été séparés en deux parties. La première partie contient toujours \num{25 000 000} de \reads.
     
     \item[Les \glspl{transcriptome} de référence (\TrEx)] utilisés dans \cite{glemin_pervasive_2019} et construits selon la méthode de \cite{sarah_large_2017}. Ils proviennent de l'\gls{assemblage} des \reads de l’individu le plus couvert. Il en existe un par espèce. 
 
@@ -52,7 +52,7 @@ Dès le début de ce stage, nous avions à notre disposition :
 
     \item[Le génome de référence complet  (\GeMo)] de \textit{Triticum urartu} provient de la release 59 de \href{https://www.ensembl.org}{ensembl génomes} : \href{https://ftp.ebi.ac.uk/ensemblgenomes/pub/release-59/plants/fasta/triticum_urartu/dna/Triticum_urartu.IGDB.dna.toplevel.fa.gz}{Triticum\_urartu.IGDB.dna.toplevel.fa.gz} 
 
-    \item[Le transciptome de référence complet  de \textit{Triticum urartu}] provient lui aussi de \href{https://www.ensembl.org}{ensembl biomart}. Voici comment récupérer celui-ci :
+    \item[Le transciptome de référence complet  de \textit{Triticum urartu}] provient lui aussi de \href{https://www.ensembl.org}{ensembl biomart}. Voici la requête biomart permettant de récupérer celui-ci :
     \begin{itemize}
         \item Dataset : Triticum urartu genes (Tu2.0)
         \item Gene type: protein\_coding ; Ensembl Canonical: Only
@@ -67,7 +67,7 @@ Dès le début de ce stage, nous avions à notre disposition :
 
 \subsection{Principes de la recherche de traces de sélection}
 \label{PrincipeTrace}
-La recherche de traces de sélection, à l'echelle d'une \gls{phylogenie} se base sur le concept d’ « horloge moléculaire ». Cette idée stipule que la diversité accumulée par une espèce, en absence de sélection, est fonction du taux de mutation et du temps de divergence. Ainsi, si l'on assume que le taux de mutation est le même pour toutes les espèces et est constant dans le temps, plus le temps passe, plus les génomes accumulent de mutations. En conséquence, deux espèces « proches » accumulent un nombre similaire de \glspl{substitution} depuis qu'elles ont divergé.
+% La recherche de traces de sélection, à l'echelle d'une \gls{phylogenie} se base sur le concept d’ « horloge moléculaire ». Cette idée stipule que la diversité accumulée par une espèce, en absence de sélection, est fonction du taux de mutation et du temps de divergence. Ainsi, si l'on assume que le taux de mutation est le même pour toutes les espèces et est constant dans le temps, plus le temps passe, plus les génomes accumulent de mutations. En conséquence, deux espèces « proches » accumulent un nombre similaire de \glspl{substitution} depuis qu'elles ont divergé.
 
 Dans les parties codantes du génome, en l'absence de sélection, on s'attend à ce que les sites \glspl{synonyme} évoluent à la même vitesse que les sites non \glspl{synonyme}. Cependant, en présence de sélection deux cas se distinguent :
 \begin{description}
@@ -103,6 +103,10 @@ Ces indicateurs permettent de calculer les deux ratios qui suivent :
     \item [\acrshort{dnds}] \acrlong{dnds}
     \item [\acrshort{pnps}] qui \acrlong{pnps}
 \end{description}
+
+Dès lors, il est nécessaire de disposer de suffisamment de sites variables pour déterminer si un gène est potentiellement sous sélection via ce type d'analyse. Il est donc requis d'avoir de nombreux gènes avec suffisamment de sites variables. Sans cela, il ne sera pas possible d'estimer correctement ces ratios. 
+L'objectif de ce stage est donc de déterminer si le jeu de données actuel permet cela ou si de nouvelles données doivent être acquises.
+
 Tout ces éléments sont utilisés par des tests et des logiciels qui seront utilisés dans la  \cref{sec:PipelineTrace}
 
 
