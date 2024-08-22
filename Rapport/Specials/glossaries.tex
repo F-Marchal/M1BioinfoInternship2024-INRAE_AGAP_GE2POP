@@ -1,22 +1,9 @@
-\newglossaryentry{latex}{
-    name={LaTeX},
-    description={Un système de composition de documents de haute qualité utilisé pour la production de textes scientifiques et techniques.}
-}
-
-\newglossaryentry{glossaire}{
-    name={Glossaire},
-    description={Une liste alphabétique de termes spécialisés et de leurs définitions.}
-}
-
-\newglossaryentry{compilation}{
-    name={Compilation},
-    description={Le processus de conversion du code source en un document final.}
-}
+\selectlanguage{french}
 
 
 \newglossaryentry{synonyme}{
     name={synonyme},
-    description={Désigne les sites ou les mutations qui produisent le même acide aminé. En effet, les deux \glspl{codon} différents peuvent produire le même acide aminé}
+    description={dans le contexte de ce rapport, désigne les sites ou les mutations qui produisent le même acide aminé. En effet, deux \glspl{codon} différents peuvent produire le même acide aminé. A l'inverse, des sites "non synonymes" désignent les sites ou les mutations qui ne produisent pas le même acide aminé}
 }
 
 \newglossaryentry{codon}{
@@ -27,12 +14,12 @@
 
 \newglossaryentry{autogame} {
     name={autogame},
-    description={"mode de reproduction par union de gamètes provenant du même individu, observé surtout dans le règne végétal (algues, champignons…), plus rare dans le règne animal" \cite{Robert}},
+    description={(ou autogamie) "mode de reproduction par union de gamètes provenant du même individu, observé surtout dans le règne végétal (algues, champignons…), plus rare dans le règne animal" \cite{Robert}},
 }
 
 \newglossaryentry{outgroup} {
     name={outgroup},
-    description={groupe d'espèces lié mais extérieur à aux espèces dont on souhaite construire la \gls{phylogenie}},
+    description={groupe d'espèces lié, mais extérieur aux espèces dont on souhaite construire la \gls{phylogenie}},
 }
 
 % 
@@ -42,13 +29,13 @@
 }
  
 \newglossaryentry{heterogame} {
-    name={hétérogame},
-    description={mode de "reproduction sexuée par deux gamètes de morphologie différente (par ex. ovule et spermatozoïde)" \cite{Robert}}
+    name={allogame},
+    description={"caractérisé par l'allogamie, par la fécondation du pistil d'une fleur par le pollen d'une autre fleur." \cite{Robert}}
 }
 
 \newglossaryentry{bien_apparies} {
     name={bien appariés},
-    description={deux brins d'ADN (ou d'\ARN) (ou \reads\,ou \contigs) sont bien appariés lorsque les \glspl{nucleotide} qui les composent sont correctement appariés selon la complémentarité des bases}
+    description={ce dit de deux brins d'ADN, d'\ARN, de \reads, ou de \contigs lorsque les \glspl{nucleotide} qui les composent forment la séquence complémentaire d'une référence}
 }
 
 
@@ -64,11 +51,11 @@
 
 \newglossaryentry{transcriptome} {
     name=transcriptome,
-    description={ensemble des molécules d'\ARN résultant de l'expression d'une partie du génome d'un tissu cellulaire ou d'un type de cellule \cite{LeDico}},
+    description={"ensemble des molécules d'\ARN résultant de l'expression d'une partie du génome d'un tissu cellulaire ou d'un type de cellule" \cite{LeDico}},
 }
 \newglossaryentry{transcriptomique} {
     name=transcriptomique,
-    description={relatif au \gls{transcriptome}},
+    description={qui est relatif au \gls{transcriptome}},
 }
 
 \newglossaryentry{nucleotide} {
@@ -90,7 +77,7 @@
 
 \newglossaryentry{mapping} {
     name=mapping,
-    description={alignement de \reads sur une séquence de référence. Cela permet d'identifier la position position du \gls{read} dans un génome ainsi que les différences qu'il présente par rapport à l'original (ex: \SNP)},
+    description={alignement de \reads sur une séquence de référence. Cela permet d'identifier la position du \gls{read} dans un génome ainsi que les différences qu'il présente par rapport à l'original (ex: \SNP)},
 }
 
 \newglossaryentry{mappeur} {
@@ -100,7 +87,7 @@
 
 \newglossaryentry{phylogenie} {
     name=phylogénie,
-    description={"étude de l’évolution des êtres vivants afin de déterminer leurs liens de parenté \cite{LeDico}"},
+    description={"étude de l’évolution des êtres vivants afin de déterminer leurs liens de parenté" \cite{LeDico}},
 }
 \newglossaryentry{read} {
     name=read,
@@ -110,7 +97,7 @@
 
 \newglossaryentry{contig} {
     name=contig,
-    description={séquence de \glspl{nucleotide} obtenue à partir de l'\gls{assemblage} de \reads. Dans le cadre de ce rapport, comme nous travaillons sur des donnés \gls{transcriptomique}, un \gls{contig} correspond à un \acrfull{ORF}, donc à un gène},
+    description={séquence de \glspl{nucleotide} obtenue à partir de l'\gls{assemblage} de \reads. Dans le cadre de ce rapport, comme nous travaillons sur des donnés \glspl{transcriptomique}, un \gls{contig} correspond à un cadre ouvert de lecture. L'on assimilera donc "contigs" et "gènes"},
 }
 \newcommand{\contig}{\gls{contig}}
 \newcommand{\contigs}{\glspl{contig}}
@@ -123,7 +110,7 @@
 
 \newglossaryentry{pipe} {
     name=pipe,
-    description={ou "tube" est un "mécanisme qui permet de chaîner des processus de sorte que la sortie d'un processus (stdout) alimente directement l'entrée (stdin) du suivant." \cite{LeDico}}
+    description={ou "tube" est un "mécanisme qui permet de chaîner des processus de sorte que la sortie d'un processus (stdout) alimente directement l'entrée (stdin) du suivant" \cite{LeDico}}
 }
 \newcommand{\pipe}{\gls{pipe}}
 
@@ -135,12 +122,12 @@
 
 \newglossaryentry{substitution} {
     name=substitution,
-    description={désigne, dans le contexte de ce stage, un changement entre les séquences nucleotide de deux espèces. (\cref{PrincipeTrace})},
+    description={désigne, dans le contexte de ce stage, un changement entre les séquences \gls{nucleotide} de deux espèces (\cref{PrincipeTrace})},
 }
 
 \newglossaryentry{orthologue} {
     name=orthologue,
-    description={désignes des séquences héritées d'un même ancêtre.},
+    description={désignes des séquences héritées d'un même ancêtre},
 }
 
 \newglossaryentry{McTest} {
@@ -176,14 +163,14 @@
 
 \newglossaryentry{bz} {
     name=$.bz2$,
-    description={fichier compressé au format $.bz2$},
+    description={fichier compressé au format $bz2$},
 }
 \newcommand{\bz}{"\gls{bz}"}
 
 
 \newglossaryentry{fastq} {
     name=$.fastq$,
-    description={Type de fichier texte permettant de stocker des séquences nulceotidiques (relatif aux \glspl{nucleotide}) et leur qualité. Contient généralement des \reads issues d'un \gls{sequencage}},
+    description={type de fichier texte permettant de stocker des séquences nucléotidiques (relatif aux \glspl{nucleotide}) et leur qualité. Contient généralement des \reads issues d'un \gls{sequencage}},
 }
 \newcommand{\fastq}{"\gls{fastq}"}
 
@@ -196,7 +183,7 @@
 
 \newglossaryentry{png} {
     name=$.png$,
-    description={format d'image numérique}
+    description={format d'image numérique supportant les fonds transparents}
 }
 \newcommand{\png}{"\gls{png}"}
 
@@ -209,30 +196,30 @@
 
 \newglossaryentry{svg} {
    name=$.svg$,
-    description={format d'image numérique utilisant des vecteurs pour représenter une image. Ce type de fichiers assure que l'image pourra être étendue sans perte de qualité }
+    description={format d'image numérique utilisant des vecteurs pour représenter une image. Ce type de fichier assure que l'image pourra être étendue sans perte de qualité }
 }
 \newcommand{\svg}{"\gls{svg}"}
 
 \newglossaryentry{tsv} {
    name=$.tsv$,
-    description={type de fichier texte représentant un tableau. Les données y sont séparées par des tabulations}
+    description={type de fichier texte représentant un tableau. Les données y sont séparées par des tabulations ("\\t")}
 }
 \newcommand{\tsv}{"\gls{tsv}"}
 
 \newglossaryentry{pyproject.toml} {
    name=$pyproject.toml$,
-    description={fichier utilisé dans les projets \gls{Python} pour préciser les prérequis et les caractéristiques d'une application.}
+    description={fichier utilisé dans les projets \gls{Python} pour préciser les prérequis et les caractéristiques d'une application}
 }
 
 \newglossaryentry{bam} {
     name=$.bam$,
-    description={fichier de cartographie d'alignement binaire. C'est le type de fichier créer à la suite d'un \gls{mapping}},
+    description={fichier de cartographie d'alignement binaire. Ce type de fichier est généralement créé à la suite d'un \gls{mapping} ou de la compresion d'un fichier "$.sam$" (fichier de cartographie d'alignement de séquences)},
 }
 \newcommand{\bam}{"\gls{bam}"}
 
 \newglossaryentry{json} {
     name=$.json$,
-    description={fichier texte structuré permettant de stocker des informations},
+    description={fichier texte structuré permettant de stocker des informations. Ce type de fichier est souvent utilisé pour les fichiers de configuration},
 }
 \newcommand{\json}{"\gls{json}"}
 
@@ -256,7 +243,7 @@
 
 \newglossaryentry{git} {
     name=Git,
-    description={système de contrôle de version distribué qui permet de suivre les modifications d'un code source. \cite{git}}
+    description={système de contrôle de version distribué permettant de suivre les modifications d'un code source. \cite{git}}
 }
 
 \newglossaryentry{Conda} {
@@ -268,7 +255,7 @@
 
 \newglossaryentry{Lucidchart} {
     name=Lucidchart,
-    description={éditeur de diagrammes en ligne.\cite{lucidchart}}
+    description={éditeur de diagrammes en ligne \cite{lucidchart}}
 }
 
 \newglossaryentry{STAR} {
@@ -278,7 +265,7 @@
 
 \newglossaryentry{dNdSpNpS} {
     name=dNdSpNpS,
-    description={outil permettant d'extraire les \acrshort{dn}, \acrshort{ds}, \acrshort{pn}, \acrshort{ps} de données liées au génome. \cite{dNdSpNpS}}
+    description={outil permettant de calculer les \acrshort{dn}, \acrshort{ds}, \acrshort{pn}, \acrshort{ps} de chaque \contig\,\cite{dNdSpNpS}}
 }
 
 \newglossaryentry{BWA} {
@@ -312,7 +299,7 @@
 
 \newglossaryentry{Python} {
     name=Python,
-    description={langage de programmation grand publique \cite{python}}
+    description={langage de programmation grand public, \cite{python}}
 }
 \newcommand{\Python}{\gls{Python}}
 
@@ -323,7 +310,7 @@
 
 \newglossaryentry{Bash} {
     name=Bash,
-    description={langage de programmation présent par défaut sur les sytémes d'exploitation linux. \cite{bash}}
+    description={langage de programmation présent par défaut sur les systèmes d'exploitation Linux. \cite{bash}}
 }
 
 
@@ -334,7 +321,7 @@
 
 \newglossaryentry{Slurm} {
     name=Slurm,
-    description={logiciel permettant de répartir l'exécution de programmes sur les différents noeuds d'un \gls{cluster} \cite{slurm}}
+    description={logiciel permettant de répartir l'exécution de programmes sur les différents nœuds d'un \gls{cluster} \cite{slurm}}
 }
 \newcommand{\Slurm}{\gls{Slurm}}
 
@@ -353,7 +340,7 @@
 
 \newglossaryentry{Pytest} {
     name=Pytest,
-    description={bibliothèque \gls{Python} permettant de tester les résultat des fonctions d'un projet \cite{pytest}}
+    description={bibliothèque \gls{Python} permettant de tester les résultats des fonctions d'un projet \cite{pytest}}
 }
 \newcommand{\Pytest}{\gls{Pytest}}
 \newcommand{\pytest}{\gls{Pytest}}
@@ -394,9 +381,10 @@
 }
 \newcommand{\Doxygen}{\gls{Doxygen}}
 
+
 \newglossaryentry{Latex} {
     name=\LaTeX,
-    description={système de développement de documents techniques et scientifiques \cite{latex}}
+    description={système permettant composition de documents de haute qualité utilisé pour la production de textes scientifiques et techniques \cite{latex}. Par de nombreux aspect, \LaTeX est assimilable à un langage de programmation}
 }
 \newcommand{\Latex}{\gls{Latex}}
 
@@ -451,7 +439,7 @@
 \newacronym{TrMo}{TrMo}{\gls{transcriptome} de référence construit à partir du génome de référence. (\textit{Transcriptome moderne})}
 \newcommand{\TrMo}{\acrshort{TrMo}}
 
-\newacronym{oldBAM}{oldBAM}{fichiers \gls{bam} générés avec \gls{BWA} en utilisant \gls{TrEx} datant d'avant le début du stage (cf. \cref{sec:donnees})}
+\newacronym{oldBAM}{oldBAM}{fichiers \gls{bam} générés avec \gls{BWA} en utilisant \acrshort{TrEx} datant d'avant le début du stage (cf. \cref{sec:donnees})}
 \newcommand{\OldBam}{\acrshort{oldBAM}}
 
 % ------ ------ -------
@@ -475,13 +463,13 @@
 \newacronym{NbSNP}{NbSNP}{Nombre de \SNP}
 \newcommand{\NbSNP}{\acrshort{NbSNP}}
 
-\newacronym{BamTrEx}{BamTrEx}{fichiers \gls{bam} générés avec \gls{BWA} en utilisant \gls{TrEx}}
+\newacronym{BamTrEx}{BamTrEx}{fichiers \gls{bam} générés avec \gls{BWA} en utilisant \acrshort{TrEx}}
 \newcommand{\BamTrEx}{\acrshort{BamTrEx}}
 
-\newacronym{BamTrMo}{BamTrMo}{fichiers \gls{bam} générés avec \gls{BWA} en utilisant \gls{TrMo}}
+\newacronym{BamTrMo}{BamTrMo}{fichiers \gls{bam} générés avec \gls{BWA} en utilisant \acrshort{TrMo}}
 \newcommand{\BamTrMo}{\acrshort{BamTrMo}}
 
-\newacronym{BamGeStar}{BamGeStar}{fichiers \gls{bam} générés avec \gls{STAR} en utilisant \gls{GeMo}}
+\newacronym{BamGeStar}{BamGeStar}{fichiers \gls{bam} générés avec \gls{STAR} en utilisant \acrshort{GeMo}}
 \newcommand{\BamGeStar}{\acrshort{BamGeStar}}
 
 
@@ -515,7 +503,6 @@ et non \glspl{synonyme} (\dn) entre deux populations. Si $\frac{D_n}{D_s} > 1$ l
 \newacronym{omega}{\ensuremath{\omega}}{autre écriture de \dnds}
 \newcommand{\w}{\acrshort{omega}}
 
-\newacronym{ORF}{Open Reading Frame} {désigne la transcrite des gènes ou cadre ouvert de lecture)}
 \newacronym{REGEX}{REGEX} {suite de caractère spécifique décrivant une liste de caractères possible. Exemple \lstinline{^re.*} correspond à tous les mots (ou toutes les lignes dépendant du contexte) qui commencent par "re"}
 
 

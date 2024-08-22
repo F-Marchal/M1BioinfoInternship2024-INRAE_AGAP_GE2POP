@@ -10,7 +10,7 @@
 
 \section{Introduction}
 
-Mon stage de master 1 en bioinformatique à la faculté des sciences de Montpellier, s’est déroulé au sein de 
+Mon stage de master 1 en bioinformatique à la faculté des sciences de Montpellier s’est déroulé au sein de 
 l’UMR AGAP, équipe Ge2POP (INRAE / Institut Agro) du 2 mai 2024 au 26 juillet 2024. J’ai été encadré par Concetta \textsc{Burgarella}, Vincent \textsc{Ranwez} et Nathalie \textsc{Chantret}. 
 
 L’objectif de ce stage est d’évaluer la qualité des données de \gls{sequencage} issues d’une étude antérieure (cf. \cref{Contexte}) pour déterminer si celles-ci peuvent être utilisées pour rechercher des traces de sélection chez des espèces sauvages apparentées au blé (cf. \cref{PrincipeTrace}). Ce rapport est rédigé à des fins descriptives et à des fins de traçabilité. De ce fait,  en plus du contexte et des raisons qui ont motivé mes choix, je préciserai aussi les sources des données utilisées et comment faire pour reproduire les résultats.
@@ -21,14 +21,14 @@ L’équipe dans laquelle je travaille a publié un article dans lequel a été 
 
 \subsubsection{Modèles biologiques}
 \label{model_bio}
-Nous travaillons ici sur 13 espèces \glspl{diploide} sauvages apparentées au blé. Ces espèces appartiennent à la famille des \textit{Poaceae} (Graminées). Le nom et les particularités de ces espèces sont récapitulées dans \cref{tab:Especes}. La \gls{phylogenie} de ces espèces est, quant à elle, présentée dans la \cref{fig:Phylo}
+Nous travaillons ici sur 13 espèces \glspl{diploide} sauvages apparentées au blé. Ces espèces appartiennent à la famille des \textit{Poaceae} (Graminées). Le nom et les particularités de ces espèces sont récapitulées dans le \cref{tab:Especes}. La \gls{phylogenie} de ces espèces est, quant à elle, présentée dans la \cref{fig:Phylo}
 
 \subfile{../FiguresTex/especes.tex}
 \subfile{../FiguresTex/phylogenetic-relationships.tex}
 
-Ce choix de modèles permet de travailler sur des espèces génétiquement proches (\cref{fig:Phylo}) ayant des modes de reproduction divers. En effet, certaines de ces espèces sont \glspl{autogame}, d’autres sont \glspl{heterogame} et enfin, certaines ont un régime mixte (\gls{autogame} et \gls{heterogame}).
+Ce choix de modèles permet de travailler sur des espèces génétiquement proches (\cref{fig:Phylo}) ayant des modes de reproduction divers. En effet, certaines de ces espèces sont \glspl{autogame}, d’autres sont \glspl{heterogame} et, enfin, certaines ont un régime mixte (\gls{autogame} et \gls{heterogame}).
 
-Si, au cours de ce stage, j’ai travaillé sur des données issues de toutes les espèces mentionnées ci-dessus,  certaines  analyses se concentrent sur \textit{Triticum urartu}. Ce choix est motivé par la présence d'un génome de référence publié (certaines des espèces n'en n'ont pas). A titre indicatif, \textit{Triticum urartu} à un génome \gls{diploide} de $4,8 Gpb$ soit $35,5$ fois plus qu'\textit{Arabidopsis thaliana} ($0,135 Gpb$). Le génome de \textit{Triticum urartu} correspond à la partie « A » du génome du blé tendre (Froment) qui est \gls{hexaploide} (3 génomes : « A », « B » et « C »  \cite{noauthor_ble_2024}).
+Si, au cours de ce stage, j’ai travaillé sur des données issues de toutes les espèces mentionnées ci-dessus,  certaines  analyses se concentrent sur \textit{Triticum urartu}. Ce choix est motivé par la présence d'un génome de référence publié (certaines des espèces n'en n'ont pas). A titre indicatif, \textit{Triticum urartu} à un génome \gls{diploide} de $4,8 Gpb$ soit $35,5$ fois plus grand qu'\textit{Arabidopsis thaliana} ($0,135 Gpb$). Le génome de \textit{Triticum urartu} correspond à la partie « A » du génome du blé tendre (Froment) qui est \gls{hexaploide} (3 génomes : « A », « B » et « C »  cf. \cite{noauthor_ble_2024}).
 
 
 \subsubsection{Données}
@@ -52,14 +52,14 @@ Dès le début de ce stage, nous avions à notre disposition :
 
     \item[Le génome de référence complet  (\GeMo)] de \textit{Triticum urartu} provient de la release 59 de \href{https://www.ensembl.org}{ensembl génomes} : \href{https://ftp.ebi.ac.uk/ensemblgenomes/pub/release-59/plants/fasta/triticum_urartu/dna/Triticum_urartu.IGDB.dna.toplevel.fa.gz}{Triticum\_urartu.IGDB.dna.toplevel.fa.gz} 
 
-    \item[Le transciptome de référence complet  de \textit{Triticum urartu}] provient lui aussi de \href{https://www.ensembl.org}{ensembl biomart}. Voici la requête biomart permettant de récupérer celui-ci :
+    \item[Le \gls{transcriptome} de référence complet de \textit{Triticum urartu}] provient lui aussi de \href{https://www.ensembl.org}{ensembl biomart}. Voici la requête biomart permettant de récupérer celui-ci :
     \begin{itemize}
         \item Dataset : Triticum urartu genes (Tu2.0)
         \item Gene type: protein\_coding ; Ensembl Canonical: Only
         \item Attributs :  Gene stable ID ; Transcript stable ID ; cDNA sequences ; Upstream flank [200] ; Downstream flank [200]
     \end{itemize}
     
-    \item[Tableau SNP par contigs ] contenant pour chaque \contig lié à une espèce, le nombre de \SNP présent sur les deux  
+    \item[Tableau \SNP par \contig] contenant, pour chaque \contig lié à une espèce, le nombre de \SNP présent sur les deux  
     allèles. Ils ont été produits grâce à l'outil \gls{dNdSpNpS}.
 
 
@@ -69,25 +69,25 @@ Dès le début de ce stage, nous avions à notre disposition :
 \label{PrincipeTrace}
 % La recherche de traces de sélection, à l'echelle d'une \gls{phylogenie} se base sur le concept d’ « horloge moléculaire ». Cette idée stipule que la diversité accumulée par une espèce, en absence de sélection, est fonction du taux de mutation et du temps de divergence. Ainsi, si l'on assume que le taux de mutation est le même pour toutes les espèces et est constant dans le temps, plus le temps passe, plus les génomes accumulent de mutations. En conséquence, deux espèces « proches » accumulent un nombre similaire de \glspl{substitution} depuis qu'elles ont divergé.
 
-Dans les parties codantes du génome, en l'absence de sélection, on s'attend à ce que les sites \glspl{synonyme} évoluent à la même vitesse que les sites non \glspl{synonyme}. Cependant, en présence de sélection deux cas se distinguent :
+Dans les parties codantes du génome on distingue les sites \glspl{synonyme} et les sites non \glspl{synonyme}. La locution "site \gls{synonyme}" désigne les codons codants pour un même acide aminé (\cref{tab:seqEx}). En l'absence de sélection, on s'attend à ce que les sites \glspl{synonyme} évoluent à la même vitesse que les sites non \glspl{synonyme}. Cependant, en présence de sélection deux cas se distinguent :
 \begin{description}
 
     \item [la sélection purificatrice] Elle fonctionne "contre" les mutations non \glspl{synonyme}. De fait, elle tend à conserver la séquence d'acides aminés et, en conséquence, la séquence nucléotidique. Dans la majorité des cas, lorsqu'un site est soumis à une sélection, c'est à celle-ci. Ainsi, l'action de cette sélection réduit le nombre de sites non \glspl{synonyme}.
 
-    \item [la sélection positive] Elle favorise la fixation de mutations dans une espèce. Dans un gène sous sélection positive, on s'attend à trouver plus de substitutions non \glspl{synonyme} que ce à quoi l'on aurait pu s'attendre en regardant les substitution \glspl{synonyme}.
+    \item [la sélection positive] Elle favorise la fixation de mutations dans une population. Dans un gène sous sélection positive, on s'attend à trouver plus de substitutions non \glspl{synonyme} que ce à quoi l'on aurait pu s'attendre en regardant les substitutions \glspl{synonyme}.
     
 \end{description}
 
-Ces deux types de sélections peuvent s'étudier dans les deux conditions suivantes :
+Ces deux types de sélection peuvent s'étudier dans les deux conditions suivantes :
 \begin{description}
-    \item [au sein d’une même espèce] Dans ce cas, les variations de séquences sont appelées sites polymorphe
+    \item [au sein d’une même espèce] Dans ce cas, les variations de séquences sont appelées sites polymorphes
     \item [au sein d'un groupe d'espèce] Les différences entre séquence sont appelées "\gls{substitution}" ou "divergence" lorsqu'elles sont fixées dans les espèces. Dans les fait, on  considère que ces différences sont toujours fixées dans les espèces.
 \end{description}
 Des exemples sont consultable dans le \cref{tab:seqEx}.
 
 
 
-L'étude des sélections se fait en utilisant les indicateurs suivant :
+L'étude des sélection se fait en utilisant les indicateurs suivants :
 
 
 \begin{description}
@@ -107,7 +107,7 @@ Ces indicateurs permettent de calculer les deux ratios qui suivent :
 Dès lors, il est nécessaire de disposer de suffisamment de sites variables pour déterminer si un gène est potentiellement sous sélection via ce type d'analyse. Il est donc requis d'avoir de nombreux gènes avec suffisamment de sites variables. Sans cela, il ne sera pas possible d'estimer correctement ces ratios. 
 L'objectif de ce stage est donc de déterminer si le jeu de données actuel permet cela ou si de nouvelles données doivent être acquises.
 
-Tout ces éléments sont utilisés par des tests et des logiciels qui seront utilisés dans la  \cref{sec:PipelineTrace}
+Tous les éléments précédemment évoqués sont utilisés par des tests et des logiciels qui seront utilisés dans la \cref{sec:PipelineTrace}
 
 
 % ----------------------------  END --------------------------- 

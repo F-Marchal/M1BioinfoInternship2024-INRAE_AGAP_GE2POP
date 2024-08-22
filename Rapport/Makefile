@@ -11,6 +11,7 @@ EXTENSIONS = \
 # Cible par défaut
 all: Complete
 
+
 pdf: main.tex
 	pdflatex main.tex
 	

@@ -21,7 +21,6 @@ L'objectif de cette partie est d'expliquer le fonctionnement de ce logiciel et d
     \item le long de la \gls{phylogenie} (\cref{fig:Phylo}), auquel cas des \contigs \glspl{orthologue} et polymorphes sont requis pour au moins certaines espèces.  
 \end{itemize}
 
-
 \subsection{Fonctionnement de l’outil} 
 \label{sec:FonctionnementSNPHeatmap}
 Le but de cet outil est de créer un petit nombre de graphiques pouvant présenter :
@@ -34,7 +33,7 @@ Le but de cet outil est de créer un petit nombre de graphiques pouvant présent
     \item le  nombre de \contigs présentant au moins un certain nombre de \SNP (\GNSPge). Ex : environ \num{12 300} ($= \num{4 000} + \num{3 000} + \num{2 000} + \num{1 000} + \num{800} ...$) \contigs contiennent au moins 1 \SNP (\cref{fig:ExempleTriticum}). 
 \end{itemize}
 
-Si dans le cadre de ce stage, cet outil ne servira qu'à l'analyse des \SNP et du nombre de \contigs dans un fichier \bam (\cref{fig:ContigClassicHeatmap}, \cref{fig:ContigPercentHeatmap}), celui-ci peut être utilisé pour toutes données discrètes distribuées sur un axe discret.
+Si, dans le cadre de ce stage, cet outil ne servira qu'à l'analyse des \SNP et du nombre de \contigs dans un fichier \bam (\cref{fig:ContigClassicHeatmap}, \cref{fig:ContigPercentHeatmap}), celui-ci peut être utilisé pour toutes données discrètes distribuées sur un axe discret (résultats (note sur 20) d'une cohorte d'étudiant, nombre de maladies rare par personne dans la population d'un pays ...).
 
 Ce programme utilise plusieurs bibliothèques externes : 
 \begin{multicols}{3}
@@ -63,7 +62,7 @@ Pour chaque ensemble d’espèces données (c’est à dire pour chaque groupe d
 S'active avec l'option  \lstinline{-c}
 \item[La heatmap cumulative] est une représentation différente des histogrammes cumulatifs. Le nombre de \contigs est contenu dans les cellules de la heatmap au lieu d’être présent en ordonnée. Les heatmaps cumulatives présentent le \GNSPge d’un seul groupe. S'active avec l'option  \lstinline{-u}
 
-\item [La heatmap globale] est la concaténation de toutes les heatmaps cumulatives. De fait, elle présente l’ensemble des espèces sur une seule figure. La \cref{fig:ClassicSNPHeatmap} et la \cref{fig:PercentSNPHeatmap} sont des exemples de  d'heatmaps globales. S'active avec l'option  \lstinline{-g}
+\item [La heatmap globale] est la concaténation de toutes les heatmaps cumulatives. De fait, elle présente l’ensemble des espèces sur une seule figure. La \cref{fig:ClassicSNPHeatmap} et la \cref{fig:PercentSNPHeatmap} sont des exemples d'heatmaps globales. S'active avec l'option  \lstinline{-g}
 
 \end{description}
 
@@ -73,11 +72,11 @@ Tous les graphiques sont générés par la bibliothèque \MatPlotLib et peuvent
 \svg, au format \tsv ou simplement affichés au moment de leur création. Cela correspond respectivement aux options \lstinline{-k}, \lstinline{-v}, \lstinline{-t} et \lstinline{-d}. 
 
 \subsubsection{Chargement du jeu de données}
-La fonction \lstinline{utilities.py::extract_data_from_table} permet la lecture des fichiers tabulés. Elle se sert du nom des colonnes pour identifier quelles informations utiliser (cf. options \lstinline{-s} et \lstinline{-n}). Bien entendu elle ne charge pas tout le contenu du fichier en mémoire. A la place, elle crée un générateur. Ce générateur est utilisé par la fonction \lstinline{snp_analyser.py::compile_gene_snp} pour créer un dictionnaire où chaque \NbSNP est associé avec le nombre de \contigs présentant ce \NbSNP. Le nom du fichier d’origine (ou du groupe d’origine) est conservé. 
+La fonction \lstinline{utilities.py::extract_data_from_table} permet la lecture des fichiers tabulés. Elle se sert du nom des colonnes pour identifier quelles informations utiliser (cf. options \lstinline{-s} et \lstinline{-n}). Bien entendu, elle ne charge pas tout le contenu du fichier en mémoire. A la place, elle crée un générateur. Ce générateur est utilisé par la fonction \lstinline{snp_analyser.py::compile_gene_snp} pour créer un dictionnaire où chaque \NbSNP est associé avec le nombre de \contigs présentant ce \NbSNP. Le nom du fichier d’origine (ou du groupe d’origine) est conservé. 
 
 \subsubsection{Manipulation du jeu de données}
 Le programme utilise le résultat de l’étape précédente pour créer un dictionnaire intermédiaire via la fonction \lstinline{snp_analyser.py::compile_gene_snp}. Cet intermédiaire permet de concaténer les dictionnaires créés précédemment tout en conservant l’espèce d’origine.
-Ce dictionnaire intermédiaire est utilisé par \lstinline{snp_analyser.py::make_data_matrix} pour créer une matrice de données. Cette matrice est de taille $e$ * $s$  avec $e$ le nombre d’espèce et $s$ le nombre de valeurs considérées, c'est-à-dire le nombre de \NbSNP affiché. Ce dernier nombre peut être modifié via l’option \lstinline{-m}. Par défaut, les valeurs considérées sont $[1:20]$. Chaque cellule contient le \GNSPge associé à la valeur.
+Ce dictionnaire intermédiaire est utilisé par \lstinline{snp_analyser.py::make_data_matrix} pour créer une matrice de données. Cette matrice est de taille $e$ * $s$  avec $e$ le nombre d’espèces et $s$ le nombre de valeurs considérées, c'est-à-dire le nombre de \NbSNP affiché. Ce dernier nombre peut être modifié via l’option \lstinline{-m}. Par défaut, les valeurs considérées sont $[1:20]$. Chaque cellule contient le \GNSPge associé à la valeur.
 
 
 \subsubsection{Automatisation}
@@ -110,7 +109,7 @@ Voici une liste d'améliorations et de critiques pouvant être adressées à l'�
             \item je me suis aperçu à la fin de mon stage que j'ai construit mon \getopts à l'envers, ce qui rend impossible l'usage d'un "\pipe" pour fournir des noms de fichiers au programme : \lstinline{echo "Clef" "NbSnp" "Exemple.tsv" | python3 main.py -g} ne fonctionne pas car les arguments doivent être placés avant les options. 
 
 
-            \item seuls les entiers supérieurs ou égaux à un sont acceptés. Le programme pourrait être modifié afin d'accepter des nombres réels.
+            \item seuls les entiers supérieurs ou égaux à 0 sont acceptés. Le programme pourrait être modifié afin d'accepter des nombres réels.
     
         \end{itemize}
 
@@ -133,7 +132,7 @@ Voici une liste d'améliorations et de critiques pouvant être adressées à l'�
 
     \item Maintenance :
         \begin{itemize}
-          \item la documentation de certaines fonctions n'est peut être plus à jour. Aucune révision de la documentation n'a été faite depuis la version 1.0.0 du fait d'un manque de temps.
+          \item la documentation de certaines fonctions n'est peut-être plus à jour. Aucune révision de la documentation n'a été faite depuis la version 1.0.0 du fait d'un manque de temps.
     
         \item il n'y a aucun test automatisé des sorties du programme. 
         
@@ -145,28 +144,31 @@ Voici une liste d'améliorations et de critiques pouvant être adressées à l'�
     \end{itemize}
 
 \item Reproductibilité et portabilité : 
-\begin{itemize}
-     \item le \readme généré à la fin de chaque exécution ne contient pas la ligne de commande utilisé pour démarrer le programme mais le dictionnaire d'argument reçu par la fonction démarrant le programme.
+    \begin{itemize}
+        \item le \readme généré à la fin de chaque exécution ne contient pas la ligne de commande utilisée pour démarrer le programme, mais le dictionnaire d'argument reçu par la fonction qui démarre le programme.
 
-     \item il n'existe pas d'environnement \Conda ou de fichier \gls{pyproject.toml} pour faciliter l'installation et l'utilisation du logiciel. Les erreurs d'import donnent tout de même lieu à des erreurs personnalisées pour aider l'utilisateur à installer les bibliothèques manquantes.
+        \item il n'existe pas d'environnement \Conda ou de fichier \gls{pyproject.toml} pour faciliter l'installation et l'utilisation du logiciel. Les erreurs d'import donnent tout de même lieu à des erreurs personnalisées pour aider l'utilisateur à installer les bibliothèques manquantes.
     \end{itemize}
+
 \end{itemize}
 
 \subsection{Résultats et conclusion}
 \label{sec:SNP_Results}
-Pour cette analyse nous avons utilisé les tableaux récapitulant le nombre de \SNP par \contig mentionné dans \ref{sec:donnees} et le logiciel décrit dans cette partie (\cref{sec:SnpHeatmap}). Les résultats décrits dans cette partie correspondent à la \cref{fig:SNPHeatmap}.
+Pour cette analyse, nous avons utilisé les tableaux récapitulant le nombre de \SNP par \contig mentionné dans \ref{sec:donnees} et le logiciel décrit dans cette partie (\cref{sec:SnpHeatmap}). Les résultats décrits dans cette partie correspondent à la \cref{fig:SNPHeatmap}.
 
-Dans notre cas, pour pouvoir procéder à une analyse de  traces de sélection, on souhaiterait avoir 5 \SNP par \contigs\,sur au moins 70\% des \contigs.
+Dans notre cas, pour pouvoir procéder à une analyse de  traces de sélection, on souhaiterait avoir 5 \SNP par \contigs\,sur au moins 70\% des \contig.
 On observe sur la \cref{fig:ClassicSNPHeatmap} que le nombre de \contigs est très variable entre les différentes espèces étudiées (\ref{tab:Especes}). Celui-ci varie de \num{19 000} (\textit{Ae. bicornis}) à \num{7 080} (\textit{Ae. searsii}). On remarque aussi que le nombre de \SNP s'écroule très rapidement. Cette impression est confirmée par la \cref{fig:PercentSNPHeatmap}. Sur cette seconde figure, on observe que seules 4 des 13 espèces ont au moins 20\% de leurs \contigs avec un \NbSNP supérieur à \num{5}.
 
 La \cref{fig:ClassicSNPHeatmap} et la \cref{fig:PercentSNPHeatmap} permettent aussi de determiner que :
 
 \begin{itemize}
-\item \textit{Aegilops speltoides} est un bon candidat pour une étude exploratoire, c'est la seule espèce avec 5 \SNP par \contigs\,sur au moins 70\%.
+\item \textit{Aegilops speltoides} est un bon candidat pour une étude exploratoire, c'est la seule espèce avec 5 \SNP par \contig\,sur au moins 70\%.
 
-\item les données disponibles sur \textit{Aegilops searsii} sont largement insufisantes (peu de \reads\,et peu de \SNP\,par \contigs ).
+\item les données disponibles sur \textit{Aegilops searsii} sont largement insufisantes (peu de \reads\,et peu de \SNP\,par \contig ).
 
 \end{itemize}
+
+La \cref{fig:SNPHeatmap} montre clairement que, pour la plupart des espèces, l'on ne dispose pas d’un nombre suffisant de \SNP. Ces résultats démontrent aussi l’intérêt des figures générées par \cite{florent_f-marchalsnpheatmap_2024} pour décider si des analyses de traces de sélection sont envisageables ou non. 
 
 \subfile{../FiguresTex/heatmap_SNP.tex}
 % ----------------------------  END --------------------------- 

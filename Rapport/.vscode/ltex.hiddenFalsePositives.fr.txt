@@ -1,0 +1,2 @@
+{"rule":"D_N","sentence":"^\\QLa \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q de ces espèces est, quant à elle, présentée dans la \\E(?:Dummy|Ina|Jimmy-)[0-9]+$"}
+{"rule":"QUE_AVOIR","sentence":"^\\QLe \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, en annexe, fourni une liste non exhaustive des outils que j'ai manipulés et des compétences que j'ai acquises ou commencé à acquérir.\\E$"}

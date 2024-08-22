@@ -4,12 +4,12 @@
 \usepackage[T1]{fontenc}
 \usepackage[french]{babel}          % Switch french with english
 \usepackage{csquotes}
-\usepackage{tcolorbox}
-\usepackage{amsmath}
+\usepackage{tcolorbox} % Boite de vouleur
+\usepackage{amsmath} % Balises de maths
 \definecolor{darkblue}{rgb}{0.0, 0.0, 0.4} % Darker shade of blue
 \definecolor{darkgreen}{rgb}{0.0, 0.4, 0.0} % Darker shade of blue
 \definecolor{darkred}{rgb}{0.4, 0.0, 0.0} % Darker shade of blue
-\usepackage[colorlinks=true, linkcolor=darkblue, citecolor=darkgreen, filecolor=purple, urlcolor=darkred]{hyperref}  
+\usepackage[colorlinks=true, linkcolor=darkblue, citecolor=darkgreen, filecolor=purple, urlcolor=darkred]{hyperref}  % \cite, \ref, \cref deviennent clickables
 \usepackage[capitalise,noabbrev]{cleveref} 
 \usepackage{graphicx}               % For including figures
 \usepackage{caption}                % For better control over captions in tables and figures
@@ -23,8 +23,8 @@
 \usepackage[acronym]{glossaries} % nonumberlist pour effacer les numéros
 \usepackage{subcaption}
 \usepackage{pdflscape}
-\usepackage{siunitx}
-\sisetup{group-separator = \ }
+\usepackage{siunitx} % \num (affichage gros nombre)
+\sisetup{group-separator = \ } % Espace insecable pour seppare les chiffres des nombre (5,00,00 devient 5 000 000)
 \usepackage{titlesec}
 \usepackage{needspace}
 \usepackage{enumitem}
@@ -104,6 +104,7 @@
 % Ajouter un saut de ligne après les environnements d'énumération
 \setlist[itemize]{after=\vspace{0.5\baselineskip}}
 \setlist[enumerate]{after=\vspace{0.5\baselineskip}}
+\renewcommand*\descriptionlabel[1]{\hspace\labelsep\texttt{#1}}
 \setlist[description]{after=\vspace{0.5\baselineskip}}
 % ------------------------------------------------------------------
 

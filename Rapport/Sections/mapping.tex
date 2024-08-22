@@ -8,48 +8,48 @@
 
 \section{Mapping}
 \label{sec:Mapping}
-L’analyse du \NbSNP réalisée dans la partie précédente a montré que les \contigs considérés possèdent peu de \SNP. Une explication possible de  ce manque de \SNP pourrait être que la \gls{mapping} utilisé pour analyser les \contigs ait entraîné trop de perte. En effet, le \gls{mapping} ayant été réalisé sur des transcriptomes ex-nihilo (\TrEx), il est fort possible que ces derniers soient moins complets que le génome de référence « moderne »  (\GeMo) ou qu’un transcriptome de référence (\TrMo) issu de ce dernier. Afin d’évaluer l’effet de la référence sur le \gls{mapping}, nous avons effectué de nouveaux \glspl{mapping} et comparé leurs résultats respectifs.
+L’analyse du \NbSNP réalisée dans la partie précédente a montré que les \contigs considérés possèdent peu de \SNP. Une explication possible de ce manque de \SNP pourrait être que le \gls{mapping} utilisé pour analyser les \contigs ait entraîné trop de perte. En effet, le \gls{mapping} ayant été réalisé sur des \glspl{transcriptome} ex-nihilo (\TrEx), il est fort possible que les résultats soient moins complets que s'il avait été réalisé sur un génome de référence « moderne » (\GeMo) ou sur \gls{transcriptome} de référence (\TrMo) issu de ce dernier. Afin d’évaluer l’effet de la référence sur le \gls{mapping}, nous avons effectué de nouveaux \glspl{mapping} et nous avons comparé leurs résultats respectifs.
 
 Les nouveaux  \glspl{mapping} ont été réalisés sur :
 \begin{itemize}
 \item le génome de référence (\GeMo)
-\item le transcriptome de référence (\TrMo)
-\item le transcriptome de référence créé par l'équipe (\TrEx)
+\item le \gls{transcriptome} de référence (\TrMo)
+\item le \gls{transcriptome} de référence créé par l'équipe (\TrEx)
 \end{itemize}
 
 Ce travail a été effectué avec le support de la Plateforme ISDM-MESO de l’Université de Montpellier financée dans le cadre du CPER par l’État, la Région Occitanie, la Métropole de Montpellier et l’Université de Montpellier.
 
-
-
-
 \subsection{Le pipeline}
 \label{sec:GeCKO}
-\GeCKO est le pipeline qui sera utilisé pour les étapes de \gls{mapping}. Celui-ci a été développée dans l’équipe qui m’a accueilli. Il est en libre accès sur \GitHub \cite{noauthor_ge2popgecko_2024}, \cite{ardisson_gecko_2024}. Ce pipeline a pour but de faciliter les analyses de donnèes \acrshort{ngs} sur de gros génomes en les rendant plus « user-friendly ». Il se base sur \Conda et \SnakeMake pour assurer la portabilité. Celui-ci a été choisi car :
+
+\GeCKO est le pipeline qui sera utilisé pour les étapes de \gls{mapping}. Celui-ci a été développé dans l’équipe qui m’a accueilli. Il est en libre accès sur \GitHub \cite{noauthor_ge2popgecko_2024}, \cite{ardisson_gecko_2024}. Ce pipeline a pour but de faciliter les analyses de données \acrshort{ngs} sur de gros génomes en les rendant plus « user-friendly ». Il se base sur \Conda et \SnakeMake pour assurer sa portabilité. Celui-ci a été choisi car :
+
 \begin{itemize}
-\item il est connu de l’équipe
-\item les développeurs se trouvent à proximité
-\item il avait besoin d’être testé en conditions « réelles »
+    \item il est connu de l’équipe
+    \item les développeurs se trouvent à proximité
+    \item il avait besoin d’être testé en conditions « réelles »
 \end{itemize}
+
 Nous n’avons utilisé que la partie « READ\_MAPPING » du pipeline.
 
 
 
 \subsubsection{Installation}
-L’installation et la mise en route du pipeline s'est révélée être bien plus compliquée que prévue. Celle-ci a nécessite un fort investissement en temps avant de résoudre les différents problèmes rencontrés. (\cref{fig:gantt}). Les sous-sections suivantes dresseront une liste non exhaustive des problèmes rencontrés et des techniques mises en œuvre pour essayer de les résoudre.
+L’installation et la mise en route du pipeline se sont révélées être bien plus compliquées que prévu. Celle-ci a nécessité un fort investissement en temps avant de résoudre les différents problèmes rencontrés. (\cref{fig:gantt}). Les sous-sections suivantes dresseront une liste non exhaustive des problèmes rencontrés et des techniques mises en œuvre pour essayer de les résoudre.
 
-La vaste majorité des problèmes rencontrés sont liés à la création de l’environnement global. En effet, pour fonctionner, \GeCKO à besoin de créer un environnement \Conda. Ce dernier permet la création des environnements \SnakeMake dans lesquels les différentes sous parties du programme vont tourner. 
+La vaste majorité des problèmes rencontrés sont liés à la création de l’environnement global. En effet, pour fonctionner, \GeCKO a besoin de créer un environnement \Conda. Ce dernier permet la création des environnements \SnakeMake dans lesquels les différentes sous parties du programme vont tourner. 
 
-\paragraph{\Slurm n’a pas les droits pour écrire dans le dossier home.} Fort heureusement, ce problème a été anticipé par les développeurs du pipeline. Il suffit de déplacer les dossiers dans lesquels le pipeline souhaite écrire (\lstinline{~/.conda/} et \lstinline{~/.cashe/}) dans un dossier où le pipeline a le droit d’écrire puis de créer un lien symbolique dans le home pointant vers ces dossiers.
+\paragraph{\Slurm n’a pas les droits pour écrire dans le dossier home.} Fort heureusement, ce problème a été anticipé par les développeurs du pipeline. Il suffit de déplacer les dossiers dans lesquels le pipeline souhaite écrire (\lstinline{~/.conda/} et \lstinline{~/.cashe/}) dans un dossier où le pipeline a le droit d’écrire puis de créer un lien symbolique dans le dossier "home" pointant vers ces dossiers.
 
-\paragraph{\Conda n’arrive pas à télécharger certains fichiers (\lstinline{CondaHTTPError}).} Ce problème est d’autant plus étonnant que l’installation en local du pipeline n’a pas rencontré ce problème et que le lien était parfaitement accessible via un navigateur web. Après un long temps de recherche, il s’est avéré que le problème venait du contrôle ssl. La désactivation de ce dernier a permis de résoudre l’erreur (\lstinline{conda config --set ssl_verify false})
+\paragraph{\Conda n’arrive pas à télécharger certains fichiers (\lstinline{CondaHTTPError}).} Ce problème est d’autant plus étonnant que l’installation en local du pipeline n’a pas rencontré ce problème et que le lien était parfaitement accessible via un navigateur web. Après un long temps de recherche, il s’est avéré que le problème venait du contrôle $ssl$. La désactivation de ce dernier a permis de résoudre l’erreur (\lstinline{conda config --set ssl_verify false})
 
 \paragraph{Conflit dans les bibliothèques \Conda.} Après plusieurs heures d’installation, \Conda s’arrêtait avec un message d’erreur très long, environ $\num{740} Ko$, mentionnant un problème de compatibilité entre les versions des différents logiciels et bibliothèques installées par \Conda.
 
-\subparagraph{Importation de l’environnement.} Une des stratégies envisagées  pour résoudre les problèmes mentionnés précédemment fut l’importation des environnements \Conda depuis un autre utilisateur ou depuis mon installation en local. Malheureusement les environnements \Conda utilisent les chemins complets pour accéder aux dossiers qui les intéressent. Cela implique que ces chemins contiennent les noms d’utilisateur et autres particularités du système de fichier et sont, de fait, difficilement transférables. J’ai tout de même essayé de modifier les chemins, mais cela n’a pas été concluant.
+\subparagraph{Importation de l’environnement.} Une des stratégies envisagées  pour résoudre les problèmes mentionnés précédemment fut l’importation des environnements \Conda depuis un autre utilisateur ou depuis mon installation en local. Malheureusement les environnements \Conda utilisent les chemins absolus pour accéder aux dossiers qui les intéressent. Cela implique que ces chemins contiennent les noms d’utilisateur et autres particularités du système de fichier et sont, de fait, difficilement transférables. J’ai tout de même essayé de modifier les chemins, mais cela n’a pas été concluant.
 
-\subparagraph{Création d’un conteneur \Singularity} J’ai envisagé de créer un conteneur \Singularity pour pouvoir lancer le pipeline sur le \gls{cluster}. Cependant, n’ayant pas le « privilege root » sur ma machine, je n’ai pas réussi à créer le conteneur.
+\subparagraph{Création d’un conteneur \Singularity} J’ai envisagé de créer un conteneur \Singularity pour pouvoir lancer le pipeline sur le \gls{cluster}. Cependant, n’ayant pas le « privilege root » sur ma machine, je n’ai pas réussi à créer le conteneur. Je travaillais en \gls{WSL} sur une machine Windows.
 
-\subparagraph{Résolution} Au final, la création des différents environnements a été faite par l’une des développeuse du pipeline. Il s’est avéré qu’il manquait une ligne de configuration dans mon \bashrc me permettant d’accéder à un grand nombre de logiciels installés sur le \gls{cluster}. Je ne sais pas si elle a résolu d’autres problèmes.
+\subparagraph{Résolution} La création des différents environnements a été faite par Johanna \textsc{Girodolle}, l’une des développeuses du pipeline. Il s’est avéré qu’il manquait une ligne de configuration dans mon \bashrc me permettant d’accéder à un grand nombre de logiciels installés sur le \gls{cluster}. Je ne sais pas si elle a résolu d’autres problèmes.
 
 
 \subsection{Prétraitement des données}
@@ -57,21 +57,23 @@ Les données sur lesquelles j’ai travaillé ont nécessité quelques petits pr
 
 \paragraph{Changement du mode de compression}
 \subfile{../FiguresTex/decompression.tex}
-Les \fastq utilisés pour le \gls{mapping} sont stockés sur le \gls{cluster} au format \bz. Cependant, \GeCKO n’accepte pas ce type de compression. J’ai donc fait un petit script (\cref{fig:DiagDecompresse}  parties jaunes) me permettant de décompresser les \bz et de les recompresser au format \gz. Comme la première version de ce script a créé des fichiers que \GeCKO considérait comme « potentiellement corrompus », j’ai créé une nouvelle version qui vérifie que les fichiers ne le sont pas (\cref{fig:DiagDecompresse} parties jaunes et bleues). Celle-ci ajoute des contrôles à chaque étape pour s’assurer que tout fonctionne.  (\cite{florent_f-marchalm1bioinfointernship2024-inrae_agap_ge2pop_2024} \lstinline{$gz2_to_bz2$})
+Les \fastq utilisés pour le \gls{mapping} sont stockés sur le \gls{cluster} au format \bz. Cependant, \GeCKO n’accepte pas ce type de compression. J’ai donc fait un petit script (\cref{fig:DiagDecompresse} parties jaunes) me permettant de décompresser les \bz et de les recompresser au format \gz. Comme la première version de ce script a créé des fichiers que \GeCKO considérait comme « potentiellement corrompus », j’ai créé une nouvelle version qui vérifie que les fichiers ne le sont pas (\cref{fig:DiagDecompresse} parties jaunes et bleues). Celle-ci ajoute des contrôles à chaque étape pour s’assurer que tout fonctionne.  (\cite{florent_f-marchalm1bioinfointernship2024-inrae_agap_ge2pop_2024} \lstinline{$gz2_to_bz2$})
 
 \paragraph{Tri des fichiers}
-Les fichiers \fastq sur lesquels  j’ai travaillé sont tous stockés dans le même dossier, indépendamment de leur espèce. Or, je devais travailler sur les \textit{Triticum urartu} uniquement. Comme j’avais à ma disposition un tableau permettant de faire la correspondance entre l’identifiant du fichier et l’espèce, j’ai créé un petit script. Celui-ci charge simplement les noms de fichiers avant de créer un dossier pour déplacer les fichiers dedans. (\cite{florent_f-marchalm1bioinfointernship2024-inrae_agap_ge2pop_2024} \lstinline{Sort_files_by_species})
+Les fichiers \fastq sur lesquels j’ai travaillé sont tous stockés dans le même dossier, indépendamment de leur espèce. Or, je devais travailler sur les \textit{Triticum urartu} uniquement. Comme j’avais à ma disposition un tableau permettant de faire la correspondance entre l’identifiant du fichier et l’espèce, j’ai créé un petit script. Celui-ci charge simplement les noms de fichiers avant de créer un dossier pour déplacer les fichiers dedans. (\cite{florent_f-marchalm1bioinfointernship2024-inrae_agap_ge2pop_2024} \lstinline{Sort_files_by_species})
 
 
 \subsection{Déroulement des \gls{mapping}}
 
-Nous aborderons ici les difficultés qui ont eu lieu pendant les mappings ainsi que leurs deroulés.
+Nous aborderons ici les difficultés qui ont eu lieu pendant les \glspl{mapping} ainsi que leurs déroulés.
+
 \subsubsection{Mapping avec \gls{MINIMAP} (\GeMo)}
 \label{sec:Minimap}
-Le \gls{mappeur} MINIMAP2 a été choisi pour effectuer le \gls{mapping} des \fastq sur \GeMo. Cependant, ce choix a posé de nombreux problèmes et n'a pas abouti à une solution satisfaisante, malgré un investissement en temps conséquent (\cref{fig:gantt}). En effet, si nous arrivions à démarrer les \glspl{mapping}, ils se sont sont tous soldés par des erreurs. A titre indicatif voici les types d’erreurs rencontrés sur 17 échantillons :
+
+Le \gls{mappeur} \gls{MINIMAP}2 a été choisi pour effectuer le \gls{mapping} des \fastq sur \GeMo. Cependant, ce choix a posé de nombreux problèmes et n'a pas abouti à une solution satisfaisante, malgré un investissement en temps conséquent (\cref{fig:gantt}). En effet, si nous arrivions à démarrer les \glspl{mapping}, ils se sont tous soldés par des erreurs. A titre indicatif voici les types d’erreurs rencontrés sur 17 échantillons :
 
 \begin{itemize}
-    \item  10 \lstinline{'minimap2: hit.c:210: mm_hit_sort: Assertion `has_cigar + no_cigar == 1' failed.'}
+    \item 10 \lstinline{'minimap2: hit.c:210: mm_hit_sort: Assertion `has_cigar + no_cigar == 1' failed.'}
     \item 2 \lstinline{'minimap2: format.c:380: write_sam_cigar: Assertion `clip_len[0] < qlen && clip_len[1] < qlen' failed.'}
     \item 2 \lstinline{'Segmentation fault      (core dumped)'}
     \item 3 \lstinline{'[morecore] insufficient memory'}
@@ -83,50 +85,46 @@ Nous avons bien essayé d’augmenter la quantité de mémoire attribuée à \gl
 
 \subsubsection{Mapping avec \gls{STAR} (\GeMo)}
 \label{sec:Star}
-Comme \gls{MINIMAP} s’est révélé inexploitable, nous avons choisi d’essayer avec un autre \gls{mappeur}, bien qu’il ne soit pas accessible dans \GeCKO. Le \gls{mappeur} choisi a été \gls{STAR}. Ce choix fut motivé par les conseilles de mon tuteur pédagogique (cf. page de garde). Les résultats des \glspl{mapping} ont été obtenus très rapidement et sans grandes difficultés. Cependant, les résultats sont arrivés trop tard (\cref{fig:gantt}) et n'ont pas put être analysés. 
+Comme \gls{MINIMAP} s’est révélé inexploitable, nous avons choisi d’essayer avec un autre \gls{mappeur}, bien qu’il ne soit pas accessible dans \GeCKO. Le \gls{mappeur} choisi a été \gls{STAR}. Ce choix fut motivé par les conseilles d'Anthony \textsc{Boureux}, mon tuteur pédagogique. Les résultats des \glspl{mapping} ont été obtenus très rapidement et sans grandes difficultés. Cependant, les résultats sont arrivés trop tard (\cref{fig:gantt}) et n'ont pas pu être analysés. 
 
-
+A la suite de ce stage, il est prévu d'ajouter \gls{STAR} dans \GeCKO.
 
 \subsubsection{Mapping avec \BWA (\TrEx et \TrMo)}
-Les mappings sur les \glspl{transcriptome} de références ont été fais avec \BWA $mem$. Il s’agit du \gls{mappeur} utilisé pour réaliser les \OldBam.
+Les \glspl{mapping} sur les \glspl{transcriptome} de références ont été fais avec \BWA $mem$. Il s’agit du \gls{mappeur} utilisé pour réaliser les \OldBam.
 
 \paragraph{Mapping sur \TrEx} Le re-mapping sur \TrEx est justifié par la nécessité d'avoir des données comparables au \gls{mapping} sur \TrMo. En effet, nous ne pouvions pas utiliser les \OldBam pour les raisons détaillées ici : \ref{sec:oldBam}. 
-
-
-
 
 \subsection{Analyse des BAMS}
 Nous détaillerons ici les différentes étapes de l'analyse des \bam.
 Afin de faciliter la rédaction de ce rapport, des acronymes seront utilisés pour différencier les \bam en fonction de leur origine :
-\begin{itemize}
-    \item \acrshort{oldBAM} : \acrlong{oldBAM}
-    \item \acrshort{BamTrMo} : \acrlong{BamTrMo}
-    \item \acrshort{BamTrEx} : \acrlong{BamTrEx}
-    \item \acrshort{BamGeStar} : \acrlong{BamGeStar}
-\end{itemize}
+\begin{description}
+    \item [\acrshort{oldBAM}] \acrlong{oldBAM}
+    \item [\acrshort{BamTrMo}] \acrlong{BamTrMo}
+    \item [\acrshort{BamTrEx}] \acrlong{BamTrEx}
+    \item [\acrshort{BamGeStar}] \acrlong{BamGeStar}
+\end{description}
 
-
+Avec notre hypothèse de départ (\cref{sec:Mapping}) nous attendons à ce que le nombre de \reads\,mappés suivent la distribution suivante : $\acrshort{BamGeStar} \geq \acrshort{oldBAM} > \acrshort{BamTrMo} \gg \acrshort{oldBAM}$.
 
 \subsubsection{Un mot sur les anciens bams (\OldBam)}
 \label{sec:oldBam}
 Comme mentionné dans la \cref{sec:donnees}, les \OldBam proviennent d'une étude antérieure. Ces \bam sont déjà énormément filtrés ce qui implique qu'une partie non négligeable des \reads ont été perdus. Cela se voit notamment le \cref{tab:qual}. Ces \bam seront tout de même utilisés à titre indicatif dans certaines des analyses.
 
 
-
 \subsubsection{Comparaison des tailles (\BamTrEx, \BamTrMo)}
-Une première analyse, très simple a consisté à regarder le tailles global de chaque \bam. Comme les \reads font tous la même taille un \bam plus lourd a tendance à contenir plus de \reads.
+Une première analyse, très simple a consisté à regarder la taille globale de chaque \bam. Comme les \reads font tous la même taille un \bam plus lourd a tendance à contenir plus de \reads.
 
 
 
 \subfile{../FiguresTex/weightTab}
 
 
-Dans notre situation, on remarque que les \bam issus de \TrMo sont légèrement plus lourds que ceux issus de \TrEx (\cref{tab:weight}). La différence est généralement comprise entre 1 \% et 2 \%
+Dans notre situation, on remarque que les \bam issus de \TrMo sont légèrement plus lourds que ceux issus de \TrEx (\cref{tab:weight}). La différence est généralement comprise entre 1 \% et 2 \%. Ce premier résultat nous permet de supposer que les deux \gls{mapping} sont équivalents ou très légèrement en faveur de \TrEx. Cela est conforme à nos attendus de départ.
 
 
 \subsubsection{Comparaison des FastQcReports (\BamTrEx, \BamTrMo)}
 \label{sec:fastqc}
-Quand un \gls{mapping} est lancé avec \GeCKO, \GeCKO crée de lui même un rapport \fastqc (\cref{tab:fastqcTrEx}, \cref{tab:fastqcTrMo}). Analysons celui-ci.
+Quand un \gls{mapping} est lancé avec \GeCKO, \GeCKO crée de lui-même un rapport \fastqc (\cref{tab:fastqcTrEx}, \cref{tab:fastqcTrMo}). Analysons celui-ci.
 
 
 \subfile{../FiguresTex/rapportFastQcEx}
@@ -140,29 +138,29 @@ Quand un \gls{mapping} est lancé avec \GeCKO, \GeCKO crée de lui même un rap
 
 \paragraph{Le pourcentage de \reads\,\gls{bien_apparies}} est compris entre 78 \% et 82 \% pour \TrMo tandis qu'il est compris entre 81 \% et 86 \% pour \TrEx.
 
-Contrairement à nos attententes initiales, il semblerait que \TrEx soi plus intéressant pour procéder à nos \glspl{mapping} que \TrMo , \TrEx maximisant le nombre de \reads mappés.
+Contrairement à nos attentes initiales, il semblerait que \TrEx soi plus intéressant pour procéder à nos \glspl{mapping} que \TrMo , \TrEx maximisant le nombre de \reads mappés.
 
 
 
 \subsubsection{Nombre de \reads mappés par rapport au nombre de \contigs (\BamTrEx, \BamTrMo)}
-Afin de confirmer ou d'infirmer les bons résultats de \TrEx dans la partie précédente (\cref{sec:fastqc}), nous avons décidé de vérifier que le fort pourcentage de \reads mappés n'était pas causé par des \reads dont la qualité de la correspondance entre eux et la référence est faible. Pour cela, nous avons divisé le nombre de \reads présents dans chaque \bam par le nombre de \reads présents dans le \fastq correspondant. Pour qu'un \gls{read} contenu dans un \bam soi pris en compte, la qualité de la correspondance doit être supérieure ou égale à 30. Cette valeur a été choisies car elle est généralement utilisées comme valeur minimale pour séparer les bonnes correspondances des correspondances insuffisantes.
+Afin de confirmer ou d'infirmer les bons résultats de \TrEx dans la partie précédente (\cref{sec:fastqc}), nous avons décidé de vérifier que le fort pourcentage de \reads mappés n'était pas causé par des \reads dont la qualité de la correspondance entre eux et la référence est faible. Pour cela, nous avons divisé le nombre de \reads présents dans chaque \bam par le nombre de \reads présents dans le \fastq correspondant. Pour qu'un \gls{read} contenu dans un \bam soi pris en compte, la qualité de la correspondance doit être supérieure ou égale à 30. Cette valeur a été choisie car elle est généralement utilisées comme valeur minimale pour séparer les bonnes correspondances des correspondances insuffisantes.
 
 
 
 \subfile{../FiguresTex/qual}
 
 
-Dans la \cref{tab:qual}, on remarque que les \BamTrEx sont toujours meilleurs que les \BamTrMo. Cela confirme que les résultats  (\cref{sec:fastqc}) ne sont pas causés par des \reads ayant une qualité de correspondance  faible.
+Dans la \cref{tab:qual}, on remarque que les \BamTrEx sont toujours meilleurs que les \BamTrMo. Cela confirme que les résultats (\cref{sec:fastqc}) ne sont pas causés par des \reads ayant une qualité de correspondance faible.
 
 
 
 \subsubsection{Nombre de \reads mappés par \contigs (\BamTrEx, \BamTrMo)}
 \label{sec:NbReadsParCotigs}
-Afin de savoir si les bons résultats de \TrEx (\cref{sec:fastqc}) ne sont pas causés par des \contigs sur-représentés, c'est à dire des \contigs sur lesquels une proportion trop grande de \reads sont mis en correspondance, il a été décidé de faire une analyse supplémentaire. Celle-ci  se base sur le  comptage du nombre de \reads mappés sur chaque \contigs (\cite{florent_f-marchalm1bioinfointernship2024-inrae_agap_ge2pop_2024} ($Read\_per\_contig$) ). Pour chaque référence, le script utilisé parcourt les \contigs contenus dans la référence. Pour chaque  \contig, les \bam correspondant à la référence sont ouverts et le nombre d'occurrences de ce \contig est compté (\lstinline{samtools view -c $BAM_FILE $CONTIG_NAME}). Le résultat de ce comptage est inscrit dans un fichier tabulé (\tsv). Les valeurs du \tsv sont reformatées (\cite{florent_f-marchalm1bioinfointernship2024-inrae_agap_ge2pop_2024} \lstinline{Refomat_bam-contig_read}). Cela permet de séparer chaque \bam dans des fichiers différents. Au passage, le nombre de \reads est divisé par 10. Cela permet de visualiser les résultats avec le logiciel présenté dans la \cref{sec:SnpHeatmap} (\cref{fig:ContigClassicHeatmap}, \cref{fig:ContigPercentHeatmap}).
+Afin de savoir si les bons résultats de \TrEx (\cref{sec:fastqc}) ne sont pas causés par des \contigs surreprésentés, c'est-à-dire des \contigs sur lesquels une proportion trop grande de \reads sont mis en correspondance, il a été décidé de faire une analyse supplémentaire. Celle-ci  se base sur le  comptage du nombre de \reads mappés sur chaque \contigs (\cite{florent_f-marchalm1bioinfointernship2024-inrae_agap_ge2pop_2024} ($Read\_per\_contig$) ). Pour chaque référence, le script utilisé parcourt les \contigs contenus dans la référence. Pour chaque  \contig, les \bam correspondant à la référence sont ouverts et le nombre d'occurrences de ce \contig est compté (\lstinline{samtools view -c $BAM_FILE $CONTIG_NAME}). Le résultat de ce comptage est inscrit dans un fichier tabulé (\tsv). Les valeurs du \tsv sont reformatées (\cite{florent_f-marchalm1bioinfointernship2024-inrae_agap_ge2pop_2024} \lstinline{Refomat_bam-contig_read}). Cela permet de séparer chaque \bam dans des fichiers différents. Au passage, le nombre de \reads est divisé par 10. Cela permet de visualiser les résultats avec le logiciel présenté dans la \cref{sec:SnpHeatmap} (\cref{fig:ContigClassicHeatmap}, \cref{fig:ContigPercentHeatmap}).
 
-Une autre étape de pré-traitement a permis de générer la \cref{fig:BoxPlotContigs} (\cite{florent_f-marchalm1bioinfointernship2024-inrae_agap_ge2pop_2024} \lstinline{Boxplot}).
+Une autre étape de prétraitement a permis de générer la \cref{fig:BoxPlotContigs} (\cite{florent_f-marchalm1bioinfointernship2024-inrae_agap_ge2pop_2024} \lstinline{Boxplot}).
 
-La \cref{fig:ContigClassicHeatmap} nous montre que le nombre de \reads  par \contigs est plus élevé dans les \BamTrEx que dans les \BamTrMo, et ce, malgré le fait que \TrMo possèdent un nombre de \contigs largement plus élevé que \TrEx. Dans le même temps, la \cref{fig:BoxPlotContigs} nous montre clairement que, en moyenne, les \contig dans \BamTrEx possèdent largement plus de \reads que \BamTrMo (741,35 contre seulement 620,02). L'écart type entre les deux conditions est tout a fait similaire ($2495,10 \approx 2481.73$).
+La \cref{fig:ContigClassicHeatmap} nous montre que le nombre de \reads  par \contigs est plus élevé dans les \BamTrEx que dans les \BamTrMo, et ce, malgré le fait que \TrMo possèdent un nombre de \contigs largement plus élevé que \TrEx. Dans le même temps, la \cref{fig:BoxPlotContigs} nous montre clairement que, en moyenne, les \contig dans \BamTrEx possèdent largement plus de \reads que \BamTrMo (741,35 contre seulement 620,02). L'écart type entre les deux conditions est tout à fait similaire ($2495,10 \approx 2481.73$).
 
 
 \subfile{../FiguresTex/boxplotsContigs}
@@ -170,10 +168,10 @@ La \cref{fig:ContigClassicHeatmap} nous montre que le nombre de \reads  par \co
 
 \subsection{Conclusion}
 \label{sec:MapConclusion}
-Au vu des analyses réalisées précédemment, il est claire que le \gls{mapping} des \fastq  sur \TrEx est meilleur que le \gls{mapping} des \fastq sur \TrMo :
+Au vu des analyses réalisées précédemment, il est clair que le \gls{mapping} des \fastq  sur \TrEx est meilleur que le \gls{mapping} des \fastq sur \TrMo :
 \begin{itemize}
     \item le nombre de \reads\,par \contigs\,est plus élevé 
-    \item le nombre de \contigs\,ayant recu des \reads\,est plus élevé 
+    \item le nombre de \contigs\,ayants reçu des \reads\,est plus élevé 
     \item la qualité du \gls{mapping} est plus élevée
 \end{itemize}
 
