@@ -1,0 +1,57 @@
+\documentclass{beamer}
+\usepackage{hyperref}
+
+\usepackage[T1]{fontenc}
+
+% -------------------------------------------------------------------
+% other packages
+
+
+% dummy text; remove it when working on this template
+\usepackage{lipsum}
+
+
+\date{\today}
+\usepackage{./Ritsumeikan}
+
+% defs
+\def\cmd#1{\texttt{\color{red}\footnotesize $\backslash$#1}}
+\def\env#1{\texttt{\color{blue}\footnotesize #1}}
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{ccnuMainColor}{RGB}{0,86,109}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+\definecolor{halfgray}{gray}{0.55}
+
+
+% -------------------------------------------------------------------
+
+% ----------------------------  PACKAGES ---------------------------- 
+% \usepackage{latexsym,calligra}
+% \usepackage{pstricks,stackengine}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}          % Changer 'french' avec 'english' si vous préférez l'anglais
+\usepackage{csquotes}
+\usepackage{graphicx}               % Pour inclure des images
+\usepackage{caption}                % Pour mieux contrôler les légendes dans les tableaux et figures
+\usepackage{booktabs}               % Pour les tableaux avec lignes horizontales
+\usepackage{amsmath}                % Pour les équations mathématiques
+\usepackage{multicol}               % Pour les environnements multi-colonnes
+\usepackage{multirow}               % Pour fusionner les lignes dans les tableaux
+\usepackage{listings}               % Pour afficher le code source
+\usepackage{subcaption}             % Pour les sous-légendes
+
+\usepackage{tcolorbox} 
+\usepackage{subfiles}
+\usepackage{tcolorbox} 
+
+\usepackage{xcolor}
+\usepackage{siunitx} % \num (affichage gros nombre)
+\sisetup{group-separator = \ } % Espace insecable pour seppare les chiffres des nombre (5,00,00 devient 5 000 000)
+
+\usepackage[backend=biber]{biblatex} 
+% \usepackage[style=authoryear, backend=biber]{biblatex} % Load biblatex with the biber backend
+\addbibresource{ref.bib} % Replace with your .bib file
+

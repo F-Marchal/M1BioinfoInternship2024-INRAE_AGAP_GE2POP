@@ -1,0 +1,33 @@
+% ----------------------------  START --------------------------- 
+\documentclass[../main]{subfiles} % main refers to main.tex
+
+\begin{document}
+\selectlanguage{french}
+% --------------------------------------------------------------- 
+
+
+\begin{table}[]
+    \centering
+    \begin{tabular}{cccccccc}
+        \toprule
+        \textbf{Espèce}                     & \textbf{Individu}             & \multicolumn{6}{c}{\textbf{Séquence}} \\
+        \midrule
+        \multirow{2}{*}{\textbf{espèce\_1}} & \multirow{2}{*}{individu 1}   & ATG  & CGT  & TGC  & CGA  & TGT & TAT \\
+                                            &                               & Met  & Arg  & Cys  & Arg  & Cys  & Tyr \\
+        \midrule
+        \multirow{2}{*}{\textbf{espèce\_1}} & \multirow{2}{*}{individu 2}   & ATG  & CGT  & TGC  & CGC  & TGT & TTT \\
+                                            &                               & Met  & Arg  & Cys  & Arg  & Cys  & Phe \\
+        \midrule
+        \multirow{2}{*}{\textbf{espèce\_1}} & \multirow{2}{*}{individu 3}   & ATG  & CGT  & TGC  & CGA  & TGT & TTT \\
+                                            &                               & Met  & Arg  & Cys  & Arg  & Cys  & Phe \\
+        \bottomrule
+    \end{tabular}
+
+
+    \scriptsize \caption{Exemple de séquences}
+    \label{tab:seqEx1}
+\end{table}
+
+
+
+\end{document}

@@ -1,0 +1,30 @@
+% ----------------------------  START --------------------------- 
+\documentclass[../main]{subfiles} % main refers to main.tex
+
+\begin{document}
+\selectlanguage{french}
+% --------------------------------------------------------------- 
+
+
+\begin{table}[]
+    \centering
+    \begin{tabular}{cccccccc}
+        \toprule
+        \textbf{Espèce}                     & \textbf{Individu}             & \multicolumn{6}{c}{\textbf{Séquence}} \\
+        \midrule
+        \multirow{2}{*}{\textbf{espèce\_1}} & \multirow{2}{*}{individu 1}   & ATG  & CGT  & TGC  & CGA  & TGT & T\textcolor{red}{A}T \\
+                                            &                               & Met  & Arg  & Cys  & Arg  & Cys  & \textbf{Tyr} \\
+        \midrule
+        \multirow{2}{*}{\textbf{espèce\_1}} & \multirow{2}{*}{individu 2}   & ATG  & CGT  & TGC  & CGC  & TGT & T\textcolor{red}{\textbf{T}}T \\
+                                            &                               & Met  & Arg  & Cys  & Arg  & Cys  & \textbf{Phe} \\
+        \midrule
+        \multirow{2}{*}{\textbf{espèce\_1}} & \multirow{2}{*}{individu 3}   & ATG  & CGT  & TGC  & CGA  & TGT & T\textcolor{red}{T}T \\
+                                            &                               & Met  & Arg  & Cys  & Arg  & Cys  & \textbf{Phe} \\
+        \bottomrule
+    \end{tabular}
+
+    \caption{Exemple de séquences avec un site non synonyme.}
+    \label{tab:seqEx3}
+\end{table}
+
+\end{document}

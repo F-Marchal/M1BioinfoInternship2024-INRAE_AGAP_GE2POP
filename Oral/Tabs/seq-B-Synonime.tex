@@ -1,0 +1,31 @@
+% ----------------------------  START --------------------------- 
+\documentclass[../main]{subfiles} % main refers to main.tex
+
+\begin{document}
+\selectlanguage{french}
+% --------------------------------------------------------------- 
+
+
+\begin{table}[]
+    \centering
+    \begin{tabular}{cccccccc}
+        \toprule
+        \textbf{Espèce}                     & \textbf{Individu}             & \multicolumn{6}{c}{\textbf{Séquence}} \\
+        \midrule
+        \multirow{2}{*}{\textbf{espèce\_1}} & \multirow{2}{*}{individu 1}   & ATG  & CGT  & TGC  & CG\textcolor{red}{A}  & TGT & TAT \\
+                                            &                               & Met  & Arg  & Cys  & \textbf{Arg}  & Cys  & Tyr \\
+        \midrule
+        \multirow{2}{*}{\textbf{espèce\_1}} & \multirow{2}{*}{individu 2}   & ATG  & CGT  & TGC  & CG\textcolor{red}{C}  & TGT & TTT \\
+                                            &                               & Met  & Arg  & Cys  & \textbf{Arg}  & Cys  & Phe \\
+        \midrule
+        \multirow{2}{*}{\textbf{espèce\_1}} & \multirow{2}{*}{individu 3}   & ATG  & CGT  & TGC  & CG\textcolor{red}{A}  & TGT & TTT \\
+                                            &                               & Met  & Arg  & Cys  & \textbf{Arg}  & Cys  & Phe \\
+        \bottomrule
+    \end{tabular}
+
+
+    \scriptsize \caption{Exemple de séquences avec un site synonyme.}
+    \label{tab:seqEx2}
+\end{table}
+
+\end{document}

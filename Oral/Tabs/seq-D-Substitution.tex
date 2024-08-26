@@ -1,0 +1,44 @@
+% ----------------------------  START --------------------------- 
+\documentclass[../main]{subfiles} % main refers to main.tex
+
+\begin{document}
+\selectlanguage{french}
+% --------------------------------------------------------------- 
+
+
+\begin{table}[]
+    \centering
+    \footnotesize
+    \begin{tabular}{cccccccc}
+        \toprule
+        \textbf{Espèce}                     & \textbf{Individu}             & \multicolumn{6}{c}{\textbf{Séquence}} \\
+        \midrule
+        \multirow{2}{*}{\textbf{espèce\_1}} & \multirow{2}{*}{individu 1}   & ATG  & CG\textcolor{red}{T}  & TGC  & CGA  & \textcolor{orange}{T}GT & TAT \\
+                                            &                               & Met  & \textbf{Arg}  & Cys  & Arg  & \textbf{Cys}  & Tyr \\
+        \midrule
+        \multirow{2}{*}{\textbf{espèce\_1}} & \multirow{2}{*}{individu 2}   & ATG  & CG\textcolor{red}{T}  & TGC  & CGC  & \textcolor{orange}{T}GT & TTT \\
+                                            &                               & Met  & \textbf{Arg}  & Cys  & Arg  & \textbf{Cys}  & Phe \\
+        \midrule
+        \multirow{2}{*}{\textbf{espèce\_1
+        }} & \multirow{2}{*}{individu 3}   & ATG  & CG\textcolor{red}{T}  & TGC  & CGA  & \textcolor{orange}{T}GT & TTT \\
+                                            &                               & Met  & \textbf{Arg}  & Cys  & Arg  & \textbf{Cys}  & Phe \\
+        \midrule
+        \multirow{2}{*}{\textbf{espèce\_2}} & \multirow{2}{*}{individu 1} & ATG  & CG\textcolor{red}{A}  & TGC  & CGA  & \textcolor{orange}{C}GT & TTT \\
+                                            &                               & Met  & \textbf{Arg}  & Cys  & Arg  & \textbf{Arg}  & Phe   \\
+        \midrule
+        \multirow{2}{*}{\textbf{espèce\_2}} & \multirow{2}{*}{individu 2}   & ATG  & CG\textcolor{red}{A} & TGC  & CGA  & \textcolor{orange}{C}GT & TTT \\
+                                            &                               & Met  & \textbf{Arg}  & Cys  & Arg  & \textbf{Arg}  & Phe   \\
+        \midrule
+        \multirow{2}{*}{\textbf{espèce\_2}} & \multirow{2}{*}{individu 3}   & ATG  & CG\textcolor{red}{A}  & TGC  & CGA  & \textcolor{orange}{C}GT & TTT \\
+                                            &                               & Met  & \textbf{Arg}  & Cys  & Arg  & \textbf{Arg}  & Phe   \\
+        \bottomrule
+    \end{tabular}
+    \scriptsize \caption{\small Exemple de substitution synonyme et non synonymes. Les substitutions synonymes sont en \textcolor{red}{rouge} Substitutions non synonymes sont en \textcolor{orange}{orange}}
+    
+    \label{tab:seqEx}
+\end{table}
+
+\end{document}
+
+\end{document}
+    

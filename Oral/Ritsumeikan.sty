@@ -1,0 +1,110 @@
+% | ===================================================================== |
+% | Code midified by Marchal Florent. Original author next line :         |
+% | Author Yuqi Zhao                                                      |
+% | Used : 25/08/2024                                                     |
+% | Original licece : License Creative Commons CC BY 4.0 Abstract         |
+% | https://www.overleaf.com/latex/templates/ccnu-beamer/ntkdpngwfktp     |
+% | ====================================================================  |
+
+
+\mode<presentation>
+
+\newif\ifbeamer@secheader
+\beamer@secheaderfalse
+
+%\DeclareOptionBeamer{secheader}{\beamer@secheadertrue}
+\ProcessOptionsBeamer
+
+\useoutertheme[footline=authorinstitutetitle,subsection=false]{smoothbars}
+\makeatletter % [add curpage/total page at the bottom](http://tex.stackexchange.com/questions/100838/beamer-dresden-theme-miniframes-appeareance-and-frame-number-insertion)
+\newcommand{\frameofframes}{/}
+\newcommand{\setframeofframes}[1]{\renewcommand{\frameofframes}{#1}}
+
+\setbeamertemplate{footline} 
+  {%
+    \begin{beamercolorbox}[colsep=1.5pt]{upper separation line foot}
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[ht=2.5ex,dp=1.125ex,%
+      leftskip=.3cm,rightskip=.3cm plus1fil]{author in head/foot}%
+      \leavevmode{\usebeamerfont{author in head/foot}\insertshortauthor}%
+      \hfill%
+      {\usebeamerfont{institute in head/foot}\usebeamercolor[fg]{institute in head/foot}\insertshortinstitute}%
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[ht=2.5ex,dp=1.125ex,%
+      leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}%
+      {\usebeamerfont{title in head/foot}\insertshorttitle}%
+      \hfill%
+      {\usebeamerfont{frame number}\usebeamercolor[fg]{frame number}\insertframenumber~\frameofframes~\inserttotalframenumber}
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[colsep=1.5pt]{lower separation line foot}
+    
+    \end{beamercolorbox}
+  }
+\makeatother
+
+\useinnertheme{circles}
+
+%\useoutertheme{default}
+%\useinnertheme[shadow=true]{rounded}
+\xdefinecolor{darkdolphinblue}{RGB}{42,82,113}  % Bleu foncé
+\xdefinecolor{darkdolphingray}{RGB}{34,55,65}   % Gris très foncé
+\xdefinecolor{examplegreen}{RGB}{56,110,83}     % Vert pour exampleblock
+\xdefinecolor{alertred}{RGB}{122,43,43}         % Rouge pour alertblock
+\xdefinecolor{lightgray}{RGB}{240,240,240}      % Gris très clair pour le fond des blocs
+
+\setbeamercolor{footline}{bg=darkdolphinblue}
+\setbeamercolor{frametitle}{bg=darkdolphinblue,fg=white}
+\setbeamercolor{title}{bg=darkdolphinblue}
+\setbeamerfont{frametitle}{size=\large}
+%\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{bibliography item}[text]
+\setbeamertemplate{caption}[numbered]
+
+\setbeamercolor{palette primary}{use=structure,fg=white,bg=structure.fg}
+\setbeamercolor{palette secondary}{use=structure,fg=white,bg=structure.fg!75!black}
+\setbeamercolor{palette tertiary}{use=structure,fg=white,bg=structure.fg!50!black}
+\setbeamercolor{palette quaternary}{fg=white,bg=structure.fg!50!black}
+%\setbeamercolor*{sidebar}{use=structure,bg=structure.fg}
+\setbeamercolor{titlelike}{parent=palette primary}
+
+%% Bloc principal
+\setbeamercolor{block title}{bg=darkdolphinblue,fg=white}
+\setbeamercolor{block body}{bg=lightgray,fg=black}
+
+%% Example block
+\setbeamercolor{block title example}{bg=examplegreen,fg=white}
+\setbeamercolor{block body example}{bg=lightgray,fg=black}
+
+%% Alert block
+\setbeamercolor{block title alerted}{bg=alertred,fg=white}
+\setbeamercolor{block body alerted}{bg=lightgray,fg=black}
+
+%% try
+\setbeamercolor{fine separation line}{}
+\setbeamercolor{item projected}{fg=white}
+\setbeamercolor{palette sidebar primary}{use=normal text,fg=normal text.fg}
+\setbeamercolor{palette sidebar quaternary}{use=structure,fg=structure.fg}
+\setbeamercolor{palette sidebar secondary}{use=structure,fg=structure.fg}
+\setbeamercolor{palette sidebar tertiary}{use=normal text,fg=normal text.fg}
+%\setbeamercolor{palette sidebar quaternary}{fg=white}
+\setbeamercolor{section in sidebar}{fg=darkdolphingray}
+\setbeamercolor{section in sidebar shaded}{fg=grey}
+\setbeamercolor{separation line}{}
+\setbeamercolor{sidebar}{bg=darkdolphingray}
+\setbeamercolor{sidebar}{parent=palette primary}
+\setbeamercolor{structure}{fg=darkdolphinblue}
+\setbeamercolor{subsection in sidebar}{fg=darkdolphingray}
+\setbeamercolor{subsection in sidebar shaded}{fg=grey}
+% \AtBeginSection[]{
+%	\begin{frame}
+%		\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/shaded/hide]
+%	\end{frame}
+%}
+% \AtBeginSubsection[]{
+%	\begin{frame}
+%		\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/shaded/hide]
+%	\end{frame}
+% }
+
+\mode
+<all>
