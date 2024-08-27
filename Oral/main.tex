@@ -17,7 +17,7 @@ apparentées au blé}
     \frametitle{Problématique}
     
     \begin{alertblock}{Objectif}
-       Évaluer la qualité des données de séquençage issues d’une étude antérieure (\cite{burgarella_mating_2024}) pour déterminer si celles-ci peuvent être utilisées pour rechercher des traces de sélection.
+       Évaluer la qualité des données transcriptomiques issues d’une étude antérieure (\cite{burgarella_mating_2024}) pour déterminer si celles-ci peuvent être utilisées pour rechercher des traces de sélection.
     \end{alertblock}
     
 \end{frame}
@@ -37,57 +37,79 @@ apparentées au blé}
     \frametitle{Modèles biologiques}
     \begin{block}{Espèces utilisées}
         \begin{itemize}
-            \item 13 espèces sauvages apparentés au blé 
+            \item 13 espèces sauvages apparentées au blé 
             \item Famille des \textit{Poaceae} (Graminées)
-            \item Phylogénie connue (\cite{burgarella_mating_2024})
+            % \item Phylogénie connue (\cite{burgarella_mating_2024})
         \end{itemize}
     \end{block}
-    \pause
+
+    \begin{columns}[c] % Aligns the columns content vertically centered
+        \column{0.33\textwidth}
+        \includegraphics[height=4.7cm]{./Illustrations/Plante1.png}
+        
+        \column{0.33\textwidth}
+        \includegraphics[height=4.7cm]{./Illustrations/Plante2.png}
+        
+        \column{0.33\textwidth}
+        \includegraphics[height=4.7cm]{./Illustrations/Plante3.png}
+    \end{columns}
+\end{frame}
+  
+\begin{frame}
+
+    \frametitle{Modèles biologiques}
+    \begin{block}{Espèces utilisées}
+        \begin{itemize}
+            \item 13 espèces sauvages apparentées au blé 
+            \item Famille des \textit{Poaceae} (Graminées)
+            % \item Phylogénie connue (\cite{burgarella_mating_2024})
+        \end{itemize}
+    \end{block}
     \vspace{0.25cm}
     \begin{block}{\textit{Triticum urartu}}
         \begin{itemize}
 
-
-            \item Mode de reproduction fortement autogame 
+            
+            % \item Mode de reproduction fortement autogame 
             \item Génome diploide de $4,8Gpb$  ($35,5$ fois plus
-grand qu’\textit{Arabidopsis thaliana} ($0, 135Gpb$))
-            \item Partie « A » du génome du blé tendre (Froment)
+grand qu’\textit{Arabidopsis thaliana})
+            % \item Partie « A » du génome du blé tendre (Froment)
             \item Génome de référence disponible
         \end{itemize}
     \end{block}
 \end{frame}
 
-\subsection{Données}
-\begin{frame}
-    \frametitle{Données}
-    \begin{block}{Données brutes}
-        \begin{itemize}
-            \item Fichier FASTQ
-            \item 44 fichier de \num{24 000 000} reads
-            
-        \end{itemize}
-    \end{block}
-
-    \pause
-    
-    \begin{block}{Reférenes}
-        \begin{itemize}
-            \item Genone de référence
-            \item Transcriptome de référence
-            \item Ancien transcriptome de référence (ex-nihilo)
-            
-        \end{itemize}
-    \end{block}
-
-    \pause
-    
-    \begin{block}{Données raffinés}
-        \begin{itemize}
-            \item Fichier BAMS
-            \item Tableaux fait avec "dNdSpiNpiS" \cite{dNdSpNpS}
-        \end{itemize}
-    \end{block}
-\end{frame}
+% \subsection{Données}
+% \begin{frame}
+%    \frametitle{Données}
+%    \begin{block}{Données brutes}
+%        \begin{itemize}
+%            \item Fichier FASTQ
+%            \item 44 fichier de \num{24 000 000} reads
+%            
+%        \end{itemize}
+%    \end{block}
+%
+%    \pause
+%    
+%    \begin{block}{Reférenes}
+%        \begin{itemize}
+%            \item Genone de référence
+%            \item Transcriptome de référence
+%            \item Ancien transcriptome de référence (ex-nihilo)
+%           
+%        \end{itemize}
+%    \end{block}
+%
+%    \pause
+%    
+%    \begin{block}{Anciens résultats de mapping}
+%        \begin{itemize}
+%            \item Fichier BAMS
+%            % \item Tableaux fait avec "dNdSpiNpiS" \cite{dNdSpNpS}
+%        \end{itemize}
+%    \end{block}
+% \end{frame}
 
 
 \section{Vocabulaire}
@@ -95,16 +117,47 @@ grand qu’\textit{Arabidopsis thaliana} ($0, 135Gpb$))
 	\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/show/hide,subsubsectionstyle=show/show/hide]
 \end{frame}
 
+\subsection{contigs et SNP}
+
+\begin{frame}{SNP et Contigs}
+
+    \begin{itemize}
+        \item  \textbf{SNP} \textit{Single nucléotidique polymorphisme}
+
+        \item  \textbf{contig}
+    \end{itemize}
+ 
+
+    \begin{itemize}
+        \item \textbf{Sites synonymes}
+        \item \textbf{Sites non synonymes}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{SNP et Contigs}
+
+    \begin{itemize}
+        \item  \textbf{SNP} \textit{Single nucléotidique polymorphisme}
+
+        \item  \textbf{contig} Ici, "contig" est synonyme de "gène"
+    \end{itemize}
+ 
+
+    \begin{itemize}
+        \item \textbf{Sites synonymes}
+        \item \textbf{Sites non synonymes}
+    \end{itemize}
+\end{frame}
+
 \subsection{Synonyme et non synonyme}
 \begin{frame}
     \frametitle{Synonyme et non synonyme}
     \subfile{Tabs/seq-A-Presentation}
 
-    \pause
     \small
     \begin{itemize}
-        \item \textbf{Sites synonyme}
-        \item \textbf{Sites non synonyme}
+        \item \textbf{Sites synonymes}
+        \item \textbf{Sites non synonymes}
     \end{itemize}
 
 \end{frame}
@@ -119,8 +172,8 @@ grand qu’\textit{Arabidopsis thaliana} ($0, 135Gpb$))
     \small
 
     \begin{itemize}
-        \item \textbf{Sites synonyme} codons codants pour un même acide aminé
-        \item \textbf{Sites non synonyme} 
+        \item \textbf{Sites synonymes} codons codants pour un même acide aminé
+        \item \textbf{Sites non synonymes} 
     \end{itemize}
 
 
@@ -132,8 +185,8 @@ grand qu’\textit{Arabidopsis thaliana} ($0, 135Gpb$))
     \subfile{Tabs/seq-C-NonSynonime}
     \small
     \begin{itemize}
-        \item \textbf{Sites synonyme} codons codants pour un même acide aminé
-        \item \textbf{Sites non synonyme} codons ne codants pas pour un même acide aminé
+        \item \textbf{Sites synonymes} codons codants pour un même acide aminé
+        \item \textbf{Sites non synonymes} codons ne codants pas pour un même acide aminé
     \end{itemize}
 
 \end{frame}
@@ -142,12 +195,13 @@ grand qu’\textit{Arabidopsis thaliana} ($0, 135Gpb$))
 \begin{frame}
     \frametitle{Polymorphisme et substitutions}
    
-    \begin{block}{Les sites synonymes peuvent s'étudiés :}
+    \begin{block}{Les sites peuvent s'étudier :}
         \begin{description}
-            \item [au sein d’une même population :] on parle de polymorphisme
-            \item [au sein d’un groupe de population :] on parle de substitutions 
+            \item [Au sein d’une même population :] on parle de polymorphisme
+            \item [Au sein d’un groupe de population :] on parle de substitutions 
         \end{description}
     \end{block}
+    
     
 
 
@@ -165,28 +219,33 @@ grand qu’\textit{Arabidopsis thaliana} ($0, 135Gpb$))
 \end{frame}
 
 \subsection{Sélections}
+
 \begin{frame}{Sélections}
-	\begin{block}{Absence de sélection}
+
+	\begin{block}{L'absence de sélection}
         \begin{itemize}
-            \item Les sites évoluent à la même vitesse.
+            \item Les sites synonymes et non synonymes se fixent à la même vitesse
         \end{itemize}
     \end{block}
 
  
     \pause
-    \begin{block}{Sélection purificatrice}
+    \begin{block}{La sélection purificatrice}
         \begin{itemize}
-            \item S'oppose aux mutations non synonymes
-            \item Conserve les séquences
+            \item S'oppose à la fixation des sites non synonymes
         \end{itemize}
     \end{block}
 
     \pause
-    \begin{block}{Sélection positive}
+    \begin{block}{La sélection positive}
         \begin{itemize}
-            \item Favorise la fixation de mutations non synonymes
+            \item Favorise la fixation de sites synonymes
         \end{itemize}
     \end{block}
+    \pause
+    \begin{itemize}
+        \item[$\rightarrow$] Création d'un déséquilibre
+    \end{itemize}
     
 \end{frame}
 
@@ -200,15 +259,15 @@ grand qu’\textit{Arabidopsis thaliana} ($0, 135Gpb$))
         \begin{tabular}{c c c}
            
             \toprule
-              & Site Fixés & Sites polymorphique \\
+              & Sites polymorphiques  & Site Fixés\\
             \midrule
-            Non synonyme & $D_n$ & $P_n$ \\
-            Synonyme & $D_s$ & $P_s$ \\
+            Non synonyme& $P_n$ & $D_n$  \\
+            Synonyme & $P_s$ & $D_s$  \\
 
             \bottomrule
            
         \end{tabular}
-         \caption{Indicateurs utilisés pour la recherche de traces de sélections}
+         \caption{Indicateurs utilisés pour la recherche de traces de sélection}
     \end{table}
 
     \begin{exampleblock}{Utilisation}
@@ -216,8 +275,8 @@ grand qu’\textit{Arabidopsis thaliana} ($0, 135Gpb$))
             \item  $\frac{P_n}{P_s}$ Étude du polymorphisme 
             \item  $\frac{D_n}{D_s}$ Étude des substitutions
             \begin{itemize}
-                \item $\frac{D_n}{D_s} > 1$ Conservation de la substitution
-                \item $\frac{D_n}{D_s} < 1$ Élimination de la substitution
+                \item $\frac{D_n}{D_s} > 1$ Conservation des Substitutions
+                \item $\frac{D_n}{D_s} < 1$ Élimination des substitutions
             \end{itemize}
 
         \end{itemize}
@@ -228,10 +287,10 @@ grand qu’\textit{Arabidopsis thaliana} ($0, 135Gpb$))
 
 \begin{frame}
     \frametitle{Conclusion}
-     \begin{alertblock}{ Besoin de sites variables}
+     \begin{alertblock}{Besoin de sites variables}
         \begin{itemize}
-            \item[$\rightarrow$] Suffisamment de sites
-            \item[$\rightarrow$] Suffisamment grand nombre de séquence
+            \item[$\rightarrow$] Grand nombre de sites
+            \item[$\rightarrow$] Grand nombre de contigs
         \end{itemize}
     \end{alertblock}
     
@@ -244,18 +303,15 @@ grand qu’\textit{Arabidopsis thaliana} ($0, 135Gpb$))
 
 \subsection{Outil fait maison}
 \begin{frame}{Création d'un outil}
-    \begin{block}{Données de initiales}
+    \begin{block}{Données initiales}
         \begin{itemize}
-            \item Nombre de SNP par contig
+            \item Des tableaux contenant le nombre de SNP par contig
+            \item[$\rightarrow$] Tableaux  générés avec "dNdSpiNpiS" (\cite{dNdSpNpS})
+            \item[$\rightarrow$] Utilisation du mapping utilisant le transcriptome de référence de l'équipe
         \end{itemize}
     \end{block}
 
-    \begin{block}{Definitions}
-        \begin{itemize}
-            \item SNP : \textit{Single nucléotidique polymorphisme}
-            \item contig : Ici, "contig" est synonyme de "gène".
-        \end{itemize}
-    \end{block}
+
 
     \pause
 
@@ -278,15 +334,24 @@ grand qu’\textit{Arabidopsis thaliana} ($0, 135Gpb$))
 
     \begin{block}{Reproductibilité / Tracabilité}
         \begin{itemize}
-            \item Génération d'un fichier README a chaque éxecution
-            \item Disponible sur github : \cite{florent_f-marchalm1bioinfointernship2024-inrae_agap_ge2pop_2024}
+            \item Génération d'un fichier README à chaque exécution
+            \item Disponible sur GitHub : \cite{florent_f-marchalm1bioinfointernship2024-inrae_agap_ge2pop_2024}
         \end{itemize}
     \end{block}
 
+    \begin{alertblock}{Besoins}
+        \begin{itemize}
+            \small
+            \item Au moins 5 SNP par contig
+            \item Sur au moins 70\% des contigs
+        \end{itemize}
+    \end{alertblock}
+
+
     
 \end{frame}
-
-\begin{frame}{resultats}
+\subsection{Résultats}
+\begin{frame}{Résultats}
 
     \begin{figure}[h!]
         \centering
@@ -295,12 +360,13 @@ grand qu’\textit{Arabidopsis thaliana} ($0, 135Gpb$))
         \label{fig:heatmap_snp}
     \end{figure}
 
+    \pause
+
     \begin{alertblock}{Résultats}
         \begin{itemize}
             \small
-            \item Besoin d'au moins 5 SNP par contig sur 70\% des contigs
-            \item Seul 1 des 13 éspéces atteigne ce seuil
-            \item Grande variabilité dans le npmbre de SNP (\textit{Aegilops searsii})
+            \item Seule 1 des 13 espèces atteint le seuil (\textit{Aegilops speltoides})
+            \item Grande variabilité dans le nombre de SNP (\textit{Aegilops searsii})
             \item \textit{Aegilops speltoides} candidat pour une étude préparatoire
         \end{itemize}
     \end{alertblock}
@@ -311,16 +377,16 @@ grand qu’\textit{Arabidopsis thaliana} ($0, 135Gpb$))
 
 
 \section{Re-Mapping}
-\subsection{Justification}
+\subsection{Justifications}
 \begin{frame}
 	\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/show/hide,subsubsectionstyle=show/show/hide]
 \end{frame}
 
 \begin{frame}
-    \begin{alertblock}{Explication des résultats précédents}
+    \begin{alertblock}{Potentielle explication des résultats précédents}
         \begin{itemize}
-            \item Trop peux de reads ont mappés
-            \item Le transcriptome été référence  de l'équipe est potentielment incomplet
+            \item Trop peu de reads ont mappés
+            \item Le transcriptome référence provenant de l'équipe est potentiellement incomplet
         \end{itemize}
     \end{alertblock}
 
@@ -333,31 +399,13 @@ grand qu’\textit{Arabidopsis thaliana} ($0, 135Gpb$))
     \end{alertblock}
 
     \begin{alertblock}{Attendus}
-        $Génome \geq transcriptome > Ancien_transcriptome$
+        Génome $\geq$ Transcriptome $>$ Ancien transcriptome
     \end{alertblock}
 
 \end{frame}
 
 \subsection{Outils}
 
-\begin{frame}{Outils }
-   
-        \begin{block}{GeCKO \cite{ardisson_gecko_2024}}
-            \begin{itemize}
-                \item Analyses de données NGS
-                \item « user-friendly »
-            \end{itemize}
-        \end{block}
-
-
-    \begin{block}{Mapper}
-        \begin{itemize}
-            \item Transcriptomes : BWA-MEM
-            \item Génome : Minimap2
-        \end{itemize}
-    \end{block}
-
-\end{frame}
 
 \begin{frame}{Outils}
    
@@ -369,7 +417,7 @@ grand qu’\textit{Arabidopsis thaliana} ($0, 135Gpb$))
     \end{block}
 
 
-    \begin{block}{Mapper}
+    \begin{block}{Mappers}
         \begin{itemize}
             \item Transcriptomes : BWA-MEM
             \item Génome : Minimap2 \pause (Non-fonctionnel)
@@ -379,12 +427,19 @@ grand qu’\textit{Arabidopsis thaliana} ($0, 135Gpb$))
 \end{frame}
 % 
 \subsection{Résultats}
-\begin{frame}{Résultats}
+\begin{frame}{Analyses}
+    \begin{block}{Données brutes}
+            \begin{itemize}
+                \item Fichiers FASTQ
+                \item 44 fichiers de \num{24 000 000} reads
+                \item[$\rightarrow$] Utilisation d'un cluster de calcul
+           \end{itemize}
+    \end{block}
 
-    \begin{block}{Analyse}
+    \begin{block}{Analyses}
         \begin{itemize}
-            \item Nombre de reads par contigs
-            \item Nombre de contigs ayants reçu des reads
+            \item Nombre de reads par contig
+            \item Nombre de contigs ayant reçu des reads
             \item Qualité du mapping
         \end{itemize}
     \end{block}
@@ -413,41 +468,42 @@ grand qu’\textit{Arabidopsis thaliana} ($0, 135Gpb$))
 
 \section{Conclusion}
 
-\begin{frame}{Conclusion et Perspéctives}
+\begin{frame}{Conclusion et Perspectives}
     \begin{alertblock}{Conclusion}
         \begin{itemize}
-            \item Le jeu de donné risque de ne pas convenir.
+            \item Le jeu de données risque de ne pas convenir
         \end{itemize}
     \end{alertblock}
 
     \pause
 
-    \begin{exampleblock}{Perspéctives}
+    
+
+    \begin{exampleblock}{Perspectives}
         \begin{itemize}
             \item Analyses du mapping sur le génome de référence
             \item La quantification des SNP n'a eu lieu que sur les "anciens BAM"
         \end{itemize}
     \end{exampleblock}
-\end{frame}
-
-
-\begin{frame}{Points clef}
-    \begin{center}
-        \huge \textbf{Merci pour votre attention}
-    \end{center}
-
-    \begin{block}{Points clefs de la présentation}
-        \begin{itemize}
-            \item Dévelopement d'un outil
-            \item Quantification des SNP
-            \item Remapping des BAMS
-            \item Analyse des nouveaux BAM
-        \end{itemize}
-    \end{block}
-       
-
 
 \end{frame}
+
+
+% \begin{frame}{Points clef}
+%    \begin{center}
+%        \huge \textbf{Merci pour votre attention}
+%    \end{center}
+%
+%    \begin{block}{Points clefs de la présentation}
+%        \begin{itemize}
+%            \item Dévelopement d'un outil
+%            \item Quantification des SNP
+%            \item Remapping des BAMS
+%            \item Analyse des nouveaux BAM
+%        \end{itemize}
+%    \end{block}
+%       
+% \end{frame}
 
 
 \appendix
@@ -457,20 +513,44 @@ grand qu’\textit{Arabidopsis thaliana} ($0, 135Gpb$))
    \subfile{annexes/phylogenetic-relationships}
 \end{frame}
 
+
+\begin{frame}{Heatmaps complètes (Analyse des SNP)}
+    \begin{figure}[p]
+        \centering
+        \begin{subfigure}[b]{0.4\paperwidth}
+            \centering
+            \includegraphics[width=\textwidth]{./Illustrations/Classic_Heatmap_SNP.png}
+            \label{fig:ClassicSNPHeatmap}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.4\paperwidth}
+            \centering
+            \includegraphics[width=\textwidth]{./Illustrations/Percent_Heatmap_SNP.png}
+            \label{fig:PercentSNPHeatmap}
+        \end{subfigure}
+        
+        \label{fig:SNPHeatmap}
+    \end{figure}
+\end{frame}
+
 \begin{frame}{}
    \begin{figure}[ht]
       \centering
        \includegraphics[width=0.9\textwidth]{./Illustrations/boxplotTr.png}
-       \caption{Boite à moustache du nombre de reads par contigs}
+       \caption{Boîte à moustaches du nombre de reads par contig}
        \label{fig:BoxPlotContigs}
    \end{figure}
 
 \end{frame}
 
+
+
+
 \begin{frame}[allowframebreaks]
    \frametitle{Références}
    \printbibliography
 \end{frame}
+
 
 
 
